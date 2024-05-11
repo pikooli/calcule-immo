@@ -2,17 +2,17 @@
 	import InputNumber from '$components/inputs/InputNumber.svelte';
 	import RangeInput from '$components/inputs/Range.svelte';
 	import { immoValues } from '$lib/stores/immo';
-	import { mortgageDurationYears_MIN, mortgageDurationYears_MAX } from '../constants';
+	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '../constants';
 	import './mortage.scss';
 </script>
 
 <div class="mortage-block">
 	<RangeInput
-		name="mortgagePercent"
+		name="mortgageAmountPercent"
 		min={0}
 		max={100}
-		bind:value={$immoValues.mortgagePercent}
-		onInput={() => immoValues.updateValue('mortgagePercent')}
+		bind:value={$immoValues.mortgageAmountPercent}
+		onInput={() => immoValues.updateValue('mortgageAmountPercent')}
 	/>
 	<InputNumber
 		name="mortgageAmount"
@@ -20,6 +20,13 @@
 		max={$immoValues.amount}
 		bind:value={$immoValues.mortgageAmount}
 		onInput={() => immoValues.updateValue('mortgageAmount')}
+	/>
+	<RangeInput
+		name="mortgageRatePercent"
+		min={0}
+		max={100}
+		bind:value={$immoValues.mortgageRatePercent}
+		onInput={() => immoValues.updateValue('mortgageRatePercent')}
 	/>
 	<InputNumber
 		name="mortgageRatePercent"
@@ -30,8 +37,16 @@
 	/>
 	<RangeInput
 		name="mortgageDurationYears"
-		min={mortgageDurationYears_MIN}
-		max={mortgageDurationYears_MAX}
+		min={MORTGAGE_DURATION_MIN_YEARS}
+		max={MORTGAGE_DURATION_MAX_YEARS}
 		bind:value={$immoValues.mortgageDurationYears}
+		onInput={() => immoValues.updateValue('mortgageDurationYears')}
+	/>
+	<InputNumber
+		name="mortgageDurationYears"
+		min={MORTGAGE_DURATION_MIN_YEARS}
+		max={MORTGAGE_DURATION_MAX_YEARS}
+		bind:value={$immoValues.mortgageDurationYears}
+		onInput={() => immoValues.updateValue('mortgageDurationYears')}
 	/>
 </div>

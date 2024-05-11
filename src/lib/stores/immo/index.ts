@@ -1,1 +1,1 @@
-export { immoValues } from './immoValues';
+export { immoValues } from './immo';

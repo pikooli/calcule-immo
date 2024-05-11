@@ -5,6 +5,7 @@
 	import { MortageBlock } from '$components/forms/immo/mortage';
 	import { DepositBlock } from '$components/forms/immo/deposit';
 	import { NotaryBlock } from '$components/forms/immo/notary';
+	import { AgencyBlock } from '$components/forms/immo/agency';
 
 	import './immo.scss';
 
@@ -24,6 +25,7 @@
 			onInput={() => immoValues.updateValue('amount')}
 		/>
 
+		<AgencyBlock />
 		<DepositBlock />
 
 		<MortageBlock />

@@ -1,2 +1,2 @@
-export const mortgageDurationYears_MIN = 1;
-export const mortgageDurationYears_MAX = 24;
+export const MORTGAGE_DURATION_MIN_YEARS = 1;
+export const MORTGAGE_DURATION_MAX_YEARS = 24;
