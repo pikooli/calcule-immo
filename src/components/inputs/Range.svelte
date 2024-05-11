@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let name: string;
-	export let value = '';
-	export let min: string = '';
-	export let max: string = '';
-	export let step: string = '';
+	export let value: any;
+	export let min: number = 0;
+	export let max: number = 100;
+	export let step: number = 1;
 	export let onInput: any = null;
 </script>
 

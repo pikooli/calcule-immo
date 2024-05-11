@@ -1,0 +1,1 @@
+export { immoValues } from './immoValues';
