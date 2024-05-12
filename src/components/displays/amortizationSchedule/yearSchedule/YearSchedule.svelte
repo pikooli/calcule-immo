@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { _ } from 'svelte-i18n';
 	import type { YearSchedule } from '$lib/stores/amortizationSchedule';
+	import { formatNumber } from '$lib/utils/display';
 	import { MonthSchedule } from '$components/displays/amortizationSchedule/yearSchedule/monthSchedule/';
 	import './YearSchedule.scss';
 
@@ -16,23 +18,27 @@
 </script>
 
 <div class="yearSchedule">
-	<h2>Year : {year + 1}</h2>
+	<h2>{$_('amortizationSchedule.yearSchedule.year')} : {year + 1}</h2>
 	<MonthSchedule {monthSchedule} />
 	<div class="yearSchedule-conclusion">
 		<p>
-			YearPayment : {yearPayment}
+			{$_('amortizationSchedule.yearSchedule.yearPayment')} : {formatNumber(yearPayment)}
 		</p>
 		<p>
-			YearMortgagePayment : {yearMortgagePayment}
+			{$_('amortizationSchedule.yearSchedule.yearMortgagePayment')} : {formatNumber(
+				yearMortgagePayment
+			)}
 		</p>
 		<p>
-			YearInterest : {yearInterest}
+			{$_('amortizationSchedule.yearSchedule.yearInterest')} : {formatNumber(yearInterest)}
 		</p>
 		<p>
-			mortageInsuranceFees : {mortageInsuranceFees}
+			{$_('amortizationSchedule.yearSchedule.mortageInsuranceFees')} : {formatNumber(
+				mortageInsuranceFees
+			)}
 		</p>
 		<p>
-			RemainingCapital : {remainingCapital}
+			{$_('amortizationSchedule.yearSchedule.remainingCapital')} : {formatNumber(remainingCapital)}
 		</p>
 	</div>
 </div>

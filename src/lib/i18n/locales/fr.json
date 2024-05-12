@@ -1,3 +1,22 @@
 {
-	"start": "start en fr"
+	"start": "start en fr",
+	"amortizationSchedule": {
+		"title": "Tableau d'amortisement",
+		"yearSchedule": {
+			"monthSchedule": {
+				"month": "Mois",
+				"monthlyPayment": "Mensualité",
+				"monthMortgagePayment": "Capital remboursé",
+				"monthlyInterest": "Intérêt payé",
+				"mortageInsuranceFees": "Assurance",
+				"remainingCapital": "Capital restant"
+			},
+			"year": "Année",
+			"yearPayment": "Mensualité payé",
+			"yearInterest": "Intérêt payé",
+			"yearMortgagePayment": "Capital payé",
+			"mortageInsuranceFees": "Assurance payé",
+			"remainingCapital": "Capital restant"
+		}
+	}
 }

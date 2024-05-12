@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { MonthSchedule } from '$lib/stores/amortizationSchedule';
+	import { formatNumber } from '$lib/utils/display';
 	export let monthContent: MonthSchedule;
 	const {
 		month,
@@ -13,11 +14,11 @@
 
 <div class="schedule-row">
 	<p>{month + 1}</p>
-	<p>{monthlyPayment}</p>
-	<p>{monthMortgagePayment}</p>
-	<p>{monthlyInterest}</p>
-	<p>{mortageInsuranceFees}</p>
-	<p>{remainingCapital}</p>
+	<p>{formatNumber(monthlyPayment)}</p>
+	<p>{formatNumber(monthMortgagePayment)}</p>
+	<p>{formatNumber(monthlyInterest)}</p>
+	<p>{formatNumber(mortageInsuranceFees)}</p>
+	<p>{formatNumber(remainingCapital)}</p>
 </div>
 
 <style>
@@ -27,6 +28,9 @@
 			padding: 8px;
 			background-color: #f8f8f8;
 			border: 1px solid #ddd;
+		}
+		& > p:not(:first-child)::after {
+			content: ' €';
 		}
 	}
 </style>
