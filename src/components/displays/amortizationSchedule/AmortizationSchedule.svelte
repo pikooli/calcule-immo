@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { YearSchedule } from '$components/displays/amortizationSchedule/yearSchedule';
+	import './AmortizationSchedule.scss';
 </script>
 
-<h1>Amortization Schedule</h1>
-{#each $amortizationScheduleStore as yearSchedule}
-	<YearSchedule {yearSchedule} />
-{/each}
+<div class="amortizationSchedule">
+	<div class="amortizationSchedule-content">
+		<h1 class="amortizationSchedule-title">Amortization Schedule</h1>
+		{#each $amortizationScheduleStore as yearSchedule (yearSchedule)}
+			<YearSchedule {yearSchedule} />
+		{/each}
+	</div>
+</div>

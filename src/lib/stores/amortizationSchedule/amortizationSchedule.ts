@@ -6,8 +6,9 @@ export interface MonthSchedule {
 	month: number;
 	monthlyPayment: number;
 	monthlyInterest: number;
-	monthlyCapital: number;
+	monthMortgagePayement: number;
 	remainingCapital: number;
+	mortageInsuranceFees: number;
 }
 
 export interface YearSchedule {
@@ -16,27 +17,29 @@ export interface YearSchedule {
 	yearInterest: number;
 	yearPayment: number;
 	remainingCapital: number;
+	mortageInsuranceFees: number;
 }
 
 export type AmortizationScheduleStore = YearSchedule[];
 
-const defaultAmortizationScheduleStore: AmortizationScheduleStore = [
-	{
-		year: 1,
-		monthSchedule: [
-			{
-				month: 1,
-				monthlyPayment: 0,
-				monthlyInterest: 0,
-				monthlyCapital: 0,
-				remainingCapital: 0
-			}
-		],
-		yearInterest: 0,
-		yearPayment: 0,
-		remainingCapital: 0
-	}
-];
+export const defaultMonthSchedule = {
+	month: 1,
+	monthlyPayment: 0,
+	monthlyInterest: 0,
+	monthMortgagePayement: 0,
+	remainingCapital: 0,
+	mortageInsuranceFees: 0
+};
+export const defaultYearSchedule = {
+	year: 1,
+	monthSchedule: [defaultMonthSchedule],
+	yearInterest: 0,
+	yearPayment: 0,
+	remainingCapital: 0,
+	mortageInsuranceFees: 0
+};
+
+export const defaultAmortizationScheduleStore: AmortizationScheduleStore = [defaultYearSchedule];
 
 function createAmortizationScheduleStore() {
 	const { subscribe, set, update } = writable(defaultAmortizationScheduleStore);

@@ -14,7 +14,7 @@ export interface ImmoStore {
 	mortgageMonthlyRatePercent: number;
 	mortgageMonthlyRateAmount: number;
 	mortageTotalRateAmount: number;
-	mortageInsurance: number; // ===
+	mortageInsuranceFees: number; // ===
 	agencyFees: number;
 	agencyFeesPercent: number;
 	notaryFees: number;
@@ -34,7 +34,7 @@ const defaultImmoStore: ImmoStore = {
 	mortgageMonthlyRatePercent: 0,
 	mortgageMonthlyRateAmount: 0,
 	mortageTotalRateAmount: 0,
-	mortageInsurance: 0,
+	mortageInsuranceFees: 30,
 	agencyFees: 0,
 	agencyFeesPercent: 0,
 	notaryFees: 0,

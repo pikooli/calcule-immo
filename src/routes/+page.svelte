@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { immoStore } from '$lib/stores/immo';
+	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { ImmoForm } from '$components/forms';
 	import { AmortizationSchedule } from '$components/displays/amortizationSchedule';
+
+	onMount(() => {
+		immoStore.init();
+		amortizationScheduleStore.init($immoStore);
+	});
+	$: console.log($amortizationScheduleStore);
 </script>
 
 <ImmoForm />

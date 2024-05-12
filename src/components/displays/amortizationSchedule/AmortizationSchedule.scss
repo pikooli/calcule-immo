@@ -1,0 +1,19 @@
+.amortizationSchedule {
+	border: 1px solid #000;
+	padding: 10px;
+	margin: 30px 30px;
+}
+.amortizationSchedule-title {
+	text-align: center;
+}
+
+.amortizationSchedule-content {
+	max-height: 500px; /* Set a maximum height */
+	overflow-y: auto; /* Enables vertical scrolling when content overflows */
+}
+
+.schedule-row {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr); /* Two columns of equal size */
+	gap: 10px; /* Space between rows and columns */
+}

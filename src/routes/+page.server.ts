@@ -1,7 +1,6 @@
 import * as db from '$lib/server/db.js';
 
 export function load({ cookies }) {
-	console.log('db.getData()', db.getData());
 	return {
 		data: db.getData(),
 		aaa: 'aaaa'

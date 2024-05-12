@@ -1,15 +1,18 @@
 <script lang="ts">
 	import type { MonthSchedule } from '$lib/stores/amortizationSchedule';
+	import MonthContent from '$components/displays/amortizationSchedule/yearSchedule/monthSchedule/MonthContent.svelte';
 	export let monthSchedule: MonthSchedule[];
-	console.log('monthSchedule', monthSchedule);
 </script>
 
-{#each monthSchedule as month}
-	{#each Object.entries(month) as [key, value]}
-		{#if key === 'month'}
-			<h3>Month : {value}</h3>
-		{:else}
-			<p>{key}: {JSON.stringify(value)}</p>
-		{/if}
-	{/each}
+<div class="schedule-row">
+	<p><strong>Month</strong></p>
+	<p><strong>Monthly Payment</strong></p>
+	<p><strong>Month Mortgage Payement</strong></p>
+	<p><strong>Monthly Interest</strong></p>
+	<p><strong>Mortgage Insurence</strong></p>
+	<p><strong>Remaining Capital</strong></p>
+</div>
+
+{#each monthSchedule as monthContent}
+	<MonthContent {monthContent} />
 {/each}

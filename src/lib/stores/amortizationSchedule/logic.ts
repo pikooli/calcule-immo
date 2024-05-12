@@ -3,15 +3,17 @@ import type { ImmoStore } from '$lib/stores/immo/';
 export const generateSchedule = ({
 	mortgageAmount,
 	mortgageDurationYears,
-	mortgageRatePercent
+	mortgageRatePercent,
+	mortageInsuranceFees = 0
 }: ImmoStore) => {
 	const schedule = [];
 	let remainingMortgage = mortgageAmount;
 	const monthlyRate = mortgageRatePercent / 100 / 12;
 	const totalPayments = mortgageDurationYears * 12;
-	const monthlyPayment =
+	const baseMonthlyPayment =
 		(mortgageAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments))) /
 		(Math.pow(1 + monthlyRate, totalPayments) - 1);
+	const monthlyPayment = baseMonthlyPayment + mortageInsuranceFees; // Including insurance fee
 
 	for (let year = 0; year < mortgageDurationYears; year++) {
 		let yearInterest = 0;
@@ -20,9 +22,9 @@ export const generateSchedule = ({
 
 		for (let month = 0; month < 12; month++) {
 			const monthInterest = remainingMortgage * monthlyRate;
-			const monthCapital = monthlyPayment - monthInterest;
+			const monthMortgagePayement = baseMonthlyPayment - monthInterest;
 
-			remainingMortgage -= monthCapital;
+			remainingMortgage -= monthMortgagePayement;
 			yearInterest += monthInterest;
 			yearPayment += monthlyPayment;
 
@@ -30,8 +32,9 @@ export const generateSchedule = ({
 				month,
 				monthlyPayment: parseFloat(monthlyPayment.toFixed(2)),
 				monthlyInterest: parseFloat(monthInterest.toFixed(2)),
-				monthlyCapital: parseFloat(monthCapital.toFixed(2)),
-				remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0
+				monthMortgagePayement: parseFloat(monthMortgagePayement.toFixed(2)),
+				remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0,
+				mortageInsuranceFees
 			});
 		}
 
@@ -40,7 +43,8 @@ export const generateSchedule = ({
 			monthSchedule,
 			yearInterest: parseFloat(yearInterest.toFixed(2)),
 			yearPayment: parseFloat(yearPayment.toFixed(2)),
-			remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0
+			remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0,
+			mortageInsuranceFees: mortageInsuranceFees * 12
 		});
 	}
 

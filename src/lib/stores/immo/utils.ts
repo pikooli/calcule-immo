@@ -69,7 +69,7 @@ export const computeTotal = (values: ImmoStore) => {
 		values.notaryFees +
 		values.agencyFees +
 		values.mortageTotalRateAmount +
-		values.mortageInsurance;
+		values.mortageInsuranceFees;
 
 	return values;
 };

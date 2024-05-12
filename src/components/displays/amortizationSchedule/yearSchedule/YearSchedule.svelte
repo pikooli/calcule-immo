@@ -1,15 +1,24 @@
 <script lang="ts">
 	import type { YearSchedule } from '$lib/stores/amortizationSchedule';
 	import { MonthSchedule } from '$components/displays/amortizationSchedule/yearSchedule/monthSchedule/';
+	import './YearSchedule.scss';
+
 	export let yearSchedule: YearSchedule;
+	const { monthSchedule, remainingCapital, year, yearInterest, yearPayment } = yearSchedule;
 </script>
 
-{#each Object.entries(yearSchedule) as [key, value]}
-	{#if key === 'year'}
-		<h2>Year : {value}</h2>
-	{:else if key === 'monthSchedule'}
-		<MonthSchedule monthSchedule={value} />
-	{:else}
-		<p>{key}: {JSON.stringify(value, null, 2)}</p>
-	{/if}
-{/each}
+<div class="yearSchedule">
+	<h2>Year : {year + 1}</h2>
+	<MonthSchedule {monthSchedule} />
+	<div class="yearSchedule-conclusion">
+		<p>
+			RemainingCapital : {remainingCapital}
+		</p>
+		<p>
+			YearInterest : {yearInterest}
+		</p>
+		<p>
+			YearPayment : {yearPayment}
+		</p>
+	</div>
+</div>
