@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { immoValues } from '$lib/stores/immo';
+	import { immoStore } from '$lib/stores/immo';
+	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import InputNumber from '$components/inputs/InputNumber.svelte';
 	import { MortageBlock } from '$components/forms/immo/mortage';
 	import { DepositBlock } from '$components/forms/immo/deposit';
@@ -10,7 +11,8 @@
 	import './immo.scss';
 
 	onMount(() => {
-		immoValues.init();
+		immoStore.init();
+		amortizationScheduleStore.init($immoStore);
 	});
 
 	// export let data: { data: string };
@@ -21,8 +23,8 @@
 		<InputNumber
 			name="amount"
 			min={0}
-			bind:value={$immoValues.amount}
-			onInput={() => immoValues.updateValue('amount')}
+			bind:value={$immoStore.amount}
+			onInput={() => immoStore.updateValue('amount')}
 		/>
 
 		<AgencyBlock />

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import InputNumber from '$components/inputs/InputNumber.svelte';
 	import RangeInput from '$components/inputs/Range.svelte';
-	import { immoValues } from '$lib/stores/immo';
+	import { immoStore } from '$lib/stores/immo';
 	import './agency.scss';
 </script>
 
@@ -10,14 +10,14 @@
 		name="agencyFeesPercent"
 		min={0}
 		max={100}
-		bind:value={$immoValues.agencyFeesPercent}
-		onInput={() => immoValues.updateValue('agencyFeesPercent')}
+		bind:value={$immoStore.agencyFeesPercent}
+		onInput={() => immoStore.updateValue('agencyFeesPercent')}
 	/>
 	<InputNumber
 		min={0}
-		max={$immoValues.amount}
+		max={$immoStore.amount}
 		name="agencyFees"
-		bind:value={$immoValues.agencyFees}
-		onInput={() => immoValues.updateValue('agencyFees')}
+		bind:value={$immoStore.agencyFees}
+		onInput={() => immoStore.updateValue('agencyFees')}
 	/>
 </div>

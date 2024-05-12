@@ -1,7 +1,7 @@
 <script lang="ts">
 	import InputNumber from '$components/inputs/InputNumber.svelte';
 	import RangeInput from '$components/inputs/Range.svelte';
-	import { immoValues } from '$lib/stores/immo';
+	import { immoStore } from '$lib/stores/immo';
 	import './deposit.scss';
 </script>
 
@@ -10,14 +10,14 @@
 		name="depositePercent"
 		min={0}
 		max={100}
-		bind:value={$immoValues.depositePercent}
-		onInput={() => immoValues.updateValue('depositePercent')}
+		bind:value={$immoStore.depositePercent}
+		onInput={() => immoStore.updateValue('depositePercent')}
 	/>
 	<InputNumber
 		min={0}
-		max={$immoValues.amount}
+		max={$immoStore.amount}
 		name="depositeAmount"
-		bind:value={$immoValues.depositeAmount}
-		onInput={() => immoValues.updateValue('depositeAmount')}
+		bind:value={$immoStore.depositeAmount}
+		onInput={() => immoStore.updateValue('depositeAmount')}
 	/>
 </div>

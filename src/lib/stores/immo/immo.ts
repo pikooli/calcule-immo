@@ -1,19 +1,19 @@
 import { writable } from 'svelte/store';
-import { updateValues, initValues } from './logicValues';
+import { updateValues, initValues } from './logic';
 
 const NOTARY_PERCENT = 7;
 
-export interface ImmoValues {
+export interface ImmoStore {
 	amount: number;
 	depositePercent: number;
 	depositeAmount: number;
 	mortgageAmount: number;
 	mortgageAmountPercent: number;
-	mortgageDurationYears: number; // ===
-	mortgageRatePercent: number; // ===
-	mortgageMonthlyRatePercent: number; // ===
-	mortgageMonthlyRateAmount: number; // ===
-	mortageTotalRateAmount: number; // ===
+	mortgageDurationYears: number;
+	mortgageRatePercent: number;
+	mortgageMonthlyRatePercent: number;
+	mortgageMonthlyRateAmount: number;
+	mortageTotalRateAmount: number;
 	mortageInsurance: number; // ===
 	agencyFees: number;
 	agencyFeesPercent: number;
@@ -23,7 +23,7 @@ export interface ImmoValues {
 	total: number;
 }
 
-const defaultImmoValues: ImmoValues = {
+const defaultImmoStore: ImmoStore = {
 	amount: 200000,
 	depositePercent: 0,
 	depositeAmount: 0,
@@ -44,7 +44,7 @@ const defaultImmoValues: ImmoValues = {
 };
 
 function createImmoStore() {
-	const { subscribe, set, update } = writable(defaultImmoValues);
+	const { subscribe, set, update } = writable(defaultImmoStore);
 
 	const init = () => {
 		update(initValues);
@@ -65,4 +65,4 @@ function createImmoStore() {
 	};
 }
 
-export const immoValues = createImmoStore();
+export const immoStore = createImmoStore();

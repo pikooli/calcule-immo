@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { immoValues } from '$lib/stores/immo';
+	import { immoStore } from '$lib/stores/immo';
 	import { ImmoForm } from '$components/forms';
+	import { AmortizationSchedule } from '$components/displays/amortizationSchedule';
 </script>
 
 <ImmoForm />
+
 <ul class="display">
-	{#each Object.entries($immoValues) as [key, value]}
+	{#each Object.entries($immoStore) as [key, value]}
 		{#if key !== 'lastUpdated'}
 			<li><strong>{key.replace(/_/g, ' ')}:</strong> {value}</li>
 		{/if}
 	{/each}
 </ul>
+
+<AmortizationSchedule />
 
 <style>
 	.display {
