@@ -4,7 +4,15 @@
 	import './YearSchedule.scss';
 
 	export let yearSchedule: YearSchedule;
-	const { monthSchedule, remainingCapital, year, yearInterest, yearPayment } = yearSchedule;
+	const {
+		monthSchedule,
+		remainingCapital,
+		year,
+		yearInterest,
+		yearPayment,
+		mortageInsuranceFees,
+		yearMortgagePayement
+	} = yearSchedule;
 </script>
 
 <div class="yearSchedule">
@@ -12,13 +20,19 @@
 	<MonthSchedule {monthSchedule} />
 	<div class="yearSchedule-conclusion">
 		<p>
-			RemainingCapital : {remainingCapital}
+			YearPayment : {yearPayment}
+		</p>
+		<p>
+			YearMortgagePayement : {yearMortgagePayement}
 		</p>
 		<p>
 			YearInterest : {yearInterest}
 		</p>
 		<p>
-			YearPayment : {yearPayment}
+			mortageInsuranceFees : {mortageInsuranceFees}
+		</p>
+		<p>
+			RemainingCapital : {remainingCapital}
 		</p>
 	</div>
 </div>

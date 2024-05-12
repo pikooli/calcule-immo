@@ -13,11 +13,12 @@ export const generateSchedule = ({
 	const baseMonthlyPayment =
 		(mortgageAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments))) /
 		(Math.pow(1 + monthlyRate, totalPayments) - 1);
-	const monthlyPayment = baseMonthlyPayment + mortageInsuranceFees; // Including insurance fee
+	const monthlyPayment = baseMonthlyPayment + mortageInsuranceFees;
 
 	for (let year = 0; year < mortgageDurationYears; year++) {
 		let yearInterest = 0;
 		let yearPayment = 0;
+		let yearMortgagePayement = 0;
 		const monthSchedule = [];
 
 		for (let month = 0; month < 12; month++) {
@@ -27,6 +28,7 @@ export const generateSchedule = ({
 			remainingMortgage -= monthMortgagePayement;
 			yearInterest += monthInterest;
 			yearPayment += monthlyPayment;
+			yearMortgagePayement += monthMortgagePayement;
 
 			monthSchedule.push({
 				month,
@@ -43,6 +45,7 @@ export const generateSchedule = ({
 			monthSchedule,
 			yearInterest: parseFloat(yearInterest.toFixed(2)),
 			yearPayment: parseFloat(yearPayment.toFixed(2)),
+			yearMortgagePayement: parseFloat(yearMortgagePayement.toFixed(2)),
 			remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0,
 			mortageInsuranceFees: mortageInsuranceFees * 12
 		});
