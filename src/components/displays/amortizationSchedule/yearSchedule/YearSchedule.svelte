@@ -11,7 +11,7 @@
 		yearInterest,
 		yearPayment,
 		mortageInsuranceFees,
-		yearMortgagePayement
+		yearMortgagePayment
 	} = yearSchedule;
 </script>
 
@@ -23,7 +23,7 @@
 			YearPayment : {yearPayment}
 		</p>
 		<p>
-			YearMortgagePayement : {yearMortgagePayement}
+			YearMortgagePayment : {yearMortgagePayment}
 		</p>
 		<p>
 			YearInterest : {yearInterest}

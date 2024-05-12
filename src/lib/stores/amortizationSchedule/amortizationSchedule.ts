@@ -6,7 +6,7 @@ export interface MonthSchedule {
 	month: number;
 	monthlyPayment: number;
 	monthlyInterest: number;
-	monthMortgagePayement: number;
+	monthMortgagePayment: number;
 	remainingCapital: number;
 	mortageInsuranceFees: number;
 }
@@ -18,7 +18,7 @@ export interface YearSchedule {
 	yearPayment: number;
 	remainingCapital: number;
 	mortageInsuranceFees: number;
-	yearMortgagePayement: number;
+	yearMortgagePayment: number;
 }
 
 export type AmortizationScheduleStore = YearSchedule[];
@@ -27,7 +27,7 @@ export const defaultMonthSchedule = {
 	month: 1,
 	monthlyPayment: 0,
 	monthlyInterest: 0,
-	monthMortgagePayement: 0,
+	monthMortgagePayment: 0,
 	remainingCapital: 0,
 	mortageInsuranceFees: 0
 };
@@ -36,7 +36,7 @@ export const defaultYearSchedule = {
 	monthSchedule: [defaultMonthSchedule],
 	yearPayment: 0,
 	yearInterest: 0,
-	yearMortgagePayement: 0,
+	yearMortgagePayment: 0,
 	remainingCapital: 0,
 	mortageInsuranceFees: 0
 };

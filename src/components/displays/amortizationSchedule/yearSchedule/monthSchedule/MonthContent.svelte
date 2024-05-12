@@ -3,7 +3,7 @@
 	export let monthContent: MonthSchedule;
 	const {
 		month,
-		monthMortgagePayement,
+		monthMortgagePayment,
 		monthlyInterest,
 		monthlyPayment,
 		remainingCapital,
@@ -14,7 +14,7 @@
 <div class="schedule-row">
 	<p>{month + 1}</p>
 	<p>{monthlyPayment}</p>
-	<p>{monthMortgagePayement}</p>
+	<p>{monthMortgagePayment}</p>
 	<p>{monthlyInterest}</p>
 	<p>{mortageInsuranceFees}</p>
 	<p>{remainingCapital}</p>
@@ -23,10 +23,10 @@
 <style>
 	.schedule-row {
 		& > p {
-			margin: 4px 0; /* Reducing space between paragraphs to mimic a tighter table row */
-			padding: 8px; /* Padding for better readability */
-			background-color: #f8f8f8; /* Light grey background for each cell */
-			border: 1px solid #ddd; /* Borders for each cell */
+			margin: 4px 0;
+			padding: 8px;
+			background-color: #f8f8f8;
+			border: 1px solid #ddd;
 		}
 	}
 </style>

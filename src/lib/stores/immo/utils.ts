@@ -27,7 +27,7 @@ export const computateMortageTotalRateAmount = (values: ImmoStore) =>
 	values.mortgageAmount;
 
 // https://www.hellopret.fr/taux-immobilier/calcul-interet-emprunt/#:~:text=Mettons%20que%20vous%20empruntez%20200,x%2020%20%3D%20100%20000%20%E2%82%AC.&text=Soit%20(200%20000%20x%202.5,12%20%3D%20416.7%20%E2%82%AC%20par%20mois.
-const computeMortgageMontlyRatePercent = ({
+export const computeMortgageMontlyRatePercent = ({
 	mortgageRatePercent
 }: {
 	mortgageRatePercent: number;
@@ -47,18 +47,20 @@ interface ComputeMortgageMontlyRateAmountArgs {
 	mortgageRatePercent: number;
 	mortgageDurationYears: number;
 }
+
 export const computeMortgageMontlyRateAmount = ({
 	mortgageAmount,
 	mortgageRatePercent,
 	mortgageDurationYears
 }: ComputeMortgageMontlyRateAmountArgs) => {
 	const mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed({ mortgageRatePercent });
-	const mortageDurationMonths = mortgageDurationYears * 12;
+	const totalPaymentInstallments = mortgageDurationYears * 12;
 	const montlyAmount =
 		(mortgageAmount *
-			mortgageMonthlyRatePercent *
-			Math.pow(1 + mortgageMonthlyRatePercent, mortageDurationMonths)) /
-		(Math.pow(1 + mortgageMonthlyRatePercent, mortageDurationMonths) - 1);
+			(mortgageMonthlyRatePercent *
+				Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments))) /
+		(Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments) - 1);
+
 	return parseFloat(montlyAmount.toFixed(2));
 };
 
