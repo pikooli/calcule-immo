@@ -4,7 +4,7 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { ImmoForm } from '$components/forms';
-
+	import { Report } from '$components/displays/report';
 	import { AmortizationSchedule } from '$components/displays/amortizationSchedule';
 	import { _ } from 'svelte-i18n';
 
@@ -19,26 +19,6 @@
 
 <ImmoForm />
 
-<ul class="display">
-	{#each Object.entries($immoStore) as [key, value]}
-		{#if key !== 'lastUpdated'}
-			<li><strong>{key.replace(/_/g, ' ')}:</strong> {value}</li>
-		{/if}
-	{/each}
-</ul>
+<Report />
 
 <AmortizationSchedule />
-
-<style>
-	.display {
-		display: grid;
-		grid-template-columns: repeat(2, 2fr);
-		padding-left: 80px;
-		padding-right: 80px;
-		& > li {
-			list-style-type: none;
-			border: solid 1px #679;
-			padding: 10px;
-		}
-	}
-</style>

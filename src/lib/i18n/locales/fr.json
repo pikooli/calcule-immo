@@ -18,5 +18,23 @@
 			"mortageInsuranceFees": "Assurance payé",
 			"remainingCapital": "Capital restant"
 		}
+	},
+	"report": {
+		"amount": "Montant",
+		"depositePercent": "Apport %",
+		"depositeAmount": "Apport",
+		"mortgageAmount": "Emprunt",
+		"mortgageAmountPercent": "Emprunt %",
+		"mortgageDurationYears": "Durée",
+		"mortgageRatePercent": "Taux d'intérêt",
+		"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
+		"mortgageMonthlyRateAmount": "Mensualité",
+		"mortageTotalRateAmount": "Coût total du crédit",
+		"mortageInsuranceFees": "Frais assurance",
+		"agencyFees": "Frais d'agence",
+		"agencyFeesPercent": "Frais d'agence %",
+		"notaryFees": "Frais de notaire",
+		"notaryFeesPercent": "Frais de notaire %",
+		"total": "Total"
 	}
 }
