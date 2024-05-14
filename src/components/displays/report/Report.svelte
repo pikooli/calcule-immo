@@ -1,44 +1,67 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
+	import { formatNumber } from '$lib/utils/display';
+	import './Report.scss';
 </script>
 
 <div class="report">
-	<p><strong>{$_('report.amount')}:</strong> {$immoStore.amount}</p>
-	<p><strong>{$_('report.depositePercent')}:</strong> {$immoStore.depositePercent}</p>
-	<p><strong>{$_('report.depositeAmount')}:</strong> {$immoStore.depositeAmount}</p>
-	<p><strong>{$_('report.mortgageAmount')}:</strong> {$immoStore.mortgageAmount}</p>
-	<p><strong>{$_('report.mortgageAmountPercent')}:</strong> {$immoStore.mortgageAmountPercent}</p>
-	<p><strong>{$_('report.mortgageDurationYears')}:</strong> {$immoStore.mortgageDurationYears}</p>
-	<p><strong>{$_('report.mortgageRatePercent')}:</strong> {$immoStore.mortgageRatePercent}</p>
-	<p>
-		<strong>{$_('report.mortgageMonthlyRatePercent')}:</strong>
-		{$immoStore.mortgageMonthlyRatePercent}
+	<div class="group">
+		<p class="euros">{$_('report.amount')}: {formatNumber($immoStore.amount)}</p>
+		<p>
+			{$_('report.mortgageDurationYears')}:
+			{formatNumber($immoStore.mortgageDurationYears)}
+		</p>
+	</div>
+	<div class="group">
+		<p class="euros">{$_('report.depositeAmount')}: {formatNumber($immoStore.depositeAmount)}</p>
+		<p>
+			{$_('report.depositePercent')}:
+			{formatNumber($immoStore.depositePercent)}
+		</p>
+	</div>
+	<div class="group">
+		<p class="euros">{$_('report.mortgageAmount')}: {formatNumber($immoStore.mortgageAmount)}</p>
+		<p>
+			{$_('report.mortgageAmountPercent')}:
+			{formatNumber($immoStore.mortgageAmountPercent)}
+		</p>
+	</div>
+	<div class="group">
+		<p>
+			{$_('report.mortgageRatePercent')}:
+			{$immoStore.mortgageRatePercent}
+		</p>
+		<p>
+			{$_('report.mortgageMonthlyRatePercent')}:
+			{$immoStore.mortgageMonthlyRatePercent}
+		</p>
+		<p class="euros">
+			{$_('report.mortgageMonthlyRateAmount')}:
+			{formatNumber($immoStore.mortgageMonthlyRateAmount)}
+		</p>
+		<p class="euros">
+			{$_('report.mortageTotalRateAmount')}:
+			{formatNumber($immoStore.mortageTotalRateAmount)}
+		</p>
+	</div>
+	<div class="group">
+		<p class="euros">{$_('report.agencyFees')}: {formatNumber($immoStore.agencyFees)}</p>
+		<p>
+			{$_('report.agencyFeesPercent')}:
+			{formatNumber($immoStore.agencyFeesPercent)}
+		</p>
+	</div>
+	<div class="group">
+		<p class="euros">{$_('report.notaryFees')}: {formatNumber($immoStore.notaryFees)}</p>
+		<p>
+			{$_('report.notaryFeesPercent')}:
+			{formatNumber($immoStore.notaryFeesPercent)}
+		</p>
+	</div>
+	<p class="euros">
+		{$_('report.mortageInsuranceFees')}:
+		{formatNumber($immoStore.mortageInsuranceFees)}
 	</p>
-	<p>
-		<strong>{$_('report.mortgageMonthlyRateAmount')}:</strong>
-		{$immoStore.mortgageMonthlyRateAmount}
-	</p>
-	<p><strong>{$_('report.mortageTotalRateAmount')}:</strong> {$immoStore.mortageTotalRateAmount}</p>
-	<p><strong>{$_('report.mortageInsuranceFees')}:</strong> {$immoStore.mortageInsuranceFees}</p>
-	<p><strong>{$_('report.agencyFees')}:</strong> {$immoStore.agencyFees}</p>
-	<p><strong>{$_('report.agencyFeesPercent')}:</strong> {$immoStore.agencyFeesPercent}</p>
-	<p><strong>{$_('report.notaryFees')}:</strong> {$immoStore.notaryFees}</p>
-	<p><strong>{$_('report.notaryFeesPercent')}:</strong> {$immoStore.notaryFeesPercent}</p>
-	<p><strong>{$_('report.total')}:</strong> {$immoStore.total}</p>
+	<p class="euros">{$_('report.total')}: {formatNumber($immoStore.total)}</p>
 </div>
-
-<style>
-	.report {
-		display: grid;
-		grid-template-columns: repeat(2, 2fr);
-		padding-left: 80px;
-		padding-right: 80px;
-		& > p {
-			list-style-type: none;
-			border: solid 1px #679;
-			padding: 10px;
-			margin: 0;
-		}
-	}
-</style>

@@ -1,15 +1,16 @@
 .immo-form {
 	display: flex;
 	flex-direction: column;
-	& > div {
-		padding-left: 10px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		display: flex;
-		flex-direction: column;
-	}
-	.block {
-		border-left: 2px solid #f888ff;
-	}
-	margin-bottom: 20px;
+	margin: 20px 0 20px 0;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.btn-submit {
+	justify-self: center;
+	width: fit-content;
+	padding: 0 20px;
+	margin: 0 20px;
 }

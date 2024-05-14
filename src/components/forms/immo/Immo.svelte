@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { immoStore } from '$lib/stores/immo';
-	import InputNumber from '$components/inputs/InputNumber.svelte';
+	import { Amount } from '$components/forms/immo/amount';
 	import { MortageBlock } from '$components/forms/immo/mortage';
 	import { DepositBlock } from '$components/forms/immo/deposit';
 	import { NotaryBlock } from '$components/forms/immo/notary';
@@ -12,22 +11,14 @@
 	// export let data: { data: string };
 </script>
 
-<form method="POST">
-	<div class="immo-form">
-		<InputNumber
-			name="amount"
-			label={$_('report.amount')}
-			min={0}
-			bind:value={$immoStore.amount}
-			onInput={() => immoStore.updateValue('amount')}
-		/>
+<form class="immo-form" method="POST">
+	<Amount />
 
-		<AgencyBlock />
-		<DepositBlock />
+	<DepositBlock />
 
-		<MortageBlock />
-		<NotaryBlock />
-	</div>
+	<MortageBlock />
+	<NotaryBlock />
+	<AgencyBlock />
 
-	<button type="submit">submit</button>
+	<button class="btn-submit" type="submit">submit</button>
 </form>

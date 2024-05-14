@@ -14,11 +14,11 @@
 
 <div class="schedule-row">
 	<p>{month + 1}</p>
-	<p>{formatNumber(monthlyPayment)}</p>
-	<p>{formatNumber(monthMortgagePayment)}</p>
-	<p>{formatNumber(monthlyInterest)}</p>
-	<p>{formatNumber(mortageInsuranceFees)}</p>
-	<p>{formatNumber(remainingCapital)}</p>
+	<p class="euros">{formatNumber(monthlyPayment)}</p>
+	<p class="euros">{formatNumber(monthMortgagePayment)}</p>
+	<p class="euros">{formatNumber(monthlyInterest)}</p>
+	<p class="euros">{formatNumber(mortageInsuranceFees)}</p>
+	<p class="euros">{formatNumber(remainingCapital)}</p>
 </div>
 
 <style>
@@ -28,9 +28,6 @@
 			padding: 8px;
 			background-color: #f8f8f8;
 			border: 1px solid #ddd;
-		}
-		& > p:not(:first-child)::after {
-			content: ' €';
 		}
 	}
 </style>

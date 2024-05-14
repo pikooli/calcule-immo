@@ -21,23 +21,23 @@
 	<h2>{$_('amortizationSchedule.yearSchedule.year')} : {year + 1}</h2>
 	<MonthSchedule {monthSchedule} />
 	<div class="yearSchedule-conclusion">
-		<p>
+		<p class="euros">
 			{$_('amortizationSchedule.yearSchedule.yearPayment')} : {formatNumber(yearPayment)}
 		</p>
-		<p>
+		<p class="euros">
 			{$_('amortizationSchedule.yearSchedule.yearMortgagePayment')} : {formatNumber(
 				yearMortgagePayment
 			)}
 		</p>
-		<p>
+		<p class="euros">
 			{$_('amortizationSchedule.yearSchedule.yearInterest')} : {formatNumber(yearInterest)}
 		</p>
-		<p>
+		<p class="euros">
 			{$_('amortizationSchedule.yearSchedule.mortageInsuranceFees')} : {formatNumber(
 				mortageInsuranceFees
 			)}
 		</p>
-		<p>
+		<p class="euros">
 			{$_('amortizationSchedule.yearSchedule.remainingCapital')} : {formatNumber(remainingCapital)}
 		</p>
 	</div>
