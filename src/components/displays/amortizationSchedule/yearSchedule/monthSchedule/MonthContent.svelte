@@ -26,7 +26,7 @@
 		& > p {
 			margin: 4px 0;
 			padding: 8px;
-			background-color: #f8f8f8;
+			background-color: #feffff;
 			border: 1px solid #ddd;
 		}
 	}

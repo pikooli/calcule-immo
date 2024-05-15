@@ -17,8 +17,18 @@
 <button on:click={() => locale.set('en')}>Change language</button>
 {$_('start')}
 
-<ImmoForm />
+<div class="block_1">
+	<ImmoForm />
 
-<Report />
+	<Report />
+</div>
 
 <AmortizationSchedule />
+
+<style>
+	.block_1 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+</style>
