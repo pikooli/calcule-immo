@@ -8,7 +8,7 @@ export const computenotaryFees = (values: ImmoStore) =>
 export const computedepositeAmountOndepositePercent = (values: ImmoStore) =>
 	computeAmount(values.amount, values.depositePercent);
 export const computedepositePercentOndepositeAmount = (values: ImmoStore) =>
-	computeAmount(values.depositeAmount, values.amount);
+	computePercent(values.depositeAmount, values.amount);
 export const computeMortgageAmountOnMortagePercent = (values: ImmoStore) =>
 	computeAmount(values.amount, values.mortgageAmountPercent);
 export const computeMortgageAmountOnMortageAmount = (values: ImmoStore) =>
@@ -65,13 +65,14 @@ export const computeMortgageMontlyRateAmount = ({
 };
 
 export const computeTotal = (values: ImmoStore) => {
+	console.log('values', values);
 	values.total =
-		values.depositeAmount +
-		values.mortgageAmount +
-		values.notaryFees +
-		values.agencyFees +
-		values.mortageTotalRateAmount +
-		values.mortageInsuranceFees;
+		Number(values.depositeAmount) +
+		Number(values.mortgageAmount) +
+		Number(values.notaryFees) +
+		Number(values.agencyFees) +
+		Number(values.mortageTotalRateAmount) +
+		Number(values.mortageInsuranceFees) * 12 * values.mortgageDurationYears;
 
 	return values;
 };

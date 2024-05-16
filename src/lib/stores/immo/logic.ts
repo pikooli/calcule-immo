@@ -45,12 +45,18 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.depositeAmount = computedepositeAmountOndepositePercent(values);
 			values.mortgageAmount = computeMortgageAmount(values);
 			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
+			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
+			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
 			break;
 		}
 		case 'depositeAmount': {
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageAmount = computeMortgageAmount(values);
 			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
+			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
+			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
 			break;
 		}
 		case 'mortgageAmountPercent': {
