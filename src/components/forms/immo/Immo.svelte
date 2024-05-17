@@ -19,6 +19,7 @@
 	<MortageBlock />
 	<NotaryBlock />
 	<AgencyBlock />
-
-	<button class="btn-submit" type="submit">submit</button>
+	<div class="submit-block">
+		<button class="btn-submit" type="submit">submit</button>
+	</div>
 </form>

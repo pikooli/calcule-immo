@@ -1,10 +1,6 @@
 .notary-block {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-auto-flow: column;
 	background-color: #a0deff;
 	border: 1px solid #a0deff;
-	padding: 5px;
 }
 
 .notary-block > *:nth-child(1),
