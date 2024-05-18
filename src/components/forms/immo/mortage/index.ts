@@ -1,1 +1,1 @@
-export { default as MortageBlock } from './mortage.svelte';
+export { default as MortageBlock } from './Mortage.svelte';

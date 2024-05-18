@@ -1,1 +1,1 @@
-export { default as Amount } from './amount.svelte';
+export { default as AmountBlock } from './Amount.svelte';
