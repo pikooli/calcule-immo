@@ -1,1 +1,1 @@
-export { default as InputCard } from './inputCard.svelte';
+export { default as InputCard } from './InputCard.svelte';
