@@ -65,7 +65,6 @@ export const computeMortgageMontlyRateAmount = ({
 };
 
 export const computeTotal = (values: ImmoStore) => {
-	console.log('values', values);
 	values.total =
 		Number(values.depositeAmount) +
 		Number(values.mortgageAmount) +

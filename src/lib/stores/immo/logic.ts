@@ -1,5 +1,4 @@
 import type { ImmoStore } from './immo';
-import {} from '$lib/utils/math';
 
 import {
 	computeNotaryFees,
@@ -25,8 +24,6 @@ export const initValues = (values: ImmoStore) => {
 	values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 	values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
 	values.notaryFees = computeNotaryFees(values);
-	values.total =
-		values.depositeAmount + values.notaryFees + values.mortgageAmount + values.agencyFees;
 	return computeTotal(values);
 };
 

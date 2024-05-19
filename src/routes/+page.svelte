@@ -17,6 +17,8 @@
 <button on:click={() => locale.set('en')}>Change language</button>
 {$_('start')}
 
+<h1>Calcule-immo</h1>
+
 <div class="block_1">
 	<ImmoForm />
 

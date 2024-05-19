@@ -23,7 +23,7 @@ export interface ImmoStore {
 	total: number;
 }
 
-const defaultImmoStore: ImmoStore = {
+export const defaultImmoStore: ImmoStore = {
 	amount: 200000,
 	depositePercent: 0,
 	depositeAmount: 0,
