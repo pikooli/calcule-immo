@@ -10,7 +10,7 @@
 
 <label>
 	{label}
-	<input placeholder="test" {name} type="text" {min} {max} {step} bind:value on:input={onInput} />
+	<input placeholder="test" {name} type="number" {min} {max} {step} bind:value on:input={onInput} />
 </label>
 
 <style>

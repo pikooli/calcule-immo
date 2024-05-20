@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import InputNumber from '$components/inputs/InputNumber.svelte';
-	import RangeInput from '$components/inputs/Range.svelte';
+	import { InputNumberWithRange } from '$components/inputs';
 	import { InputCard } from '$components/cards';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS } from '$lib/constants';
@@ -10,20 +9,18 @@
 
 <div class="card-block deposit-block">
 	<InputCard label={$_('report.depositeAmount')}>
-		<RangeInput
-			name={IMMO_FIELDS.DEPOSITEPERCENT}
-			min={0}
-			max={100}
+		<InputNumberWithRange
+			nameInput={IMMO_FIELDS.DEPOSITEAMOUNT}
+			minInput={0}
+			maxInput={$immoStore.amount}
+			bind:valueInput={$immoStore.depositeAmount}
+			onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEAMOUNT)}
+			nameRange={IMMO_FIELDS.DEPOSITEPERCENT}
+			minRange={0}
+			maxRange={100}
 			toolTip={`${$immoStore.depositePercent} %`}
-			bind:value={$immoStore.depositePercent}
-			onInput={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEPERCENT)}
-		/>
-		<InputNumber
-			name={IMMO_FIELDS.DEPOSITEAMOUNT}
-			min={0}
-			max={$immoStore.amount}
-			bind:value={$immoStore.depositeAmount}
-			onInput={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEAMOUNT)}
+			bind:valueRange={$immoStore.depositePercent}
+			onInputRange={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEPERCENT)}
 		/>
 	</InputCard>
 </div>

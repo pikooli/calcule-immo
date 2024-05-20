@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let label: string = '';
 	export let name: string;
 	export let value: string = '';
 	export let min: string = '';
@@ -8,7 +9,7 @@
 </script>
 
 <label>
-	{name}
+	{label}
 	<input placeholder="test" {name} type="text" {min} {max} {step} bind:value on:input={onInput} />
 </label>
 
