@@ -1,4 +1,4 @@
-import { initValues } from './logic';
+import { initValues, updateValues } from './logic';
 import {
 	computateMortageTotalRateAmount,
 	computedepositeAmountOndepositePercent,
@@ -25,4 +25,8 @@ describe('logic test', () => {
 		expect(result.notaryFees).toEqual(computeNotaryFees(defaultImmoStore));
 		expect(result.total).toEqual(computeTotal(defaultImmoStore).total);
 	});
+});
+
+describe('updateValues test', () => {
+	it('updateValues', () => {});
 });
