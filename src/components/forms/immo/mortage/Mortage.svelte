@@ -15,6 +15,7 @@
 			name={IMMO_FIELDS.MORTGAGEAMOUNTPERCENT}
 			min={0}
 			max={100}
+			toolTip={`${$immoStore.mortgageAmountPercent} %`}
 			bind:value={$immoStore.mortgageAmountPercent}
 			onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGEAMOUNTPERCENT)}
 		/>
@@ -31,6 +32,7 @@
 			name={IMMO_FIELDS.MORTGAGERATEPERCENT}
 			min={0}
 			max={100}
+			toolTip={`${$immoStore.mortgageRatePercent} %`}
 			bind:value={$immoStore.mortgageRatePercent}
 			onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGERATEPERCENT)}
 		/>
@@ -47,6 +49,7 @@
 			name={IMMO_FIELDS.MORTGAGEDURATIONYEARS}
 			min={MORTGAGE_DURATION_MIN_YEARS}
 			max={MORTGAGE_DURATION_MAX_YEARS}
+			toolTip={`${$immoStore.mortgageDurationYears}`}
 			bind:value={$immoStore.mortgageDurationYears}
 			onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGEDURATIONYEARS)}
 		/>

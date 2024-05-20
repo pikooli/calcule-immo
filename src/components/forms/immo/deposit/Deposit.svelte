@@ -14,6 +14,7 @@
 			name={IMMO_FIELDS.DEPOSITEPERCENT}
 			min={0}
 			max={100}
+			toolTip={`${$immoStore.depositePercent} %`}
 			bind:value={$immoStore.depositePercent}
 			onInput={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEPERCENT)}
 		/>

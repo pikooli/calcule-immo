@@ -14,6 +14,7 @@
 			name={IMMO_FIELDS.NOTARYFEESPERCENT}
 			min={0}
 			max={100}
+			toolTip={`${$immoStore.notaryFeesPercent} %`}
 			bind:value={$immoStore.notaryFeesPercent}
 			onInput={() => immoStore.updateValue(IMMO_FIELDS.NOTARYFEESPERCENT)}
 		/>
