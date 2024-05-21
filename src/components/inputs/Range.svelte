@@ -11,11 +11,15 @@
 </script>
 
 <label>
-	{label}
+	{#if label}
+		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+	{/if}
 	{#if toolTip}
 		<Tooltip triggeredBy={`#${name}`}>{toolTip}</Tooltip>
 	{/if}
+
 	<input
+		class="range-sm h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-red-500 dark:bg-gray-700"
 		id={name}
 		placeholder="test"
 		{name}

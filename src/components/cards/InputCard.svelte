@@ -4,7 +4,7 @@
 
 <div class="inputCard">
 	{#if label}
-		<span>{label}</span>
+		<label class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}
 	<div class="inputCard-content">
 		<slot />
@@ -13,11 +13,7 @@
 
 <style>
 	.inputCard {
-		display: flex;
-		justify-items: center;
-		align-items: center;
-		gap: 1rem;
-		margin: 10px 2.5px;
+		margin: 10px;
 	}
 	.inputCard-content {
 		display: flex;

@@ -17,8 +17,7 @@
 	export let toolTip: string = '';
 </script>
 
-<div>
-	{label}
+<div class=" flex flex-col">
 	<InputRange
 		{toolTip}
 		name={nameRange}
