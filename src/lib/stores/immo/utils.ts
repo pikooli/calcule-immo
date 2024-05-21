@@ -53,7 +53,7 @@ export const computeMortgageMontlyRateAmount = ({
 	mortgageRatePercent,
 	mortgageDurationYears
 }: ComputeMortgageMontlyRateAmountArgs) => {
-	const mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed({ mortgageRatePercent });
+	const mortgageMonthlyRatePercent = computeMortgageMontlyRatePercent({ mortgageRatePercent });
 	const totalPaymentInstallments = mortgageDurationYears * 12;
 	const montlyAmount =
 		(mortgageAmount *
