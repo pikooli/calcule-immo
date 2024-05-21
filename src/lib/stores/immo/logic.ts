@@ -25,6 +25,8 @@ export const initValues = (values: ImmoStore) => {
 	values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 	values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
 	values.notaryFees = computeNotaryFees(values);
+	values.mortageInsuranceFeesTotal =
+		values.mortageInsuranceFees * 12 * values.mortgageDurationYears;
 	return computeTotal(values);
 };
 
@@ -104,6 +106,11 @@ export const updateValues = (field: string, values: ImmoStore) => {
 		case IMMO_FIELDS.MORTGAGEDURATIONYEARS: {
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			break;
+		}
+		case IMMO_FIELDS.MORTAGEINSURANCEFEES: {
+			values.mortageInsuranceFeesTotal =
+				values.mortageInsuranceFees * 12 * values.mortgageDurationYears;
 			break;
 		}
 	}

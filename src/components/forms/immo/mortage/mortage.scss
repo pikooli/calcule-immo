@@ -2,12 +2,3 @@
 	background-color: #caf4ff;
 	border: 1px solid #caf4ff;
 }
-
-.mortage-block > *:nth-child(1),
-.mortage-block > *:nth-child(2) {
-	grid-column: 1 / span 1;
-}
-
-.mortage-block > *:nth-child(n + 3) {
-	grid-column: span 1;
-}

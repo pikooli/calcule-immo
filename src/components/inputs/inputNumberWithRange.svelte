@@ -15,9 +15,13 @@
 	export let onInputRange: any = null;
 	export let onInputNumber: any = null;
 	export let toolTip: string = '';
+	export let sign: string = '';
 </script>
 
-<div class=" flex flex-col">
+<div class="flex flex-col p-1">
+	{#if label}
+		<label for={nameInput} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+	{/if}
 	<InputRange
 		{toolTip}
 		name={nameRange}
@@ -34,5 +38,6 @@
 		step={stepInput}
 		bind:value={valueInput}
 		onInput={onInputNumber}
+		{sign}
 	/>
 </div>

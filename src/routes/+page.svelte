@@ -4,8 +4,7 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { ImmoForm } from '$components/forms';
-	import { Report } from '$components/displays/report';
-	import { AmortizationSchedule } from '$components/displays/amortizationSchedule';
+	import { AmortizationSchedule } from '$components/displays';
 	import { _ } from 'svelte-i18n';
 
 	onMount(() => {
@@ -21,16 +20,13 @@
 
 <div class="block_1">
 	<ImmoForm />
-
-	<Report />
 </div>
 
 <AmortizationSchedule />
 
 <style>
 	.block_1 {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
+		display: flex;
+		justify-content: center;
 	}
 </style>

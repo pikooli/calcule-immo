@@ -22,16 +22,27 @@ export const computedepositeAmountOnMortageAmount = (values: ImmoStore) =>
 	values.amount - values.mortgageAmount;
 export const computeMortgageAmount = (values: ImmoStore) => values.amount - values.depositeAmount;
 
-export const computateMortageTotalRateAmount = (values: ImmoStore) =>
-	Math.round(values.mortgageMonthlyRateAmount * values.mortgageDurationYears * 12) -
-	values.mortgageAmount;
+export const computateMortageTotalRateAmount = (values: ImmoStore) => {
+	if (values.mortgageMonthlyRateAmount === 0) {
+		return 0;
+	}
+	return (
+		Math.round(values.mortgageMonthlyRateAmount * 12 * values.mortgageDurationYears) -
+		values.mortgageAmount
+	);
+};
 
 // https://www.hellopret.fr/taux-immobilier/calcul-interet-emprunt/#:~:text=Mettons%20que%20vous%20empruntez%20200,x%2020%20%3D%20100%20000%20%E2%82%AC.&text=Soit%20(200%20000%20x%202.5,12%20%3D%20416.7%20%E2%82%AC%20par%20mois.
 export const computeMortgageMontlyRatePercent = ({
 	mortgageRatePercent
 }: {
 	mortgageRatePercent: number;
-}) => Math.pow(1 + mortgageRatePercent / 100, 1 / 12) - 1;
+}) => {
+	if (mortgageRatePercent === 0) {
+		return 0;
+	}
+	return Math.pow(1 + mortgageRatePercent / 100, 1 / 12) - 1;
+};
 
 export const computeMortgageMontlyRatePercentFixed = ({
 	mortgageRatePercent
@@ -53,6 +64,9 @@ export const computeMortgageMontlyRateAmount = ({
 	mortgageRatePercent,
 	mortgageDurationYears
 }: ComputeMortgageMontlyRateAmountArgs) => {
+	if (mortgageRatePercent === 0) {
+		return 0;
+	}
 	const mortgageMonthlyRatePercent = computeMortgageMontlyRatePercent({ mortgageRatePercent });
 	const totalPaymentInstallments = mortgageDurationYears * 12;
 	const montlyAmount =
@@ -66,12 +80,12 @@ export const computeMortgageMontlyRateAmount = ({
 
 export const computeTotal = (values: ImmoStore) => {
 	values.total =
-		Number(values.depositeAmount) +
-		Number(values.mortgageAmount) +
-		Number(values.notaryFees) +
-		Number(values.agencyFees) +
-		Number(values.mortageTotalRateAmount) +
-		Number(values.mortageInsuranceFees) * 12 * values.mortgageDurationYears;
+		values.depositeAmount +
+		values.mortgageAmount +
+		values.notaryFees +
+		values.agencyFees +
+		values.mortageTotalRateAmount +
+		values.mortageInsuranceFeesTotal;
 
 	return values;
 };

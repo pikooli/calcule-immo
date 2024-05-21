@@ -6,13 +6,17 @@
 	export let max: number | null = null;
 	export let step: number = 1;
 	export let onInput: any = null;
+	export let sign: string = '';
 </script>
 
-<label>
-	{label}
+<div class="flex flex-col">
+	{#if label}
+		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+	{/if}
 	<div class="relative mt-2 rounded-md shadow-sm">
 		<input
-			class="block w-full rounded-md border-0 py-1.5 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+			class="block w-full rounded-md border-0 py-1.5 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300
+		placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 			placeholder="test"
 			{name}
 			type="number"
@@ -22,11 +26,13 @@
 			bind:value
 			on:input={onInput}
 		/>
-		<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-			<span class="text-gray-500 sm:text-sm">€</span>
-		</div>
+		{#if sign}
+			<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+				<span class="text-gray-500 sm:text-sm">{sign}</span>
+			</div>
+		{/if}
 	</div>
-</label>
+</div>
 
 <style>
 	input {

@@ -31,6 +31,7 @@
 		"mortgageMonthlyRateAmount": "Mensualité",
 		"mortageTotalRateAmount": "Coût total du crédit",
 		"mortageInsuranceFees": "Frais assurance",
+		"mortageInsuranceFeesTotal": "Total frais assurance",
 		"agencyFees": "Frais d'agence",
 		"agencyFeesPercent": "Frais d'agence %",
 		"notaryFees": "Frais de notaire",
