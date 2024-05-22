@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { locale } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
+	import { modalStore } from '$lib/stores/modals';
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { ImmoForm } from '$components/forms';
-	import { AmortizationSchedule } from '$components/displays';
+	import { AmortizationSchedule, DisplayH1 } from '$components/displays';
+	import { Modal } from '$components/modals';
 	import { _ } from 'svelte-i18n';
 
 	onMount(() => {
@@ -13,16 +14,15 @@
 	});
 </script>
 
-<button on:click={() => locale.set('en')}>Change language</button>
-{$_('start')}
-
-<h1>Calcule-immo</h1>
+<DisplayH1>Calcule-immo</DisplayH1>
 
 <div class="block_1">
 	<ImmoForm />
 </div>
 
-<AmortizationSchedule />
+<Modal open={$modalStore}>
+	<AmortizationSchedule />
+</Modal>
 
 <style>
 	.block_1 {

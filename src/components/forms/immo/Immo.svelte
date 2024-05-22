@@ -5,6 +5,7 @@
 	import { DepositBlock } from '$components/forms/immo/deposit';
 	import { TotalBlock } from '$components/forms/immo/total';
 	import { SubmitBtn } from '$components/buttons';
+	import { modalStore } from '$lib/stores/modals';
 	import './immo.scss';
 	import { Card } from '$components/displays';
 </script>
@@ -24,6 +25,7 @@
 		<TotalBlock />
 	</Card>
 	<Card className="mt-4 border-t-2 pt-4 text-end">
+		<button on:click={modalStore.triggerModal}>openModal</button>
 		<SubmitBtn txt={$_('form.submit')} />
 	</Card>
 </form>
