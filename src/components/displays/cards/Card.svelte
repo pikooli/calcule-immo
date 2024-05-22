@@ -1,13 +1,9 @@
 <script lang="ts">
-	export let bgColor: string = 'bg-transparent';
-	export let ringColor: string = 'ring-transparent';
-	export let borderRadious: string = 'rounded-none';
-	export let borderSize: string = 'border-0';
-	export let padding: string = 'p-1.5';
+	export let className: string = '';
 </script>
 
 <div
-	class={`${bgColor} block w-full ${borderRadious} ${borderSize} ${padding} ring-1 ring-inset ${ringColor}`}
+	class={`block w-full rounded-none border-0 bg-transparent p-1.5 ring-1 ring-inset ring-transparent ${className}`}
 >
 	<slot />
 </div>

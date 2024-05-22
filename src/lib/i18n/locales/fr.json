@@ -12,11 +12,12 @@
 				"remainingCapital": "Capital restant"
 			},
 			"year": "Année",
-			"yearPayment": "Mensualité payé",
-			"yearInterest": "Intérêt payé",
-			"yearMortgagePayment": "Capital payé",
-			"mortageInsuranceFees": "Assurance payé",
-			"remainingCapital": "Capital restant"
+			"yearPayment": "Mensualité total",
+			"yearInterest": "Intérêt total",
+			"yearMortgagePayment": "Capital total",
+			"mortageInsuranceFees": "Assurance total",
+			"remainingCapital": "Capital restant",
+			"total": "Total"
 		}
 	},
 	"report": {
@@ -37,5 +38,8 @@
 		"notaryFees": "Frais de notaire",
 		"notaryFeesPercent": "Frais de notaire %",
 		"total": "Total"
+	},
+	"form": {
+		"submit": "Submit"
 	}
 }
