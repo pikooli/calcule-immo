@@ -10,7 +10,7 @@
 	export let toolTip: string = '';
 </script>
 
-<div>
+<div class="px-1">
 	{#if label}
 		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}

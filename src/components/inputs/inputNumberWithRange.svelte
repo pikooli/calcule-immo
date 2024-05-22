@@ -18,7 +18,7 @@
 	export let sign: string = '';
 </script>
 
-<div class="flex flex-col p-1">
+<div class="flex flex-col">
 	{#if label}
 		<label for={nameInput} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}

@@ -6,19 +6,17 @@
 	import './notary.scss';
 </script>
 
-<div class="card-block notary-block">
-	<InputNumberWithRange
-		label={$_('report.notaryFees')}
-		nameInput={IMMO_FIELDS.NOTARYFEES}
-		minInput={0}
-		bind:valueInput={$immoStore.notaryFees}
-		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.NOTARYFEES)}
-		nameRange={IMMO_FIELDS.NOTARYFEESPERCENT}
-		minRange={0}
-		maxRange={100}
-		bind:valueRange={$immoStore.notaryFeesPercent}
-		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.NOTARYFEESPERCENT)}
-		toolTip={`${$immoStore.notaryFeesPercent} %`}
-		sign="€"
-	/>
-</div>
+<InputNumberWithRange
+	label={$_('report.notaryFees')}
+	nameInput={IMMO_FIELDS.NOTARYFEES}
+	minInput={0}
+	bind:valueInput={$immoStore.notaryFees}
+	onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.NOTARYFEES)}
+	nameRange={IMMO_FIELDS.NOTARYFEESPERCENT}
+	minRange={0}
+	maxRange={100}
+	bind:valueRange={$immoStore.notaryFeesPercent}
+	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.NOTARYFEESPERCENT)}
+	toolTip={`${$immoStore.notaryFeesPercent} %`}
+	sign="€"
+/>

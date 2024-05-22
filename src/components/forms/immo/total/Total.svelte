@@ -5,6 +5,4 @@
 	import { formatNumber } from '$lib/utils/display';
 </script>
 
-<div class="card-block mortage-block">
-	<DisplayAmount label={$_('report.total')} sign="€" value={formatNumber($immoStore.total)} />
-</div>
+<DisplayAmount label={$_('report.total')} sign="€" value={formatNumber($immoStore.total)} />

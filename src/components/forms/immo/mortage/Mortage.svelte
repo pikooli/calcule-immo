@@ -10,7 +10,7 @@
 	import './mortage.scss';
 </script>
 
-<div class="card-block mortage-block grid grid-cols-2 gap-2">
+<div class="grid grid-cols-2 gap-2">
 	<div>
 		<InputNumberWithRange
 			label={$_('report.mortgageAmount')}
@@ -57,8 +57,6 @@
 			toolTip={`${$immoStore.mortgageDurationYears} %`}
 			sign="€"
 		/>
-	</div>
-	<div>
 		<InputNumber
 			label={$_('report.mortageInsuranceFees')}
 			name={IMMO_FIELDS.MORTAGEINSURANCEFEES}
@@ -67,6 +65,8 @@
 			sign="€"
 			bind:value={$immoStore.mortageInsuranceFees}
 		/>
+	</div>
+	<div>
 		<DisplayAmount
 			label={$_('report.mortgageMonthlyRatePercent')}
 			sign="%"

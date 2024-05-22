@@ -9,7 +9,7 @@
 	export let sign: string = '';
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col px-1">
 	{#if label}
 		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}

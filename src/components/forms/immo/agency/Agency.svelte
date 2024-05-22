@@ -6,20 +6,18 @@
 	import './agency.scss';
 </script>
 
-<div class="card-block agency-block">
-	<InputNumberWithRange
-		label={$_('report.agencyFees')}
-		nameInput={IMMO_FIELDS.AGENCYFEES}
-		minInput={0}
-		maxInput={$immoStore.amount}
-		bind:valueInput={$immoStore.agencyFees}
-		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEES)}
-		nameRange={IMMO_FIELDS.AGENCYFEESPERCENT}
-		minRange={0}
-		maxRange={100}
-		toolTip={`${$immoStore.agencyFeesPercent} %`}
-		bind:valueRange={$immoStore.agencyFeesPercent}
-		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEESPERCENT)}
-		sign="€"
-	/>
-</div>
+<InputNumberWithRange
+	label={$_('report.agencyFees')}
+	nameInput={IMMO_FIELDS.AGENCYFEES}
+	minInput={0}
+	maxInput={$immoStore.amount}
+	bind:valueInput={$immoStore.agencyFees}
+	onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEES)}
+	nameRange={IMMO_FIELDS.AGENCYFEESPERCENT}
+	minRange={0}
+	maxRange={100}
+	toolTip={`${$immoStore.agencyFeesPercent} %`}
+	bind:valueRange={$immoStore.agencyFeesPercent}
+	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEESPERCENT)}
+	sign="€"
+/>

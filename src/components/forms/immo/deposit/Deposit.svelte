@@ -3,10 +3,12 @@
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS } from '$lib/constants';
+	import { AgencyBlock } from '$components/forms/immo/agency';
+	import { NotaryBlock } from '$components/forms/immo/notary';
 	import './deposit.scss';
 </script>
 
-<div class="card-block deposit-block">
+<div class="grid grid-cols-3">
 	<InputNumberWithRange
 		label={$_('report.depositeAmount')}
 		nameInput={IMMO_FIELDS.DEPOSITEAMOUNT}
@@ -22,4 +24,6 @@
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITEPERCENT)}
 		sign="€"
 	/>
+	<AgencyBlock />
+	<NotaryBlock />
 </div>

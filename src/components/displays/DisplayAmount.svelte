@@ -5,7 +5,7 @@
 </script>
 
 <div>
-	<div class="relative p-1 text-gray-900 shadow-sm sm:text-sm sm:leading-6">
+	<div class="relative px-1 text-gray-900 shadow-sm sm:text-sm sm:leading-6">
 		{#if label}
 			<span class="text-sm font-medium leading-6 text-gray-900">{label}</span>
 		{/if}
