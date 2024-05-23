@@ -4,7 +4,7 @@
 	import { modalStore } from '$lib/stores/modals';
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { ImmoForm } from '$components/forms';
-	import { AmortizationSchedule, DisplayH1 } from '$components/displays';
+	import { AmortizationSchedule } from '$components/displays';
 	import { Modal } from '$components/modals';
 	import { _ } from 'svelte-i18n';
 
@@ -13,8 +13,6 @@
 		amortizationScheduleStore.init($immoStore);
 	});
 </script>
-
-<DisplayH1>Calcule-immo</DisplayH1>
 
 <div class="block_1">
 	<ImmoForm />
