@@ -20,7 +20,7 @@
 		>{$_('amortizationSchedule.yearSchedule.monthSchedule.monthlyInterest')}</DisplayStrong
 	>
 	<DisplayStrong
-		>{$_('amortizationSchedule.yearSchedule.monthSchedule.mortageInsuranceFees')}</DisplayStrong
+		>{$_('amortizationSchedule.yearSchedule.monthSchedule.mortgageInsuranceFees')}</DisplayStrong
 	>
 	<DisplayStrong
 		>{$_('amortizationSchedule.yearSchedule.monthSchedule.remainingCapital')}</DisplayStrong

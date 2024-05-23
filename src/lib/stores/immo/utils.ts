@@ -9,20 +9,20 @@ export const computedepositeAmountOndepositePercent = (values: ImmoStore) =>
 	computeAmount(values.amount, values.depositePercent);
 export const computedepositePercentOndepositeAmount = (values: ImmoStore) =>
 	computePercent(values.depositeAmount, values.amount);
-export const computeMortgageAmountOnMortagePercent = (values: ImmoStore) =>
+export const computeMortgageAmountOnmortgagePercent = (values: ImmoStore) =>
 	computeAmount(values.amount, values.mortgageAmountPercent);
-export const computeMortgageAmountOnMortageAmount = (values: ImmoStore) =>
+export const computeMortgageAmountOnmortgageAmount = (values: ImmoStore) =>
 	computePercent(values.mortgageAmount, values.amount);
 export const computeAgencyAmount = (values: ImmoStore) =>
 	computeAmount(values.amount, values.agencyFeesPercent);
 export const computeAgencyPercent = (values: ImmoStore) =>
 	computePercent(values.agencyFees, values.amount);
 // ==========
-export const computedepositeAmountOnMortageAmount = (values: ImmoStore) =>
+export const computedepositeAmountOnmortgageAmount = (values: ImmoStore) =>
 	values.amount - values.mortgageAmount;
 export const computeMortgageAmount = (values: ImmoStore) => values.amount - values.depositeAmount;
 
-export const computateMortageTotalRateAmount = (values: ImmoStore) => {
+export const computatemortgageTotalRateAmount = (values: ImmoStore) => {
 	if (values.mortgageMonthlyRateAmount === 0) {
 		return 0;
 	}
@@ -84,8 +84,8 @@ export const computeTotal = (values: ImmoStore) => {
 		values.mortgageAmount +
 		values.notaryFees +
 		values.agencyFees +
-		values.mortageTotalRateAmount +
-		values.mortageInsuranceFeesTotal;
+		values.mortgageTotalRateAmount +
+		values.mortgageInsuranceFeesTotal;
 
 	return values;
 };

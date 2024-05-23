@@ -6,13 +6,13 @@ import {
 	computenotaryFees,
 	computedepositeAmountOndepositePercent,
 	computedepositePercentOndepositeAmount,
-	computeMortgageAmountOnMortagePercent,
-	computeMortgageAmountOnMortageAmount,
+	computeMortgageAmountOnmortgagePercent,
+	computeMortgageAmountOnmortgageAmount,
 	computeAgencyAmount,
 	computeAgencyPercent,
-	computedepositeAmountOnMortageAmount,
+	computedepositeAmountOnmortgageAmount,
 	computeMortgageAmount,
-	computateMortageTotalRateAmount,
+	computatemortgageTotalRateAmount,
 	computeMortgageMontlyRatePercentFixed,
 	computeMortgageMontlyRateAmount,
 	computeTotal
@@ -23,10 +23,10 @@ export const initValues = (values: ImmoStore) => {
 	values.mortgageAmount = computeMortgageAmount(values);
 	values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 	values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-	values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+	values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 	values.notaryFees = computeNotaryFees(values);
-	values.mortageInsuranceFeesTotal =
-		values.mortageInsuranceFees * 12 * values.mortgageDurationYears;
+	values.mortgageInsuranceFeesTotal =
+		values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
 	return computeTotal(values);
 };
 
@@ -38,52 +38,52 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.notaryFees = computeNotaryFees(values);
 			values.agencyFees = computeAgencyAmount(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.DEPOSITEPERCENT: {
 			values.depositeAmount = computedepositeAmountOndepositePercent(values);
 			values.mortgageAmount = computeMortgageAmount(values);
-			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
+			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.DEPOSITEAMOUNT: {
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageAmount = computeMortgageAmount(values);
-			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
+			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGEAMOUNTPERCENT: {
-			values.mortgageAmount = computeMortgageAmountOnMortagePercent(values);
-			values.depositeAmount = computedepositeAmountOnMortageAmount(values);
+			values.mortgageAmount = computeMortgageAmountOnmortgagePercent(values);
+			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGEAMOUNT: {
-			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
-			values.depositeAmount = computedepositeAmountOnMortageAmount(values);
+			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGERATEPERCENT: {
-			values.mortgageAmountPercent = computeMortgageAmountOnMortageAmount(values);
-			values.depositeAmount = computedepositeAmountOnMortageAmount(values);
+			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 
 			break;
 		}
@@ -105,12 +105,12 @@ export const updateValues = (field: string, values: ImmoStore) => {
 		}
 		case IMMO_FIELDS.MORTGAGEDURATIONYEARS: {
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortageTotalRateAmount = computateMortageTotalRateAmount(values);
+			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.MORTAGEINSURANCEFEES: {
-			values.mortageInsuranceFeesTotal =
-				values.mortageInsuranceFees * 12 * values.mortgageDurationYears;
+		case IMMO_FIELDS.mortgageINSURANCEFEES: {
+			values.mortgageInsuranceFeesTotal =
+				values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
 			break;
 		}
 	}

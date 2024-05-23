@@ -3,12 +3,13 @@
 	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
 	import { formatNumber } from '$lib/utils/display';
+	import { SIGN } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2">
 	<DisplayAmount
 		label={$_('report.mortgageMonthlyRateAmount')}
-		sign="€"
+		sign={SIGN}
 		value={formatNumber($immoStore.mortgageMonthlyRateAmount)}
 	/>
 	<DisplayAmount
@@ -19,15 +20,15 @@
 </div>
 <div class="grid grid-cols-2">
 	<DisplayAmount
-		label={$_('report.mortageTotalRateAmount')}
-		sign="€"
-		value={formatNumber($immoStore.mortageTotalRateAmount)}
+		label={$_('report.mortgageTotalRateAmount')}
+		sign={SIGN}
+		value={formatNumber($immoStore.mortgageTotalRateAmount)}
 	/>
 	<DisplayAmount
-		label={$_('report.mortageInsuranceFeesTotal')}
-		sign="€"
-		value={formatNumber($immoStore.mortageInsuranceFeesTotal)}
+		label={$_('report.mortgageInsuranceFeesTotal')}
+		sign={SIGN}
+		value={formatNumber($immoStore.mortgageInsuranceFeesTotal)}
 	/>
 </div>
 
-<DisplayAmount label={$_('report.total')} sign="€" value={formatNumber($immoStore.total)} />
+<DisplayAmount label={$_('report.total')} sign={SIGN} value={formatNumber($immoStore.total)} />

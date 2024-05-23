@@ -8,7 +8,7 @@ export interface MonthSchedule {
 	monthlyInterest: number;
 	monthMortgagePayment: number;
 	remainingCapital: number;
-	mortageInsuranceFees: number;
+	mortgageInsuranceFees: number;
 }
 
 export interface YearSchedule {
@@ -17,7 +17,7 @@ export interface YearSchedule {
 	yearInterest: number;
 	yearPayment: number;
 	remainingCapital: number;
-	mortageInsuranceFees: number;
+	mortgageInsuranceFees: number;
 	yearMortgagePayment: number;
 }
 
@@ -29,7 +29,7 @@ export const defaultMonthSchedule = {
 	monthlyInterest: 0,
 	monthMortgagePayment: 0,
 	remainingCapital: 0,
-	mortageInsuranceFees: 0
+	mortgageInsuranceFees: 0
 };
 export const defaultYearSchedule = {
 	year: 1,
@@ -38,7 +38,7 @@ export const defaultYearSchedule = {
 	yearInterest: 0,
 	yearMortgagePayment: 0,
 	remainingCapital: 0,
-	mortageInsuranceFees: 0
+	mortgageInsuranceFees: 0
 };
 
 export const defaultAmortizationScheduleStore: AmortizationScheduleStore = [defaultYearSchedule];

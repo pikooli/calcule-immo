@@ -1,6 +1,6 @@
 import { initValues, updateValues } from './logic';
 import {
-	computateMortageTotalRateAmount,
+	computatemortgageTotalRateAmount,
 	computedepositeAmountOndepositePercent,
 	computeMortgageAmount,
 	computeMortgageMontlyRatePercentFixed,
@@ -19,8 +19,8 @@ describe('logic test', () => {
 			computeMortgageMontlyRatePercentFixed(defaultImmoStore)
 		);
 		expect(result.mortgageMonthlyRateAmount).toEqual(937.2);
-		expect(result.mortageTotalRateAmount).toEqual(
-			computateMortageTotalRateAmount(defaultImmoStore)
+		expect(result.mortgageTotalRateAmount).toEqual(
+			computatemortgageTotalRateAmount(defaultImmoStore)
 		);
 		expect(result.notaryFees).toEqual(computeNotaryFees(defaultImmoStore));
 		expect(result.total).toEqual(computeTotal(defaultImmoStore).total);

@@ -2,7 +2,7 @@
 	import { _ } from 'svelte-i18n';
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
-	import { IMMO_FIELDS } from '$lib/constants';
+	import { IMMO_FIELDS, SIGN } from '$lib/constants';
 	import './agency.scss';
 </script>
 
@@ -19,5 +19,5 @@
 	toolTip={`${$immoStore.agencyFeesPercent} %`}
 	bind:valueRange={$immoStore.agencyFeesPercent}
 	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEESPERCENT)}
-	sign="€"
+	sign={SIGN}
 />

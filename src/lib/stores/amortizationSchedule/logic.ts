@@ -5,7 +5,7 @@ export const generateSchedule = ({
 	mortgageAmount,
 	mortgageDurationYears,
 	mortgageRatePercent,
-	mortageInsuranceFees = 0
+	mortgageInsuranceFees = 0
 }: ImmoStore) => {
 	const schedule = [];
 	let remainingMortgage = mortgageAmount;
@@ -15,7 +15,7 @@ export const generateSchedule = ({
 		(mortgageAmount *
 			(monthlyMortgageRate * Math.pow(1 + monthlyMortgageRate, totalPaymentInstallments))) /
 		(Math.pow(1 + monthlyMortgageRate, totalPaymentInstallments) - 1);
-	const monthlyPayment = baseMonthlyPayment + mortageInsuranceFees;
+	const monthlyPayment = baseMonthlyPayment + mortgageInsuranceFees;
 
 	for (let year = 0; year < mortgageDurationYears; year++) {
 		let yearInterest = 0;
@@ -38,7 +38,7 @@ export const generateSchedule = ({
 				monthlyInterest: parseFloat(monthInterest.toFixed(2)),
 				monthMortgagePayment: parseFloat(monthMortgagePayment.toFixed(2)),
 				remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0,
-				mortageInsuranceFees
+				mortgageInsuranceFees
 			});
 		}
 
@@ -49,7 +49,7 @@ export const generateSchedule = ({
 			yearPayment: parseFloat(yearPayment.toFixed(2)),
 			yearMortgagePayment: parseFloat(yearMortgagePayment.toFixed(2)),
 			remainingCapital: remainingMortgage > 0 ? parseFloat(remainingMortgage.toFixed(2)) : 0,
-			mortageInsuranceFees: mortageInsuranceFees * 12
+			mortgageInsuranceFees: mortgageInsuranceFees * 12
 		});
 	}
 

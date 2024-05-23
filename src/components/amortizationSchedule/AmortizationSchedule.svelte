@@ -3,6 +3,7 @@
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { YearSchedule } from '$components/amortizationSchedule/yearSchedule';
 	import { DisplayH1 } from '$components/displays';
+	import AmortizationTotal from './AmortizationTotal.svelte';
 </script>
 
 <div class="rounded-md border bg-stone-50 p-4 shadow-md">
@@ -11,5 +12,6 @@
 		{#each $amortizationScheduleStore as yearSchedule (yearSchedule)}
 			<YearSchedule {yearSchedule} />
 		{/each}
+		<AmortizationTotal />
 	</div>
 </div>

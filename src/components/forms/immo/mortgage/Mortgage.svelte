@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import { InputNumberWithRange, InputNumber } from '$components/inputs';
-	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
-	import { IMMO_FIELDS } from '$lib/constants';
-	import { formatNumber } from '$lib/utils/display';
-
-	import './mortage.scss';
+	import { IMMO_FIELDS, SIGN } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2 gap-2">
@@ -24,7 +20,7 @@
 		bind:valueRange={$immoStore.mortgageAmountPercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGEAMOUNTPERCENT)}
 		toolTip={`${$immoStore.mortgageAmountPercent} %`}
-		sign="€"
+		sign={SIGN}
 	/>
 	<InputNumberWithRange
 		label={$_('report.mortgageRatePercent')}
@@ -39,7 +35,7 @@
 		bind:valueRange={$immoStore.mortgageRatePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGERATEPERCENT)}
 		toolTip={`${$immoStore.mortgageRatePercent} %`}
-		sign="€"
+		sign={SIGN}
 	/>
 	<InputNumberWithRange
 		label={$_('report.mortgageDurationYears')}
@@ -53,15 +49,15 @@
 		maxRange={MORTGAGE_DURATION_MAX_YEARS}
 		bind:valueRange={$immoStore.mortgageDurationYears}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGEDURATIONYEARS)}
-		toolTip={`${$immoStore.mortgageDurationYears} %`}
-		sign="€"
+		toolTip={`${$immoStore.mortgageDurationYears}`}
+		sign={SIGN}
 	/>
 	<InputNumber
-		label={$_('report.mortageInsuranceFees')}
-		name={IMMO_FIELDS.MORTAGEINSURANCEFEES}
+		label={$_('report.mortgageInsuranceFees')}
+		name={IMMO_FIELDS.mortgageINSURANCEFEES}
 		min={0}
-		onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTAGEINSURANCEFEES)}
-		sign="€"
-		bind:value={$immoStore.mortageInsuranceFees}
+		onInput={() => immoStore.updateValue(IMMO_FIELDS.mortgageINSURANCEFEES)}
+		sign={SIGN}
+		bind:value={$immoStore.mortgageInsuranceFees}
 	/>
 </div>

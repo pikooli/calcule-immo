@@ -4,7 +4,7 @@
 	import { formatNumber } from '$lib/utils/display';
 	import { MonthSchedule } from '$components/amortizationSchedule/yearSchedule/monthSchedule/';
 	import { DisplayStrong, DisplayAmount } from '$components/displays';
-	import { sign } from '$lib/constants';
+	import { SIGN } from '$lib/constants';
 
 	export let yearSchedule: YearSchedule;
 	const {
@@ -13,7 +13,7 @@
 		year,
 		yearInterest,
 		yearPayment,
-		mortageInsuranceFees,
+		mortgageInsuranceFees,
 		yearMortgagePayment
 	} = yearSchedule;
 </script>
@@ -30,31 +30,31 @@
 		<DisplayAmount
 			label={$_('amortizationSchedule.yearSchedule.yearPayment')}
 			classLabel="text-center"
-			{sign}
+			sign={SIGN}
 			value={formatNumber(yearPayment)}
 		/>
 		<DisplayAmount
 			label={$_('amortizationSchedule.yearSchedule.yearMortgagePayment')}
 			classLabel="text-center"
-			{sign}
+			sign={SIGN}
 			value={formatNumber(yearMortgagePayment)}
 		/>
 		<DisplayAmount
 			label={$_('amortizationSchedule.yearSchedule.yearInterest')}
 			classLabel="text-center"
-			{sign}
+			sign={SIGN}
 			value={formatNumber(yearInterest)}
 		/>
 		<DisplayAmount
-			label={$_('amortizationSchedule.yearSchedule.mortageInsuranceFees')}
+			label={$_('amortizationSchedule.yearSchedule.mortgageInsuranceFees')}
 			classLabel="text-center"
-			{sign}
-			value={formatNumber(mortageInsuranceFees)}
+			sign={SIGN}
+			value={formatNumber(mortgageInsuranceFees)}
 		/>
 		<DisplayAmount
 			label={$_('amortizationSchedule.yearSchedule.remainingCapital')}
 			classLabel="text-center"
-			{sign}
+			sign={SIGN}
 			value={formatNumber(remainingCapital)}
 		/>
 	</div>
