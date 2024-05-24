@@ -1,13 +1,9 @@
 <script>
 	import '../app.css';
+	import { NavBar } from '$components/navBar';
 </script>
 
-<div class="container">
+<NavBar />
+<div class="flex justify-center">
 	<slot />
 </div>
-
-<style>
-	.container {
-		padding: 10px;
-	}
-</style>
