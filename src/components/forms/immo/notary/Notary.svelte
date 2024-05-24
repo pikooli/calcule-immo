@@ -6,7 +6,7 @@
 </script>
 
 <InputNumberWithRange
-	label={$_('report.notaryFees')}
+	label={$_('pages.immo.report.notaryFees')}
 	nameInput={IMMO_FIELDS.NOTARYFEES}
 	minInput={0}
 	bind:valueInput={$immoStore.notaryFees}

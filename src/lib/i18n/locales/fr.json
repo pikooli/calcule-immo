@@ -1,51 +1,60 @@
 {
 	"start": "Démarrer en français",
-	"amortizationSchedule": {
-		"title": "Tableau d'amortissement",
-		"yearSchedule": {
-			"monthSchedule": {
-				"month": "Mois",
-				"monthlyPayment": "Mensualité",
-				"monthMortgagePayment": "Capital remboursé",
-				"monthlyInterest": "Intérêt payé",
-				"mortgageInsuranceFees": "Assurance",
-				"remainingCapital": "Capital restant"
+	"pages": {
+		"immo": {
+			"amortizationSchedule": {
+				"title": "Tableau d'amortissement",
+				"yearSchedule": {
+					"monthSchedule": {
+						"month": "Mois",
+						"monthlyPayment": "Mensualité",
+						"monthMortgagePayment": "Capital remboursé",
+						"monthlyInterest": "Intérêt payé",
+						"mortgageInsuranceFees": "Assurance",
+						"remainingCapital": "Capital restant"
+					},
+					"year": "Année",
+					"yearPayment": "Mensualité",
+					"yearInterest": "Intérêt",
+					"yearMortgagePayment": "Capital",
+					"mortgageInsuranceFees": "Assurance",
+					"remainingCapital": "Capital restant",
+					"total": "Total"
+				},
+				"total": {
+					"mortgageAmount": "Capital remboursé",
+					"mortgageInsuranceFeesTotal": "Assurance payée",
+					"mortgageTotalRateAmount": "Intérêt payé",
+					"mortgageInstalment": "Nombre de mensualités"
+				}
 			},
-			"year": "Année",
-			"yearPayment": "Mensualité",
-			"yearInterest": "Intérêt",
-			"yearMortgagePayment": "Capital",
-			"mortgageInsuranceFees": "Assurance",
-			"remainingCapital": "Capital restant",
-			"total": "Total"
+			"report": {
+				"amount": "Montant",
+				"depositPercent": "Apport %",
+				"depositAmount": "Apport",
+				"mortgageAmount": "Emprunt",
+				"mortgageAmountPercent": "Emprunt %",
+				"mortgageDurationYears": "Durée",
+				"mortgageRatePercent": "Taux d'intérêt",
+				"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
+				"mortgageMonthlyRateAmount": "Mensualité",
+				"mortgageTotalRateAmount": "Coût total du crédit",
+				"mortgageInsuranceFees": "Frais d'assurance",
+				"mortgageInsuranceFeesTotal": "Total frais d'assurance",
+				"agencyFees": "Frais d'agence",
+				"agencyFeesPercent": "Frais d'agence %",
+				"notaryFees": "Frais de notaire",
+				"notaryFeesPercent": "Frais de notaire %",
+				"total": "Total"
+			},
+			"toolTip": {
+				"amortizationSchedule": "Tableau d'amortissement",
+				"download": "Télécharger"
+			}
 		},
-		"total": {
-			"mortgageAmount": "Capital remboursé",
-			"mortgageInsuranceFeesTotal": "Assurance payée",
-			"mortgageTotalRateAmount": "Intérêt payé",
-			"mortgageInstalment": "Nombre de mensualités"
+
+		"form": {
+			"submit": "Soumettre"
 		}
-	},
-	"report": {
-		"amount": "Montant",
-		"depositPercent": "Apport %",
-		"depositAmount": "Apport",
-		"mortgageAmount": "Emprunt",
-		"mortgageAmountPercent": "Emprunt %",
-		"mortgageDurationYears": "Durée",
-		"mortgageRatePercent": "Taux d'intérêt",
-		"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
-		"mortgageMonthlyRateAmount": "Mensualité",
-		"mortgageTotalRateAmount": "Coût total du crédit",
-		"mortgageInsuranceFees": "Frais d'assurance",
-		"mortgageInsuranceFeesTotal": "Total frais d'assurance",
-		"agencyFees": "Frais d'agence",
-		"agencyFeesPercent": "Frais d'agence %",
-		"notaryFees": "Frais de notaire",
-		"notaryFeesPercent": "Frais de notaire %",
-		"total": "Total"
-	},
-	"form": {
-		"submit": "Soumettre"
 	}
 }

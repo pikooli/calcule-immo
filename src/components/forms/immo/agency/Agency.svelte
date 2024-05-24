@@ -7,7 +7,7 @@
 </script>
 
 <InputNumberWithRange
-	label={$_('report.agencyFees')}
+	label={$_('pages.immo.report.agencyFees')}
 	nameInput={IMMO_FIELDS.AGENCYFEES}
 	minInput={0}
 	maxInput={$immoStore.amount}

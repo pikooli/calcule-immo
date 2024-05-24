@@ -6,7 +6,7 @@
 </script>
 
 <InputNumber
-	label={$_('report.amount')}
+	label={$_('pages.immo.report.amount')}
 	name={IMMO_FIELDS.AMOUNT}
 	min={0}
 	sign={SIGN}

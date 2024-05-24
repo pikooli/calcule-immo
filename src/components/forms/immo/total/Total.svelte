@@ -4,31 +4,39 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { formatNumber } from '$lib/utils/display';
 	import { SIGN } from '$lib/constants';
+	import questMarkIcon from '$lib/assets/images/questionMark.png';
 </script>
 
 <div class="grid grid-cols-2">
 	<DisplayAmount
-		label={$_('report.mortgageMonthlyRateAmount')}
+		label={$_('pages.immo.report.mortgageMonthlyRateAmount')}
 		sign={SIGN}
 		value={formatNumber($immoStore.mortgageMonthlyRateAmount)}
 	/>
 	<DisplayAmount
-		label={$_('report.mortgageMonthlyRatePercent')}
+		label={$_('pages.immo.report.mortgageMonthlyRatePercent')}
 		sign="%"
 		value={`${$immoStore.mortgageMonthlyRatePercent}`}
 	/>
 </div>
 <div class="grid grid-cols-2">
 	<DisplayAmount
-		label={$_('report.mortgageTotalRateAmount')}
+		toolTip="test"
+		iconId="test"
+		iconSrc={questMarkIcon}
+		label={$_('pages.immo.report.mortgageTotalRateAmount')}
 		sign={SIGN}
 		value={formatNumber($immoStore.mortgageTotalRateAmount)}
 	/>
 	<DisplayAmount
-		label={$_('report.mortgageInsuranceFeesTotal')}
+		label={$_('pages.immo.report.mortgageInsuranceFeesTotal')}
 		sign={SIGN}
 		value={formatNumber($immoStore.mortgageInsuranceFeesTotal)}
 	/>
 </div>
 
-<DisplayAmount label={$_('report.total')} sign={SIGN} value={formatNumber($immoStore.total)} />
+<DisplayAmount
+	label={$_('pages.immo.report.total')}
+	sign={SIGN}
+	value={formatNumber($immoStore.total)}
+/>

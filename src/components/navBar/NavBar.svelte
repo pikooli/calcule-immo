@@ -12,9 +12,11 @@
 			<!-- <MobileMenuBtn /> -->
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<img class="scale-200 h-8 w-auto" src={logoIcon} alt="Your Company" />
+					<a href="/">
+						<img class="scale-200 h-8 w-auto" src={logoIcon} alt="Your Company" />
+					</a>
 				</div>
-				<DesktopMenu />
+				<!-- <DesktopMenu /> -->
 			</div>
 			<!-- <NavDropDown /> -->
 		</div>

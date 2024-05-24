@@ -9,24 +9,24 @@
 <div class="grap-4 grid grid-cols-4 px-8 pt-2">
 	<DisplayAmount
 		classLabel="text-center"
-		label={$_('amortizationSchedule.total.mortgageInstalment')}
+		label={$_('pages.immo.amortizationSchedule.total.mortgageInstalment')}
 		value={`${$immoStore.mortgageDurationYears * 12}`}
 	/>
 	<DisplayAmount
 		classLabel="text-center"
-		label={$_('amortizationSchedule.total.mortgageInsuranceFeesTotal')}
+		label={$_('pages.immo.amortizationSchedule.total.mortgageInsuranceFeesTotal')}
 		value={formatNumber($immoStore.mortgageInsuranceFeesTotal)}
 		sign={SIGN}
 	/>
 	<DisplayAmount
 		classLabel="text-center"
-		label={$_('amortizationSchedule.total.mortgageTotalRateAmount')}
+		label={$_('pages.immo.amortizationSchedule.total.mortgageTotalRateAmount')}
 		value={formatNumber($immoStore.mortgageTotalRateAmount)}
 		sign={SIGN}
 	/>
 	<DisplayAmount
 		classLabel="text-center"
-		label={$_('amortizationSchedule.total.mortgageAmount')}
+		label={$_('pages.immo.amortizationSchedule.total.mortgageAmount')}
 		value={formatNumber($immoStore.mortgageAmount)}
 		sign={SIGN}
 	/>

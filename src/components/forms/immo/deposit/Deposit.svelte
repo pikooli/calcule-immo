@@ -10,7 +10,7 @@
 
 <div class="grid grid-cols-3">
 	<InputNumberWithRange
-		label={$_('report.depositAmount')}
+		label={$_('pages.immo.report.depositAmount')}
 		nameInput={IMMO_FIELDS.DEPOSITEAMOUNT}
 		minInput={0}
 		maxInput={$immoStore.amount}
