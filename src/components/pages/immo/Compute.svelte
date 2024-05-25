@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import { modalStore } from '$lib/stores/modals';
+	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
+	import { immoStore } from '$lib/stores/immo';
 	import { ImmoForm } from '$components/forms';
 	import { IconBtn } from '$components/buttons';
 	import { DisplayH1 } from '$components/displays';
 	import amortizationScheduleIcon from '$lib/assets/images/amortizationScheduleIcon.png';
 	import downloadIcon from '$lib/assets/images/download.png';
 	import { Card } from '$components/displays';
+	import { generatePDF } from '$lib/pdf';
+	let a: any;
 </script>
 
 <div class="relative rounded-md bg-blue-300 p-4">
@@ -25,7 +29,11 @@
 				iconId="downloadIcon"
 				handleClick={(e) => {
 					e.preventDefault();
-					window.alert('abracadabra');
+					a = generatePDF({
+						immoForm: $immoStore,
+						amortizationSchedule: $amortizationScheduleStore,
+						_
+					});
 				}}
 				src={downloadIcon}
 				className="h-[2rem] rounded-md mx-1"
@@ -33,4 +41,7 @@
 		</div>
 	</Card>
 	<ImmoForm />
+	{#if a}
+		<iframe src={a}></iframe>
+	{/if}
 </div>

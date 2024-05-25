@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import type { YearSchedule } from '$lib/stores/amortizationSchedule';
-	import { formatNumber } from '$lib/utils/display';
+	import { formatCurrency } from '$lib/utils/display';
 	import { MonthSchedule } from '$components/pages/immo/amortizationSchedule/yearSchedule/monthSchedule/';
 	import { DisplayStrong, DisplayAmount } from '$components/displays';
-	import { SIGN } from '$lib/constants';
 
 	export let yearSchedule: YearSchedule;
 	const {
@@ -32,32 +31,27 @@
 		<DisplayAmount
 			label={$_('pages.immo.amortizationSchedule.yearSchedule.yearPayment')}
 			classLabel="text-center"
-			sign={SIGN}
-			value={formatNumber(yearPayment)}
+			value={formatCurrency(yearPayment)}
 		/>
 		<DisplayAmount
 			label={$_('pages.immo.amortizationSchedule.yearSchedule.yearMortgagePayment')}
 			classLabel="text-center"
-			sign={SIGN}
-			value={formatNumber(yearMortgagePayment)}
+			value={formatCurrency(yearMortgagePayment)}
 		/>
 		<DisplayAmount
 			label={$_('pages.immo.amortizationSchedule.yearSchedule.yearInterest')}
 			classLabel="text-center"
-			sign={SIGN}
-			value={formatNumber(yearInterest)}
+			value={formatCurrency(yearInterest)}
 		/>
 		<DisplayAmount
 			label={$_('pages.immo.amortizationSchedule.yearSchedule.mortgageInsuranceFees')}
 			classLabel="text-center"
-			sign={SIGN}
-			value={formatNumber(mortgageInsuranceFees)}
+			value={formatCurrency(mortgageInsuranceFees)}
 		/>
 		<DisplayAmount
 			label={$_('pages.immo.amortizationSchedule.yearSchedule.remainingCapital')}
 			classLabel="text-center"
-			sign={SIGN}
-			value={formatNumber(remainingCapital)}
+			value={formatCurrency(remainingCapital)}
 		/>
 	</div>
 </div>

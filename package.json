@@ -47,6 +47,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"jspdf": "^2.5.1",
 		"svelte-i18n": "^4.0.0"
 	},
 	"pre-commit": [

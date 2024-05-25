@@ -2,16 +2,14 @@
 	import { _ } from 'svelte-i18n';
 	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
-	import { formatNumber } from '$lib/utils/display';
-	import { SIGN } from '$lib/constants';
+	import { formatCurrency } from '$lib/utils/display';
 	import questMarkIcon from '$lib/assets/images/questionMark.png';
 </script>
 
 <div class="grid grid-cols-2">
 	<DisplayAmount
 		label={$_('pages.immo.report.mortgageMonthlyRateAmount')}
-		sign={SIGN}
-		value={formatNumber($immoStore.mortgageMonthlyRateAmount)}
+		value={formatCurrency($immoStore.mortgageMonthlyRateAmount)}
 	/>
 	<DisplayAmount
 		label={$_('pages.immo.report.mortgageMonthlyRatePercent')}
@@ -25,18 +23,12 @@
 		iconId="test"
 		iconSrc={questMarkIcon}
 		label={$_('pages.immo.report.mortgageTotalRateAmount')}
-		sign={SIGN}
-		value={formatNumber($immoStore.mortgageTotalRateAmount)}
+		value={formatCurrency($immoStore.mortgageTotalRateAmount)}
 	/>
 	<DisplayAmount
 		label={$_('pages.immo.report.mortgageInsuranceFeesTotal')}
-		sign={SIGN}
-		value={formatNumber($immoStore.mortgageInsuranceFeesTotal)}
+		value={formatCurrency($immoStore.mortgageInsuranceFeesTotal)}
 	/>
 </div>
 
-<DisplayAmount
-	label={$_('pages.immo.report.total')}
-	sign={SIGN}
-	value={formatNumber($immoStore.total)}
-/>
+<DisplayAmount label={$_('pages.immo.report.total')} value={formatCurrency($immoStore.total)} />

@@ -3,7 +3,6 @@
 	import type { MonthSchedule } from '$lib/stores/amortizationSchedule';
 	import MonthContent from '$components/pages/immo/amortizationSchedule/yearSchedule/monthSchedule/MonthContent.svelte';
 	import { DisplayStrong } from '$components/displays';
-	import { text } from '@sveltejs/kit';
 	export let monthSchedule: MonthSchedule[];
 </script>
 
