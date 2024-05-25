@@ -22,5 +22,4 @@
 	<Card className="mt-4 border-t-2 pt-4">
 		<TotalBlock />
 	</Card>
-	<Card></Card>
 </form>
