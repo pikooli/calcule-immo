@@ -14,6 +14,8 @@
 	});
 </script>
 
+<title>{$_('website')}</title>
+
 <div class="mt-4">
 	<Compute />
 </div>

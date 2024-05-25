@@ -1,7 +1,8 @@
 {
-	"start": "Démarrer en français",
+	"website": "Simulateur de prêt immobilier",
 	"pages": {
 		"immo": {
+			"title": "",
 			"amortizationSchedule": {
 				"title": "Tableau d'amortissement",
 				"yearSchedule": {

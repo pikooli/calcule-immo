@@ -22,7 +22,7 @@
 	<DisplayStrong
 		className="py-2"
 		text={`${$_('pages.immo.amortizationSchedule.yearSchedule.year')} : ${year + 1}`}
-	></DisplayStrong>
+	/>
 	<MonthSchedule {monthSchedule} />
 	<div class="grid grid-cols-6 gap-2">
 		<DisplayStrong
