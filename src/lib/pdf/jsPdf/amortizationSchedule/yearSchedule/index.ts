@@ -1,0 +1,1 @@
+export { generateYearSchedule } from './yearSchedule';

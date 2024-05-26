@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
+	import { onMount } from 'svelte';
+
 	import { modalStore } from '$lib/stores/modals';
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { immoStore } from '$lib/stores/immo';
@@ -9,7 +11,7 @@
 	import amortizationScheduleIcon from '$lib/assets/images/amortizationScheduleIcon.png';
 	import downloadIcon from '$lib/assets/images/download.png';
 	import { Card } from '$components/displays';
-	import { generatePDF } from '$lib/pdf';
+	import { generateAmortizationSchedule } from '$lib/pdf';
 	let a: any;
 </script>
 
@@ -29,7 +31,7 @@
 				iconId="downloadIcon"
 				handleClick={(e) => {
 					e.preventDefault();
-					a = generatePDF({
+					a = generateAmortizationSchedule({
 						immoForm: $immoStore,
 						amortizationSchedule: $amortizationScheduleStore,
 						_
@@ -41,7 +43,5 @@
 		</div>
 	</Card>
 	<ImmoForm />
-	{#if a}
-		<iframe src={a}></iframe>
-	{/if}
+	<iframe src={a}></iframe>
 </div>

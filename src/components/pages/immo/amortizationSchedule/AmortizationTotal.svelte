@@ -2,7 +2,7 @@
 	import { _ } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
 	import { DisplayAmount } from '$components/displays';
-
+	import { SIGN } from '$lib/constants';
 	import { formatCurrency } from '$lib/utils/display';
 </script>
 
@@ -14,11 +14,17 @@
 	/>
 	<DisplayAmount
 		classLabel="text-center"
+		label={$_('pages.immo.amortizationSchedule.total.mortgageInsuranceFeesTotal')}
 		value={formatCurrency($immoStore.mortgageInsuranceFeesTotal)}
 	/>
 	<DisplayAmount
 		classLabel="text-center"
+		label={$_('pages.immo.amortizationSchedule.total.mortgageTotalRateAmount')}
 		value={formatCurrency($immoStore.mortgageTotalRateAmount)}
 	/>
-	<DisplayAmount classLabel="text-center" value={formatCurrency($immoStore.mortgageAmount)} />
+	<DisplayAmount
+		classLabel="text-center"
+		label={$_('pages.immo.amortizationSchedule.total.mortgageAmount')}
+		value={formatCurrency($immoStore.mortgageAmount)}
+	/>
 </div>

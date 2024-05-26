@@ -47,6 +47,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@floating-ui/dom": "^1.6.5",
 		"jspdf": "^2.5.1",
 		"svelte-i18n": "^4.0.0"
 	},

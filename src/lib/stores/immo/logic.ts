@@ -15,7 +15,8 @@ import {
 	computatemortgageTotalRateAmount,
 	computeMortgageMontlyRatePercentFixed,
 	computeMortgageMontlyRateAmount,
-	computeTotal
+	computeTotal,
+	computeTotalMortgageCost
 } from './utils';
 
 export const initValues = (values: ImmoStore) => {
@@ -106,6 +107,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 		case IMMO_FIELDS.MORTGAGEDURATIONYEARS: {
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
+			values = computeTotalMortgageCost(values);
 			break;
 		}
 		case IMMO_FIELDS.mortgageINSURANCEFEES: {

@@ -9,8 +9,8 @@
 					"monthSchedule": {
 						"month": "Mois",
 						"monthlyPayment": "Mensualité",
-						"monthMortgagePayment": "Capital remboursé",
-						"monthlyInterest": "Intérêt payé",
+						"monthMortgagePayment": "Capital",
+						"monthlyInterest": "Intérêt",
 						"mortgageInsuranceFees": "Assurance",
 						"remainingCapital": "Capital restant"
 					},
@@ -39,8 +39,9 @@
 				"mortgageRatePercent": "Taux d'intérêt",
 				"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
 				"mortgageMonthlyRateAmount": "Mensualité",
-				"mortgageTotalRateAmount": "Coût total du crédit",
-				"mortgageInsuranceFees": "Frais d'assurance",
+				"mortgageTotalRateAmount": "Intérêt total",
+				"mortgageTotalCost": "Coût total du crédit",
+				"mortgageInsuranceFees": "Assurance",
 				"mortgageInsuranceFeesTotal": "Total frais d'assurance",
 				"agencyFees": "Frais d'agence",
 				"agencyFeesPercent": "Frais d'agence %",

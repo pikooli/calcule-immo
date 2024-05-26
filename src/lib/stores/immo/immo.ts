@@ -21,6 +21,7 @@ export interface ImmoStore {
 	notaryFees: number;
 	notaryFeesPercent: number;
 	lastUpdated: string;
+	totalMortgageCost: number;
 	total: number;
 }
 
@@ -42,6 +43,7 @@ export const defaultImmoStore: ImmoStore = {
 	notaryFees: 0,
 	notaryFeesPercent: NOTARY_PERCENT,
 	lastUpdated: '',
+	totalMortgageCost: 0,
 	total: 0
 };
 

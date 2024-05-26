@@ -1,1 +1,1 @@
-export { generatePDF } from './jsPdf';
+export { generateAmortizationSchedule } from './jsPdf';
