@@ -3,7 +3,7 @@
 	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
 	import { formatCurrency } from '$lib/utils/display';
-	import questMarkIcon from '$lib/assets/images/questionMark.png';
+	import questMarkIcon from '$lib/assets/icons/questionMark.png';
 </script>
 
 <div class="grid grid-cols-2">

@@ -1,6 +1,6 @@
 <script>
 	import { _ } from 'svelte-i18n';
-	import logoIcon from '$lib/assets/images/logo.png';
+	import logoIcon from '$lib/assets/icons/logo.png';
 	import MobileMenu from './MobileMenu.svelte';
 	import NavDropDown from './NavDropDown.svelte';
 	import DesktopMenu from './DesktopMenu.svelte';

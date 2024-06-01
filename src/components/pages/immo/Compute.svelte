@@ -7,8 +7,8 @@
 	import { ImmoForm } from '$components/forms';
 	import { IconBtn } from '$components/buttons';
 	import { DisplayH1 } from '$components/displays';
-	import amortizationScheduleIcon from '$lib/assets/images/amortizationScheduleIcon.png';
-	import downloadIcon from '$lib/assets/images/download.png';
+	import amortizationScheduleIcon from '$lib/assets/icons/amortizationScheduleIcon.png';
+	import downloadIcon from '$lib/assets/icons/download.png';
 	import { Card } from '$components/displays';
 	import { generateAmortizationSchedule } from '$lib/pdf';
 </script>
