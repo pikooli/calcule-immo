@@ -31,9 +31,3 @@
 		on:input={onInput}
 	/>
 </div>
-
-<style>
-	input {
-		flex: 1;
-	}
-</style>

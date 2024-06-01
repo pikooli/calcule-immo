@@ -1,3 +1,68 @@
 {
-	"start": "start in en"
+	"website": "Simulateur de prêt immobilier",
+	"pages": {
+		"immo": {
+			"title": "",
+			"amortizationSchedule": {
+				"title": "Tableau d'amortissement",
+				"yearSchedule": {
+					"monthSchedule": {
+						"month": "Mois",
+						"monthlyPayment": "Mensualité",
+						"monthMortgagePayment": "Capital",
+						"monthlyInterest": "Intérêt",
+						"mortgageInsuranceFees": "Assurance",
+						"remainingCapital": "Capital restant"
+					},
+					"year": "Année",
+					"yearPayment": "Mensualité",
+					"yearInterest": "Intérêt",
+					"yearMortgagePayment": "Capital",
+					"mortgageInsuranceFees": "Assurance",
+					"remainingCapital": "Capital restant",
+					"total": "Total"
+				},
+				"total": {
+					"mortgageAmount": "Capital remboursé",
+					"mortgageInsuranceFeesTotal": "Assurance payée",
+					"mortgageTotalRateAmount": "Intérêt payé",
+					"mortgageInstalment": "Nombre de mensualités"
+				}
+			},
+			"report": {
+				"amount": "Montant",
+				"depositPercent": "Apport %",
+				"depositAmount": "Apport",
+				"mortgageAmount": "Emprunt",
+				"mortgageAmountPercent": "Emprunt %",
+				"mortgageDurationYears": "Durée",
+				"mortgageRatePercent": "Taux d'intérêt",
+				"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
+				"mortgageMonthlyRateAmount": "Mensualité",
+				"mortgageTotalRateAmount": "Intérêt total",
+				"mortgageTotalCost": "Coût total du crédit",
+				"mortgageInsuranceFees": "Assurance",
+				"mortgageInsuranceFeesTotal": "Total frais d'assurance",
+				"agencyFees": "Frais d'agence",
+				"agencyFeesPercent": "Frais d'agence %",
+				"notaryFees": "Frais de notaire",
+				"notaryFeesPercent": "Frais de notaire %",
+				"total": "Total"
+			},
+			"email": {
+				"title": "Tableau d'amortissement",
+				"description": "Recever le tableau d'amortissement de votre prêt immobilier par email"
+			},
+			"toolTip": {
+				"amortizationSchedule": "Tableau d'amortissement",
+				"email": "Envoyer par email",
+				"download": "Télécharger"
+			}
+		}
+	},
+	"form": {
+		"submit": "Soumettre",
+		"termsAndConditions": "J'accepte les conditions générales d'utilisation"
+	},
+	"email": "Email"
 }

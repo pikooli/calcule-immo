@@ -2,7 +2,6 @@
 	import { _ } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
 	import { DisplayAmount } from '$components/displays';
-	import { SIGN } from '$lib/constants';
 	import { formatCurrency } from '$lib/utils/display';
 </script>
 

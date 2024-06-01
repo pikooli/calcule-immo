@@ -22,6 +22,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/eslint": "^8.56.0",
+		"@types/nodemailer": "^6.4.15",
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.0.0",
 		"autoprefixer": "^10.4.16",
@@ -49,6 +50,7 @@
 	"dependencies": {
 		"@floating-ui/dom": "^1.6.5",
 		"jspdf": "^2.5.1",
+		"nodemailer": "^6.9.13",
 		"svelte-i18n": "^4.0.0"
 	},
 	"pre-commit": [

@@ -49,14 +49,20 @@
 				"notaryFeesPercent": "Frais de notaire %",
 				"total": "Total"
 			},
+			"email": {
+				"title": "Tableau d'amortissement",
+				"description": "Recever le tableau d'amortissement de votre prêt immobilier par email"
+			},
 			"toolTip": {
 				"amortizationSchedule": "Tableau d'amortissement",
+				"email": "Envoyer par email",
 				"download": "Télécharger"
 			}
-		},
-
-		"form": {
-			"submit": "Soumettre"
 		}
-	}
+	},
+	"form": {
+		"submit": "Soumettre",
+		"termsAndConditions": "J'accepte les conditions générales d'utilisation"
+	},
+	"email": "Email"
 }

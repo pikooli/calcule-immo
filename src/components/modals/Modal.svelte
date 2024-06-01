@@ -17,7 +17,9 @@
 				handleClick={modalStore.triggerModal}
 			/>
 		{/if}
-		<slot />
+		{#if $modalStore.component}
+			<svelte:component this={$modalStore.component} />
+		{/if}
 	</div>
 	<button
 		class="absolute left-0 right-0 top-0 z-0 h-full w-full cursor-default bg-slate-900 opacity-15"

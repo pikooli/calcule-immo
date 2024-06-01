@@ -1,12 +1,10 @@
 <script lang="ts">
+	import type { HTMLInputTypeAttribute } from 'svelte/elements';
+
 	export let label: string = '';
 	export let name: string;
 	export let value: any;
-	export let min: number | null = null;
-	export let max: number | null = null;
-	export let step: number = 1;
 	export let onInput: any = null;
-	export let sign: string = '';
 	export let placeholder: string = 'test';
 </script>
 
@@ -20,17 +18,9 @@
 		placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 			{placeholder}
 			{name}
-			type="number"
-			{min}
-			{max}
-			{step}
+			type="text"
 			bind:value
 			on:input={onInput}
 		/>
-		{#if sign}
-			<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-				<span class="text-gray-500 sm:text-sm">{sign}</span>
-			</div>
-		{/if}
 	</div>
 </div>
