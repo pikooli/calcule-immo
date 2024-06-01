@@ -19,6 +19,7 @@
 <div class="mt-4">
 	<Compute />
 </div>
-<Modal open={$modalStore}>
+
+<Modal open={$modalStore} haveCloseBtn>
 	<AmortizationSchedule />
 </Modal>
