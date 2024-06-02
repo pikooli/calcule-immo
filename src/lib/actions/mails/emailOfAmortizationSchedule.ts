@@ -6,6 +6,7 @@ export const emailAmortizationSchedule = async ({ request }: { request: Request 
 	const data = await request.formData();
 	const email = data.get('email') as string;
 	const termsAndConditions = data.get('termsAndConditions') as string;
+	const locale = data.get('locale') as string;
 	const immoStore = data.get('immoStore') as string;
 	const amortizationScheduleStore = data.get('amortizationScheduleStore') as string;
 
@@ -25,7 +26,7 @@ export const emailAmortizationSchedule = async ({ request }: { request: Request 
 
 		await sendEmailOfAmortizationSchedule({
 			to: forms.email,
-			locale: 'fr',
+			locale,
 			immoStore: forms.immoStore,
 			amortizationScheduleStore: forms.amortizationScheduleStore
 		});
