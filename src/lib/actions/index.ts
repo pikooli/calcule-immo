@@ -1,0 +1,1 @@
+export { emailAmortizationSchedule } from './mails';

@@ -28,7 +28,7 @@ export const sendEmailOfAmortizationSchedule = async ({
 			amortizationScheduleStore
 		});
 
-		const info = await sendMail({
+		const mailOptions = {
 			to,
 			subject: i18n('emails.amortizationSchedule.subject'),
 			text: i18n('emails.amortizationSchedule.text'),
@@ -40,7 +40,9 @@ export const sendEmailOfAmortizationSchedule = async ({
 					contentType: 'application/pdf'
 				}
 			]
-		});
+		};
+
+		const info = await sendMail(mailOptions);
 
 		console.log('Message sent: %s', info?.messageId);
 	} catch (e) {

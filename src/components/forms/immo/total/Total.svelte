@@ -6,10 +6,14 @@
 	import questMarkIcon from '$lib/assets/icons/questionMark.png';
 </script>
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-3">
 	<DisplayAmount
 		label={$t('pages.immo.report.mortgageMonthlyRateAmount')}
 		value={formatCurrency($immoStore.mortgageMonthlyRateAmount)}
+	/>
+	<DisplayAmount
+		label={$t('pages.immo.report.mortgageMonthlyRateAmountWithInsurance')}
+		value={formatCurrency($immoStore.mortgageMonthlyRateAmountWithInsurance)}
 	/>
 	<DisplayAmount
 		label={$t('pages.immo.report.mortgageMonthlyRatePercent')}

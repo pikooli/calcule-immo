@@ -1,4 +1,4 @@
-import { initValues, updateValues } from './logic';
+import { initValues } from './logic';
 import {
 	computatemortgageTotalRateAmount,
 	computedepositeAmountOndepositePercent,

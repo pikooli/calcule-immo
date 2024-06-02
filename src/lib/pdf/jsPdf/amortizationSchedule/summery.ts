@@ -20,7 +20,7 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 			i18n('pages.immo.amortizationSchedule.total.mortgageAmount'),
 			i18n('pages.immo.report.mortgageRatePercent'),
 			i18n('pages.immo.amortizationSchedule.total.mortgageInstalment'),
-			i18n('pages.immo.report.mortgageMonthlyRateAmount')
+			i18n('pages.immo.report.mortgageInsuranceFees')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
@@ -31,20 +31,26 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 			formatCurrency(immoStore.mortgageAmount),
 			`${immoStore.mortgageRatePercent} %`,
 			`${immoStore.mortgageDurationYears * 12}`,
-			formatCurrency(immoStore.mortgageMonthlyRateAmount)
+			formatCurrency(immoStore.mortgageInsuranceFees)
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
 	});
 	currentYPosition = gridTextCenter({
 		doc,
-		texts: [i18n('pages.immo.report.mortgageInsuranceFees')],
+		texts: [
+			i18n('pages.immo.report.mortgageMonthlyRateAmount'),
+			i18n('pages.immo.report.mortgageMonthlyRateAmountWithInsurance')
+		],
 		yPosition: currentYPosition,
 		drawBorders: true
 	});
 	currentYPosition = gridText({
 		doc,
-		texts: [formatCurrency(immoStore.mortgageInsuranceFees)],
+		texts: [
+			formatCurrency(immoStore.mortgageMonthlyRateAmount),
+			formatCurrency(immoStore.mortgageMonthlyRateAmountWithInsurance)
+		],
 		yPosition: currentYPosition,
 		drawBorders: true
 	});

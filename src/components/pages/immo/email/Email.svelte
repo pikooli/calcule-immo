@@ -11,7 +11,7 @@
 </script>
 
 <form
-	action="?/sendEmailOfAmortizationSchedule"
+	action="?/emailAmortizationSchedule"
 	method="post"
 	class="grap-4 grid grid-cols-1 rounded-md bg-primary p-8"
 >

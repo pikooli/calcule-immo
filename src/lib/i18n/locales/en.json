@@ -39,6 +39,7 @@
 				"mortgageRatePercent": "Taux d'intérêt",
 				"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel",
 				"mortgageMonthlyRateAmount": "Mensualité",
+				"mortgageMonthlyRateAmountWithInsurance": "Mensualité avec assurance",
 				"mortgageTotalRateAmount": "Intérêt total",
 				"mortgageTotalCost": "Coût total du crédit",
 				"mortgageInsuranceFees": "Assurance",

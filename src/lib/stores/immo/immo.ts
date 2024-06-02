@@ -1,29 +1,11 @@
 import { writable } from 'svelte/store';
 import { updateValues, initValues } from './logic';
+import { z } from 'zod';
+import { immoValidator } from '$lib/validator';
 
 const NOTARY_PERCENT = 7;
 
-export interface ImmoStore {
-	amount: number;
-	depositePercent: number;
-	depositeAmount: number;
-	mortgageAmount: number;
-	mortgageAmountPercent: number;
-	mortgageDurationYears: number;
-	mortgageRatePercent: number;
-	mortgageMonthlyRatePercent: number;
-	mortgageMonthlyRateAmount: number;
-	mortgageTotalRateAmount: number;
-	mortgageInsuranceFees: number; // ===
-	mortgageInsuranceFeesTotal: number; // ===
-	agencyFees: number;
-	agencyFeesPercent: number;
-	notaryFees: number;
-	notaryFeesPercent: number;
-	lastUpdated: string;
-	totalMortgageCost: number;
-	total: number;
-}
+export interface ImmoStore extends z.infer<typeof immoValidator> {}
 
 export const defaultImmoStore: ImmoStore = {
 	amount: 200000,
@@ -35,6 +17,7 @@ export const defaultImmoStore: ImmoStore = {
 	mortgageRatePercent: 1.2,
 	mortgageMonthlyRatePercent: 0,
 	mortgageMonthlyRateAmount: 0,
+	mortgageMonthlyRateAmountWithInsurance: 0,
 	mortgageTotalRateAmount: 0,
 	mortgageInsuranceFees: 30,
 	mortgageInsuranceFeesTotal: 0,

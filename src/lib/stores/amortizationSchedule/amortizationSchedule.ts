@@ -1,25 +1,12 @@
+import { z } from 'zod';
 import { writable } from 'svelte/store';
 import type { ImmoStore } from '$lib/stores/immo/';
 import { generateSchedule } from '$lib/stores/amortizationSchedule/logic';
+import { monthScheduleValidator, yearScheduleValidator } from '$lib/validator';
 
-export interface MonthSchedule {
-	month: number;
-	monthlyPayment: number;
-	monthlyInterest: number;
-	monthMortgagePayment: number;
-	remainingCapital: number;
-	mortgageInsuranceFees: number;
-}
+export interface MonthSchedule extends z.infer<typeof monthScheduleValidator> {}
 
-export interface YearSchedule {
-	year: number;
-	monthSchedule: MonthSchedule[];
-	yearInterest: number;
-	yearPayment: number;
-	remainingCapital: number;
-	mortgageInsuranceFees: number;
-	yearMortgagePayment: number;
-}
+export interface YearSchedule extends z.infer<typeof yearScheduleValidator> {}
 
 export type AmortizationScheduleStore = YearSchedule[];
 
