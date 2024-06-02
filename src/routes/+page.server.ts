@@ -1,29 +1,27 @@
-import * as db from '$lib/server/db.js';
-import { sendMail } from '$lib/services/mails';
-
-export function load({ cookies }) {
-	return {
-		data: db.getData(),
-		aaa: 'aaaa'
-	};
-}
+import { fail } from '@sveltejs/kit';
+import { sendEmailOfAmortizationSchedule } from '$lib/services/mails';
+import type { ImmoStore, immoStore } from '$lib/stores/immo';
+import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 
 export const actions = {
-	sendEmail: async ({ cookies, request }) => {
+	sendEmailOfAmortizationSchedule: async ({ request }) => {
 		const data = await request.formData();
+		const to = data.get('to');
+		const email = data.get('email');
+		const immoStore = data.get('immoStore') as string;
+		const amortizationScheduleStore = data.get('amortizationScheduleStore') as string;
+		if (!email || !immoStore || !amortizationScheduleStore) {
+			return fail(422, { email, missing: true });
+		}
 		try {
-			const info = await sendMail({
-				to: 'zhangpas@gmail.com', // list of receivers
-				subject: 'Hello ✔', // Subject line
-				text: 'Hello world?', // plain text body
-				html: '<b>Hello world?</b>' // html body
+			await sendEmailOfAmortizationSchedule({
+				to: 'zhangpas@gmail.com',
+				locale: 'fr',
+				immoStore: JSON.parse(immoStore),
+				amortizationScheduleStore: JSON.parse(amortizationScheduleStore)
 			});
-
-			console.log('Message sent: %s', info?.messageId);
 		} catch (e) {
 			console.log(e);
 		}
-
-		console.log(data);
 	}
 };

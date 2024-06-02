@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from 'svelte-i18n';
 	import { InputNumberWithRange, InputNumber } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
@@ -8,7 +8,7 @@
 
 <div class="grid grid-cols-2 gap-2">
 	<InputNumberWithRange
-		label={$_('pages.immo.report.mortgageAmount')}
+		label={$t('pages.immo.report.mortgageAmount')}
 		nameInput={IMMO_FIELDS.MORTGAGEAMOUNT}
 		minInput={0}
 		maxInput={$immoStore.amount}
@@ -23,7 +23,7 @@
 		sign={SIGN}
 	/>
 	<InputNumberWithRange
-		label={$_('pages.immo.report.mortgageRatePercent')}
+		label={$t('pages.immo.report.mortgageRatePercent')}
 		nameInput={IMMO_FIELDS.MORTGAGEAMOUNT}
 		minInput={0}
 		maxInput={100}
@@ -38,7 +38,7 @@
 		sign={SIGN}
 	/>
 	<InputNumberWithRange
-		label={$_('pages.immo.report.mortgageDurationYears')}
+		label={$t('pages.immo.report.mortgageDurationYears')}
 		nameInput={IMMO_FIELDS.MORTGAGEDURATIONYEARS}
 		minInput={MORTGAGE_DURATION_MIN_YEARS}
 		maxInput={MORTGAGE_DURATION_MAX_YEARS}
@@ -53,7 +53,7 @@
 		sign={SIGN}
 	/>
 	<InputNumber
-		label={$_('pages.immo.report.mortgageInsuranceFees')}
+		label={$t('pages.immo.report.mortgageInsuranceFees')}
 		name={IMMO_FIELDS.mortgageINSURANCEFEES}
 		min={0}
 		onInput={() => immoStore.updateValue(IMMO_FIELDS.mortgageINSURANCEFEES)}

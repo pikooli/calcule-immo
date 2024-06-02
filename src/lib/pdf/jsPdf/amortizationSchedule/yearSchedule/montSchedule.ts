@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
 import { get } from 'svelte/store';
-import type { _ } from 'svelte-i18n';
+import { t } from 'svelte-i18n';
 import type { YearSchedule } from '$lib/stores/amortizationSchedule';
 import { gridText, gridTextCenter } from '$lib/pdf/jsPdf/utils';
 import { formatCurrency } from '$lib/utils/display';
@@ -9,16 +9,14 @@ interface GenerateMonthScheduleArgs {
 	doc: jsPDF;
 	yPosition: number;
 	yearSchedule: YearSchedule;
-	_: typeof _;
 }
 
 export const generateMonthSchedule = ({
 	doc,
 	yPosition,
-	yearSchedule,
-	_
+	yearSchedule
 }: GenerateMonthScheduleArgs) => {
-	const i18n = get(_);
+	const i18n = get(t);
 	let currentYPosition = yPosition;
 
 	const { monthSchedule } = yearSchedule;

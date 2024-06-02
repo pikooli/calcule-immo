@@ -5,6 +5,7 @@
 	export let onInput: any = null;
 	export let placeholder: string = 'test';
 	export let required: boolean = false;
+	export let inputClass: string = '';
 </script>
 
 <div class="flex flex-col px-1">
@@ -13,8 +14,8 @@
 	{/if}
 	<div class="relative mt-2 rounded-md shadow-sm">
 		<input
-			class="block w-full rounded-md border-0 py-1.5 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300
-		placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+			class={`block w-full rounded-md border-0 py-1.5 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300
+		placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${inputClass}`}
 			{placeholder}
 			{name}
 			type="email"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from 'svelte-i18n';
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS, SIGN } from '$lib/constants';
@@ -10,7 +10,7 @@
 
 <div class="grid grid-cols-3">
 	<InputNumberWithRange
-		label={$_('pages.immo.report.depositAmount')}
+		label={$t('pages.immo.report.depositAmount')}
 		nameInput={IMMO_FIELDS.DEPOSITEAMOUNT}
 		minInput={0}
 		maxInput={$immoStore.amount}

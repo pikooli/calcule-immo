@@ -1,6 +1,6 @@
-import jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 import { get } from 'svelte/store';
-import type { _ } from 'svelte-i18n';
+import { t } from 'svelte-i18n';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import type { ImmoStore } from '$lib/stores/immo';
 import { FONT_SIZE, LINE_HEIGHT, PAGE_HEIGHT, PAGE_WIDTH } from '$lib/pdf/jsPdf/constants';
@@ -9,22 +9,20 @@ import { generateYearSchedule } from '$lib/pdf/jsPdf/amortizationSchedule/yearSc
 import { generateSummary } from '$lib/pdf/jsPdf/amortizationSchedule/summery';
 
 interface GeneratePdf {
-	immoForm: ImmoStore;
-	amortizationSchedule: AmortizationScheduleStore;
-	_: typeof _;
+	immoStore: ImmoStore;
+	amortizationScheduleStore: AmortizationScheduleStore;
 }
 
 export const generateAmortizationSchedule = ({
-	immoForm,
-	amortizationSchedule,
-	_
+	immoStore,
+	amortizationScheduleStore
 }: GeneratePdf) => {
+	const i18n = get(t);
 	const doc = new jsPDF({
 		orientation: 'portrait',
 		unit: 'mm',
 		format: [PAGE_WIDTH, PAGE_HEIGHT]
 	});
-	const i18n = get(_);
 
 	let yPosition = LINE_HEIGHT;
 
@@ -33,14 +31,51 @@ export const generateAmortizationSchedule = ({
 
 	const text = i18n('pages.immo.amortizationSchedule.title');
 	yPosition = centerText({ doc, text, yPosition });
-	yPosition = generateSummary({ doc, immoForm, yPosition, _ });
+	yPosition = generateSummary({ doc, immoStore, yPosition });
 	generateYearSchedule({
 		doc,
 		yPosition,
-		amortizationSchedule,
-		_
+		amortizationScheduleStore
 	});
 
-	doc.save('amortizationSchedule.pdf');
-	return generatePdfUrl(doc);
+	return doc;
+};
+
+export const generateAmortizationScheduleUrl = ({
+	immoStore,
+	amortizationScheduleStore
+}: GeneratePdf) => {
+	try {
+		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		return generatePdfUrl(doc);
+	} catch (e) {
+		console.log(e);
+		throw e;
+	}
+};
+
+export const generateAmortizationScheduleSave = ({
+	immoStore,
+	amortizationScheduleStore
+}: GeneratePdf) => {
+	try {
+		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		doc.save('amortizationSchedule.pdf');
+	} catch (e) {
+		console.log(e);
+		throw e;
+	}
+};
+
+export const generateAmortizationScheduleBuffer = ({
+	immoStore,
+	amortizationScheduleStore
+}: GeneratePdf) => {
+	try {
+		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		return Buffer.from(doc.output('arraybuffer'));
+	} catch (e) {
+		console.log(e);
+		throw e;
+	}
 };

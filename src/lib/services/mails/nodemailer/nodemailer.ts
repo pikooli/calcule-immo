@@ -13,24 +13,17 @@ const transporter = nodemailer.createTransport({
 	}
 });
 
-interface sendMailerArgs {
-	to: string;
-	subject: string;
-	html: string;
-	text: string;
-}
+export const sendMail = async (args: nodemailer.SendMailOptions) => {
+	const { to, subject, text, html, attachments } = args;
 
-export const sendMail = async (args: sendMailerArgs) => {
-	const { to, subject, text, html } = args;
-	console.log('process.env.EMAIL_USER', EMAIL_USER);
-	console.log('process.env.EMAIL_PASSWORD', EMAIL_PASSWORD);
 	try {
 		const info = await transporter.sendMail({
 			from: `"Calcule-immo 👻" <${EMAIL_USER}>`,
 			to,
 			subject,
 			text,
-			html
+			html,
+			attachments
 		});
 
 		console.log('Message sent: %s', info.messageId);

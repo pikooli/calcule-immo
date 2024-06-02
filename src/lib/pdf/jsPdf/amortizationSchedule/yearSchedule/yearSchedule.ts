@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
 import { get } from 'svelte/store';
-import type { _ } from 'svelte-i18n';
+import { t } from 'svelte-i18n';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import { centerText } from '$lib/pdf/jsPdf/utils';
 import { generateYearTotal } from '$lib/pdf/jsPdf/amortizationSchedule/yearSchedule/yearTotal';
@@ -9,30 +9,27 @@ import { generateMonthSchedule } from '$lib/pdf/jsPdf/amortizationSchedule/yearS
 interface GenerateYearScheduleArgs {
 	doc: jsPDF;
 	yPosition: number;
-	amortizationSchedule: AmortizationScheduleStore;
-	_: typeof _;
+	amortizationScheduleStore: AmortizationScheduleStore;
 }
 
 export const generateYearSchedule = ({
 	doc,
 	yPosition,
-	amortizationSchedule,
-	_
+	amortizationScheduleStore
 }: GenerateYearScheduleArgs) => {
-	const i18n = get(_);
+	const i18n = get(t);
 	let currentYPosition = yPosition;
 
-	amortizationSchedule.forEach((yearSchedule, idx) => {
-		const shouldrawLine = amortizationSchedule.length - 1 !== idx;
+	amortizationScheduleStore.forEach((yearSchedule, idx) => {
+		const shouldrawLine = amortizationScheduleStore.length - 1 !== idx;
 		const { year } = yearSchedule;
 		const text = `${i18n('pages.immo.amortizationSchedule.yearSchedule.year')} ${year + 1}`;
 		currentYPosition = centerText({ doc, text, yPosition: currentYPosition });
-		currentYPosition = generateMonthSchedule({ doc, yearSchedule, yPosition: currentYPosition, _ });
+		currentYPosition = generateMonthSchedule({ doc, yearSchedule, yPosition: currentYPosition });
 		currentYPosition = generateYearTotal({
 			doc,
 			yPosition: currentYPosition,
 			yearSchedule,
-			_,
 			shouldrawLine
 		});
 	});

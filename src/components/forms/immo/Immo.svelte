@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
 	import { AmountBlock } from '$components/forms/immo/amount';
 	import { MortgageBlock } from '$components/forms/immo/mortgage';
 	import { DepositBlock } from '$components/forms/immo/deposit';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import { t } from 'svelte-i18n';
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS, SIGN } from '$lib/constants';
@@ -7,7 +7,7 @@
 </script>
 
 <InputNumberWithRange
-	label={$_('pages.immo.report.agencyFees')}
+	label={$t('pages.immo.report.agencyFees')}
 	nameInput={IMMO_FIELDS.AGENCYFEES}
 	minInput={0}
 	maxInput={$immoStore.amount}

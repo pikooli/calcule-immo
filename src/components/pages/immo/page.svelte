@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { _ } from 'svelte-i18n';
+	import { t } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
 	import { default as Compute } from '$components/pages/immo/Compute.svelte';
 
@@ -9,7 +9,7 @@
 	});
 </script>
 
-<title>{$_('website')}</title>
+<title>{$t('website')}</title>
 
 <div class="mt-4">
 	<Compute />

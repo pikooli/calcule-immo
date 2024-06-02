@@ -1,1 +1,6 @@
-export { generateAmortizationSchedule } from './jsPdf';
+export {
+	generateAmortizationSchedule,
+	generateAmortizationScheduleBuffer,
+	generateAmortizationScheduleSave,
+	generateAmortizationScheduleUrl
+} from './jsPdf';

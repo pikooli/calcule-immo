@@ -8,6 +8,7 @@
 	export let step: number = 1;
 	export let onInput: any = null;
 	export let toolTip: string = '';
+	export let inputClass: string = '';
 </script>
 
 <div class="px-1">
@@ -19,7 +20,7 @@
 	{/if}
 
 	<input
-		class="range-sm h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-red-500 dark:bg-gray-700"
+		class={`range-sm h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-red-500 dark:bg-gray-700 ${inputClass}`}
 		id={name}
 		placeholder="test"
 		{name}

@@ -1,20 +1,19 @@
 import jsPDF from 'jspdf';
-import type { ImmoStore } from '$lib/stores/immo';
+import { t } from 'svelte-i18n';
 import { get } from 'svelte/store';
-import type { _ } from 'svelte-i18n';
+import type { ImmoStore } from '$lib/stores/immo';
 import { gridTextCenter, gridText } from '$lib/pdf/jsPdf/utils';
 import { formatCurrency } from '$lib/utils/display';
 
 interface GenerateSummaryArgs {
 	doc: jsPDF;
-	immoForm: ImmoStore;
+	immoStore: ImmoStore;
 	yPosition: number;
-	_: typeof _;
 }
 
-export const generateSummary = ({ doc, immoForm, yPosition, _ }: GenerateSummaryArgs) => {
+export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryArgs) => {
 	let currentYPosition = yPosition;
-	const i18n = get(_);
+	const i18n = get(t);
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
@@ -29,10 +28,10 @@ export const generateSummary = ({ doc, immoForm, yPosition, _ }: GenerateSummary
 	currentYPosition = gridText({
 		doc,
 		texts: [
-			formatCurrency(immoForm.mortgageAmount),
-			`${immoForm.mortgageRatePercent} %`,
-			`${immoForm.mortgageDurationYears * 12}`,
-			formatCurrency(immoForm.mortgageMonthlyRateAmount)
+			formatCurrency(immoStore.mortgageAmount),
+			`${immoStore.mortgageRatePercent} %`,
+			`${immoStore.mortgageDurationYears * 12}`,
+			formatCurrency(immoStore.mortgageMonthlyRateAmount)
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
@@ -45,7 +44,7 @@ export const generateSummary = ({ doc, immoForm, yPosition, _ }: GenerateSummary
 	});
 	currentYPosition = gridText({
 		doc,
-		texts: [formatCurrency(immoForm.mortgageInsuranceFees)],
+		texts: [formatCurrency(immoStore.mortgageInsuranceFees)],
 		yPosition: currentYPosition,
 		drawBorders: true
 	});
@@ -62,9 +61,9 @@ export const generateSummary = ({ doc, immoForm, yPosition, _ }: GenerateSummary
 	currentYPosition = gridText({
 		doc,
 		texts: [
-			formatCurrency(immoForm.mortgageInsuranceFeesTotal),
-			formatCurrency(immoForm.mortgageTotalRateAmount),
-			formatCurrency(immoForm.totalMortgageCost)
+			formatCurrency(immoStore.mortgageInsuranceFeesTotal),
+			formatCurrency(immoStore.mortgageTotalRateAmount),
+			formatCurrency(immoStore.totalMortgageCost)
 		],
 		yPosition: currentYPosition,
 		drawBorders: true

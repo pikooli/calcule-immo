@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
-
 	import { ImmoForm } from '$components/forms';
 	import { Header } from './header/';
 </script>
