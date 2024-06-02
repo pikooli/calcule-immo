@@ -24,6 +24,12 @@ function createModalStore() {
 
 	const { subscribe, set, update } = writable<ModalStore>(defaultState);
 
+	const closeModal = () => {
+		update((value) => {
+			return { ...value, isOpen: false };
+		});
+	};
+
 	const triggerModal = (e: MouseEvent) => {
 		e.preventDefault();
 		update((value) => {
@@ -55,6 +61,7 @@ function createModalStore() {
 		openModal,
 		openAmortizationScheduleModal,
 		openEmailModal,
+		closeModal,
 		destroy() {
 			unsubscribe();
 		}

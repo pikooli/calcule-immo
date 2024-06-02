@@ -36,6 +36,12 @@ export default {
 					800: '#30455C',
 					900: '#2C3C4E',
 					DEFAULT: '#1F2937'
+				},
+				whiteText: {
+					DEFAULT: '#F9FAFB'
+				},
+				graytext: {
+					DEFAULT: '#6B7280'
 				}
 			}
 		}

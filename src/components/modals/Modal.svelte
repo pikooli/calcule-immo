@@ -1,9 +1,23 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { modalStore } from '$lib/stores/modals';
 	import { IconBtn } from '$components/buttons';
 	import crossIcon from '$lib/assets/icons/cross.png';
 	export let open: boolean = false;
 	export let haveCloseBtn: boolean = false;
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			modalStore.closeModal();
+		}
+	}
+
+	onMount(() => {
+		document.addEventListener('keydown', handleKeyDown);
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	});
 </script>
 
 <dialog {open} class="absolute top-0 h-full w-full bg-transparent">

@@ -1,8 +1,8 @@
 {
-	"website": "Simulateur de prêt immobilier",
+	"website": "Calcule-immo",
 	"pages": {
 		"immo": {
-			"title": "",
+			"title": "Simulateur de prêt immobilier",
 			"amortizationSchedule": {
 				"title": "Tableau d'amortissement",
 				"yearSchedule": {
