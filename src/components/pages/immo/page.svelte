@@ -9,6 +9,6 @@
 	});
 </script>
 
-<title>{$t('website')}</title>
+<title>{`${$t('website')} - ${$t('pages.immo.title')}`}</title>
 
 <Compute />
