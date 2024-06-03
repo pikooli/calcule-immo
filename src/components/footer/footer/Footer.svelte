@@ -6,7 +6,7 @@
 	import SubFooter from './SubFooter.svelte';
 </script>
 
-<footer class="bg-secondary">
+<footer class="mt-auto bg-secondary">
 	<div class="mx-auto w-full max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="grid grid-cols-2 gap-8 px-10 px-4 py-6 md:grid-cols-4">
 			<Company />

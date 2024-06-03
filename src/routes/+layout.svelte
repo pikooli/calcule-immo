@@ -6,10 +6,10 @@
 	import { Footer } from '$components/footer';
 </script>
 
-<NavBar />
-<div class="my-3 flex justify-center">
+<div class="flex h-screen flex-col">
+	<NavBar />
 	<slot />
 	<Modal open={$modalStore.isOpen} haveCloseBtn />
-</div>
 
-<Footer />
+	<Footer />
+</div>
