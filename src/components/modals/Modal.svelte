@@ -21,7 +21,9 @@
 </script>
 
 <dialog {open} class="absolute top-0 h-full w-full bg-transparent">
-	<div class="absolute z-10 w-full p-4">
+	<div
+		class="absolute z-10 mx-[2.5vw] my-[2.5vh] max-h-[95vh] w-[95vw] overflow-scroll rounded-md border border-black shadow-md"
+	>
 		{#if haveCloseBtn}
 			<IconBtn
 				src={crossIcon}

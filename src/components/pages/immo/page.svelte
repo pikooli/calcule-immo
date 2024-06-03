@@ -11,6 +11,4 @@
 
 <title>{$t('website')}</title>
 
-<div class="mt-4">
-	<Compute />
-</div>
+<Compute />

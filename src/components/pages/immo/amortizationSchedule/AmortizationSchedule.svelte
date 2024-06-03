@@ -6,9 +6,9 @@
 	import AmortizationTotal from './AmortizationTotal.svelte';
 </script>
 
-<div class="rounded-md border bg-stone-50 px-4 shadow-md">
+<div class="bg-stone-50 px-40">
 	<DisplayH1 className="text-center p-2" text={$t('pages.immo.amortizationSchedule.title')} />
-	<div class="max-h-[500px] overflow-hidden overflow-y-auto py-2">
+	<div class="py-2">
 		{#each $amortizationScheduleStore as yearSchedule (yearSchedule)}
 			<YearSchedule {yearSchedule} />
 		{/each}
