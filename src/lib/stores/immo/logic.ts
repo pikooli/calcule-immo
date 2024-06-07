@@ -46,7 +46,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.DEPOSITEPERCENT: {
+		case IMMO_FIELDS.DEPOSITE_PERCENT: {
 			values.depositeAmount = computedepositeAmountOndepositePercent(values);
 			values.mortgageAmount = computeMortgageAmount(values);
 			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
@@ -57,7 +57,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.DEPOSITEAMOUNT: {
+		case IMMO_FIELDS.DEPOSITE_AMOUNT: {
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageAmount = computeMortgageAmount(values);
 			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
@@ -68,7 +68,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.MORTGAGEAMOUNTPERCENT: {
+		case IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT: {
 			values.mortgageAmount = computeMortgageAmountOnmortgagePercent(values);
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
@@ -79,7 +79,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.MORTGAGEAMOUNT: {
+		case IMMO_FIELDS.MORTGAGE_AMOUNT: {
 			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
@@ -90,7 +90,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageTotalRateAmount = computatemortgageTotalRateAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.MORTGAGERATEPERCENT: {
+		case IMMO_FIELDS.MORTGAGE_RATE_PERCENT: {
 			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
@@ -102,23 +102,23 @@ export const updateValues = (field: string, values: ImmoStore) => {
 
 			break;
 		}
-		case IMMO_FIELDS.AGENCYFEESPERCENT: {
+		case IMMO_FIELDS.AGENCY_FEES_PERCENT: {
 			values.agencyFees = computeAgencyAmount(values);
 			break;
 		}
-		case IMMO_FIELDS.AGENCYFEES: {
+		case IMMO_FIELDS.AGENCY_FEES: {
 			values.agencyFeesPercent = computeAgencyPercent(values);
 			break;
 		}
-		case IMMO_FIELDS.NOTARYFEES: {
+		case IMMO_FIELDS.NOTARY_FEES: {
 			values.notaryFeesPercent = computenotaryFees(values);
 			break;
 		}
-		case IMMO_FIELDS.NOTARYFEESPERCENT: {
+		case IMMO_FIELDS.NOTARY_FEES_PERCENT: {
 			values.notaryFees = computeNotaryFees(values);
 			break;
 		}
-		case IMMO_FIELDS.MORTGAGEDURATIONYEARS: {
+		case IMMO_FIELDS.MORTGAGE_DURATION_YEARS: {
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
 				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
@@ -126,7 +126,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values = computeTotalMortgageCost(values);
 			break;
 		}
-		case IMMO_FIELDS.mortgageINSURANCEFEES: {
+		case IMMO_FIELDS.MORTGAGE_INSURANCE_FEES: {
 			values.mortgageInsuranceFeesTotal =
 				values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
 			values.mortgageMonthlyRateAmountWithInsurance =

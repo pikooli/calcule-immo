@@ -8,16 +8,16 @@
 
 <InputNumberWithRange
 	label={$t('pages.immo.report.agencyFees')}
-	nameInput={IMMO_FIELDS.AGENCYFEES}
+	nameInput={IMMO_FIELDS.AGENCY_FEES}
 	minInput={0}
 	maxInput={$immoStore.amount}
 	bind:valueInput={$immoStore.agencyFees}
-	onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEES)}
-	nameRange={IMMO_FIELDS.AGENCYFEESPERCENT}
+	onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.AGENCY_FEES)}
+	nameRange={IMMO_FIELDS.AGENCY_FEES_PERCENT}
 	minRange={0}
 	maxRange={100}
 	toolTip={`${$immoStore.agencyFeesPercent} %`}
 	bind:valueRange={$immoStore.agencyFeesPercent}
-	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCYFEESPERCENT)}
+	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCY_FEES_PERCENT)}
 	sign={SIGN}
 />
