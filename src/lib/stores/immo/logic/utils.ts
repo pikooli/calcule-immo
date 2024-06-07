@@ -1,4 +1,4 @@
-import type { ImmoStore } from './immo';
+import type { ImmoStore } from '$lib/stores/immo';
 import { computeAmount, computePercent } from '$lib/utils/math';
 
 export const computeNotaryFees = (values: ImmoStore) =>
@@ -17,6 +17,9 @@ export const computeAgencyAmount = (values: ImmoStore) =>
 	computeAmount(values.amount, values.agencyFeesPercent);
 export const computeAgencyPercent = (values: ImmoStore) =>
 	computePercent(values.agencyFees, values.amount);
+export const computeMortgageInsuranceFeesTotal = (values: ImmoStore) =>
+	values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
+
 // ==========
 export const computedepositeAmountOnmortgageAmount = (values: ImmoStore) =>
 	values.amount - values.mortgageAmount;
@@ -57,12 +60,14 @@ interface ComputeMortgageMontlyRateAmountArgs {
 	mortgageAmount: number;
 	mortgageRatePercent: number;
 	mortgageDurationYears: number;
+	mortgageInsuranceFees?: number;
 }
 
 export const computeMortgageMontlyRateAmount = ({
 	mortgageAmount,
 	mortgageRatePercent,
-	mortgageDurationYears
+	mortgageDurationYears,
+	mortgageInsuranceFees = 0
 }: ComputeMortgageMontlyRateAmountArgs) => {
 	if (mortgageRatePercent === 0) {
 		return 0;
@@ -75,7 +80,7 @@ export const computeMortgageMontlyRateAmount = ({
 				Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments))) /
 		(Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments) - 1);
 
-	return parseFloat(montlyAmount.toFixed(2));
+	return parseFloat((montlyAmount + mortgageInsuranceFees).toFixed(2));
 };
 
 export const computeTotal = (values: ImmoStore) => {

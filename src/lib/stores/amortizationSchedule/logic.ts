@@ -1,5 +1,5 @@
 import type { ImmoStore } from '$lib/stores/immo/';
-import { computeMortgageMontlyRatePercentFixed } from '$lib/stores/immo/utils';
+import { computeMortgageMontlyRatePercentFixed } from '$lib/stores/immo/logic/utils';
 
 export const generateSchedule = ({
 	mortgageAmount,

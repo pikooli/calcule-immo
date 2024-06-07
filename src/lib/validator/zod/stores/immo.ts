@@ -13,6 +13,7 @@ export const immoValidator = z.object({
 	mortgageMonthlyRateAmountWithInsurance: z.number(),
 	mortgageTotalRateAmount: z.number(),
 	mortgageInsuranceFees: z.number(),
+	mortgageInsurancePercent: z.number(),
 	mortgageInsuranceFeesTotal: z.number(),
 	agencyFees: z.number(),
 	agencyFeesPercent: z.number(),
