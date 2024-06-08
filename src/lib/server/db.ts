@@ -7,7 +7,6 @@ export function getData() {
 }
 
 export function createData(data: string) {
-	console.log('data', data);
 	db.set('data', data);
 }
 

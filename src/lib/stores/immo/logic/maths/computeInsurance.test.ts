@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
 	computeMonthyInsuranceFeeByPercent,
-	computeInsuranceFeePercentByAmount,
-} from './computeInsuranceFee';
+	computeInsuranceFeePercentByAmount
+} from './computeInsurance';
 import { defaultImmoStore } from '$lib/stores/immo/immo';
 
 describe('computeMonthyInsuranceFeeByPercent test', () => {
