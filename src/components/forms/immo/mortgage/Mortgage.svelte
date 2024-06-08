@@ -56,7 +56,6 @@
 		bind:valueRange={$immoStore.mortgageDurationYears}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
 		toolTipRange={`${$immoStore.mortgageDurationYears}`}
-		sign={EUROS}
 		toolTip={$t('pages.immo.descriptions.mortgageDurationYears')}
 		iconAlt={$t('pages.immo.descriptions.mortgageDurationYears')}
 		iconId="mortgageDurationYearsId"
@@ -72,6 +71,7 @@
 		minRange={0}
 		maxRange={100}
 		stepRange={0.01}
+		sign={EUROS}
 		bind:valueRange={$immoStore.mortgageInsurancePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT)}
 		toolTipRange={`${$immoStore.mortgageInsurancePercent} %`}
