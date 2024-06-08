@@ -2,7 +2,7 @@
 	import { t } from 'svelte-i18n';
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
-	import { IMMO_FIELDS, SIGN } from '$lib/constants';
+	import { IMMO_FIELDS, EUROS } from '$lib/constants';
 	import { AgencyBlock } from '$components/forms/immo/agency';
 	import { NotaryBlock } from '$components/forms/immo/notary';
 	import './deposit.scss';
@@ -22,7 +22,7 @@
 		toolTip={`${$immoStore.depositePercent} %`}
 		bind:valueRange={$immoStore.depositePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITE_PERCENT)}
-		sign={SIGN}
+		sign={EUROS}
 	/>
 	<AgencyBlock />
 	<NotaryBlock />

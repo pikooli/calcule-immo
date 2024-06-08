@@ -1,1 +1,1 @@
-export const SIGN = '€';
+export const EUROS = '€';

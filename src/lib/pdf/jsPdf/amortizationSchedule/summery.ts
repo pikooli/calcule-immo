@@ -57,7 +57,7 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.report.mortgageInsuranceFees'),
+			i18n('pages.immo.report.mortgageInsuranceFeesTotal'),
 			i18n('pages.immo.report.mortgageTotalRateAmount'),
 			i18n('pages.immo.report.mortgageTotalCost')
 		],

@@ -3,7 +3,7 @@
 	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
-	import { IMMO_FIELDS, SIGN } from '$lib/constants';
+	import { IMMO_FIELDS, EUROS } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2 gap-2">
@@ -20,7 +20,7 @@
 		bind:valueRange={$immoStore.mortgageAmountPercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT)}
 		toolTip={`${$immoStore.mortgageAmountPercent} %`}
-		sign={SIGN}
+		sign={EUROS}
 	/>
 	<InputNumberWithRange
 		label={$t('pages.immo.report.mortgageRatePercent')}
@@ -35,7 +35,7 @@
 		bind:valueRange={$immoStore.mortgageRatePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_RATE_PERCENT)}
 		toolTip={`${$immoStore.mortgageRatePercent} %`}
-		sign={SIGN}
+		sign={EUROS}
 	/>
 	<InputNumberWithRange
 		label={$t('pages.immo.report.mortgageDurationYears')}
@@ -50,7 +50,7 @@
 		bind:valueRange={$immoStore.mortgageDurationYears}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
 		toolTip={`${$immoStore.mortgageDurationYears}`}
-		sign={SIGN}
+		sign={EUROS}
 	/>
 	<InputNumberWithRange
 		label={$t('pages.immo.report.mortgageInsuranceFees')}
