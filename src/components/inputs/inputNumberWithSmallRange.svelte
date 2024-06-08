@@ -1,6 +1,10 @@
 <script lang="ts">
+	import type { Placement } from '@floating-ui/dom';
+	import { Icon } from '$components/icons';
 	import InputNumber from './InputNumber.svelte';
 	import SmallRange from './SmallRange.svelte';
+	import { questMarkIcon } from '$lib/assets/icons';
+
 	export let label: string = '';
 	export let nameRange: string = '';
 	export let nameInput: string = '';
@@ -14,18 +18,39 @@
 	export let stepInput: number = 1;
 	export let onInputRange: any = null;
 	export let onInputNumber: any = null;
-	export let toolTip: string = '';
+	export let toolTipRange: string = '';
 	export let sign: string = '';
 	export let inputRangeClass: string = '';
 	export let inputNumberClass: string = '';
+
+	export let iconSrc: string = '';
+	export let iconAlt: string = '';
+	export let iconClass: string = '';
+	export let toolTip: string = '';
+	export let toolTipPlacement: Placement = 'top';
+	export let iconId: string = '';
 </script>
 
 <div class="flex flex-col">
-	{#if label}
-		<label for={nameInput} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
-	{/if}
+	<div class="flex items-center">
+		{#if label}
+			<label for={nameInput} class="mr-2 block text-sm font-medium leading-6 text-gray-900"
+				>{label}</label
+			>
+		{/if}
+		{#if iconSrc || toolTip}
+			<Icon
+				src={iconSrc || questMarkIcon}
+				alt={iconAlt}
+				className={`h-[1rem] border-2 rounded-full ${iconClass}`}
+				id={iconId}
+				{toolTip}
+				{toolTipPlacement}
+			/>
+		{/if}
+	</div>
 	<SmallRange
-		{toolTip}
+		toolTip={toolTipRange}
 		name={nameRange}
 		min={minRange}
 		max={maxRange}

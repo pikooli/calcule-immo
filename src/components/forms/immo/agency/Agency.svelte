@@ -16,8 +16,11 @@
 	nameRange={IMMO_FIELDS.AGENCY_FEES_PERCENT}
 	minRange={0}
 	maxRange={100}
-	toolTip={`${$immoStore.agencyFeesPercent} %`}
+	toolTipRange={`${$immoStore.agencyFeesPercent} %`}
 	bind:valueRange={$immoStore.agencyFeesPercent}
 	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.AGENCY_FEES_PERCENT)}
 	sign={EUROS}
+	toolTip={$t('pages.immo.descriptions.agencyFees')}
+	iconAlt={$t('pages.immo.descriptions.agencyFees')}
+	iconId="agencyFeesId"
 />

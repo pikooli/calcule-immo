@@ -58,6 +58,22 @@
 				"amortizationSchedule": "Tableau d'amortissement",
 				"email": "Envoyer par email",
 				"download": "Télécharger"
+			},
+			"descriptions": {
+				"amount": "Montant total du prix du bien immobilier",
+				"deposit": "Un apport dans un crédit financier est la somme d'argent que l'emprunteur investit personnellement lors de l'achat, réduisant ainsi le montant du prêt nécessaire.",
+				"agencyFees": "Les frais d'agence sont les frais que vous payez à l'agence immobilière pour les services fournis lors de l'achat ou de la vente d'une propriété.",
+				"notaryFees": "Les frais de notaire sont les frais que vous payez au notaire pour les services fournis lors de l'achat ou de la vente d'une propriété.",
+				"mortgageAmount": "Montant total emprunté pour l'achat du bien immobilier",
+				"mortgageRatePercent": "Taux d'intérêt annuel du prêt immobilier",
+				"mortgageDurationYears": "Durée du prêt immobilier en années",
+				"mortgageInsuranceFees": "L'assurance emprunteur est une assurance qui garantit le remboursement du prêt immobilier en cas de décès, d'invalidité ou de perte d'emploi.",
+				"mortgageMonthlyRateAmount": "Mensualité du prêt immobilier",
+				"mortgageMonthlyRateAmountWithInsurance": "Mensualité du prêt immobilier avec assurance",
+				"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel du prêt immobilier",
+				"mortgageTotalRateAmount": "Coût total des intérêts du prêt immobilier",
+				"mortgageInsuranceFeesTotal": "Coût total de l'assurance emprunteur",
+				"total": "Coût total du prêt immobilier"
 			}
 		}
 	},

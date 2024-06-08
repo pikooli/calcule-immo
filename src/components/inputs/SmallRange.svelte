@@ -12,7 +12,7 @@
 	export let containerClass: string = '';
 </script>
 
-<div class={`flex px-1 ${containerClass}`}>
+<div class={`flex p-1 ${containerClass}`}>
 	{#if label}
 		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}
@@ -48,8 +48,8 @@
 	} */
 	input[type='range']::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		height: 0.4rem;
-		width: 0.4rem;
+		height: 0.7rem;
+		width: 0.7rem;
 	}
 
 	/* input[type='range']:hover::-webkit-slider-thumb {

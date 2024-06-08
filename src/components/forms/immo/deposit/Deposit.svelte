@@ -19,10 +19,13 @@
 		nameRange={IMMO_FIELDS.DEPOSITE_PERCENT}
 		minRange={0}
 		maxRange={100}
-		toolTip={`${$immoStore.depositePercent} %`}
+		toolTipRange={`${$immoStore.depositePercent} %`}
 		bind:valueRange={$immoStore.depositePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.DEPOSITE_PERCENT)}
 		sign={EUROS}
+		toolTip={$t('pages.immo.descriptions.deposit')}
+		iconAlt={$t('pages.immo.descriptions.deposit')}
+		iconId="depositId"
 	/>
 	<AgencyBlock />
 	<NotaryBlock />

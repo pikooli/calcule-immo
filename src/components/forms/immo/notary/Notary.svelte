@@ -16,6 +16,9 @@
 	maxRange={100}
 	bind:valueRange={$immoStore.notaryFeesPercent}
 	onInputRange={() => immoStore.updateValue(IMMO_FIELDS.NOTARY_FEES_PERCENT)}
-	toolTip={`${$immoStore.notaryFeesPercent} %`}
+	toolTipRange={`${$immoStore.notaryFeesPercent} %`}
 	sign={EUROS}
+	toolTip={$t('pages.immo.descriptions.notaryFees')}
+	iconAlt={$t('pages.immo.descriptions.notaryFees')}
+	iconId="notaryFeesId"
 />

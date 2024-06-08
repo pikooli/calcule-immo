@@ -19,8 +19,11 @@
 		maxRange={100}
 		bind:valueRange={$immoStore.mortgageAmountPercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT)}
-		toolTip={`${$immoStore.mortgageAmountPercent} %`}
+		toolTipRange={`${$immoStore.mortgageAmountPercent} %`}
 		sign={EUROS}
+		toolTip={$t('pages.immo.descriptions.mortgageAmount')}
+		iconAlt={$t('pages.immo.descriptions.mortgageAmount')}
+		iconId="mortgageAmountId"
 	/>
 	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageRatePercent')}
@@ -34,8 +37,11 @@
 		maxRange={100}
 		bind:valueRange={$immoStore.mortgageRatePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_RATE_PERCENT)}
-		toolTip={`${$immoStore.mortgageRatePercent} %`}
+		toolTipRange={`${$immoStore.mortgageRatePercent} %`}
 		sign={EUROS}
+		toolTip={$t('pages.immo.descriptions.mortgageRatePercent')}
+		iconAlt={$t('pages.immo.descriptions.mortgageRatePercent')}
+		iconId="mortgageRatePercentId"
 	/>
 	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageDurationYears')}
@@ -49,8 +55,11 @@
 		maxRange={MORTGAGE_DURATION_MAX_YEARS}
 		bind:valueRange={$immoStore.mortgageDurationYears}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
-		toolTip={`${$immoStore.mortgageDurationYears}`}
+		toolTipRange={`${$immoStore.mortgageDurationYears}`}
 		sign={EUROS}
+		toolTip={$t('pages.immo.descriptions.mortgageDurationYears')}
+		iconAlt={$t('pages.immo.descriptions.mortgageDurationYears')}
+		iconId="mortgageDurationYearsId"
 	/>
 	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageInsuranceFees')}
@@ -65,6 +74,9 @@
 		stepRange={0.01}
 		bind:valueRange={$immoStore.mortgageInsurancePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT)}
-		toolTip={`${$immoStore.mortgageInsurancePercent} %`}
+		toolTipRange={`${$immoStore.mortgageInsurancePercent} %`}
+		toolTip={$t('pages.immo.descriptions.mortgageInsuranceFees')}
+		iconAlt={$t('pages.immo.descriptions.mortgageInsuranceFees')}
+		iconId="mortgageInsuranceFeesId"
 	/>
 </div>
