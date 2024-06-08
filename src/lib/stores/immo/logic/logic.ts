@@ -18,7 +18,8 @@ import {
 	computedepositeAmountOnmortgageAmount,
 	computeMortgageAmount,
 	computeTotal,
-	computeMortgageInsuranceFeesTotal
+	computeMortgageInsuranceFeesTotal,
+	computeMortgageMontlyRateWithInsurance
 } from '$lib/stores/immo/logic/maths';
 
 export const initValues = (values: ImmoStore) => {
@@ -30,8 +31,7 @@ export const initValues = (values: ImmoStore) => {
 	values.notaryFees = computeNotaryFeeAmount(values);
 	values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 	values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-	values.mortgageMonthlyRateAmountWithInsurance =
-		values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+	values.mortgageMonthlyRateAmountWithInsurance = computeMortgageMontlyRateWithInsurance(values);
 
 	return computeTotal(values);
 };
@@ -45,7 +45,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.agencyFees = computeAgencyAmount(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -58,7 +58,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -71,7 +71,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -84,7 +84,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -97,7 +97,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -110,7 +110,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 
 			break;
@@ -134,7 +134,7 @@ export const updateValues = (field: string, values: ImmoStore) => {
 		case IMMO_FIELDS.MORTGAGE_DURATION_YEARS: {
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			values = computeMortgageTotalCost(values);
 			break;
@@ -143,13 +143,14 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsurancePercent = computeInsuranceFeePercentByAmount(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
-				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+				computeMortgageMontlyRateWithInsurance(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT: {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+			values.mortgageMonthlyRateAmountWithInsurance =
+				computeMortgageMontlyRateWithInsurance(values);
 			break;
 		}
 	}

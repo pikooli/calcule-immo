@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n';
-	import { InputNumberWithRange } from '$components/inputs';
+	import { InputNumberWithSmallRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
 	import { IMMO_FIELDS, EUROS } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2 gap-2">
-	<InputNumberWithRange
+	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageAmount')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT}
 		minInput={0}
@@ -22,7 +22,7 @@
 		toolTip={`${$immoStore.mortgageAmountPercent} %`}
 		sign={EUROS}
 	/>
-	<InputNumberWithRange
+	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageRatePercent')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT}
 		minInput={0}
@@ -37,7 +37,7 @@
 		toolTip={`${$immoStore.mortgageRatePercent} %`}
 		sign={EUROS}
 	/>
-	<InputNumberWithRange
+	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageDurationYears')}
 		nameInput={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
 		minInput={MORTGAGE_DURATION_MIN_YEARS}
@@ -52,7 +52,7 @@
 		toolTip={`${$immoStore.mortgageDurationYears}`}
 		sign={EUROS}
 	/>
-	<InputNumberWithRange
+	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageInsuranceFees')}
 		nameInput={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
 		minInput={0}

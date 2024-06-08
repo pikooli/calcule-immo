@@ -17,7 +17,8 @@ export {
 	computeMortgageMontlyRatePercentFixed,
 	computeMortgageMontlyRateAmount,
 	computeMortgageAmountOnmortgagePercent,
-	computeMortgageTotalCost
+	computeMortgageTotalCost,
+	computeMortgageMontlyRateWithInsurance
 } from './computeMortgage';
 export { computeAgencyAmount, computeAgencyPercent } from './computeAgency';
 export { computeTotal } from './computeTotal';

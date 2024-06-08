@@ -1,6 +1,6 @@
 <script lang="ts">
 	import InputNumber from './InputNumber.svelte';
-	import InputRange from './Range.svelte';
+	import SmallRange from './SmallRange.svelte';
 	export let label: string = '';
 	export let nameRange: string = '';
 	export let nameInput: string = '';
@@ -24,7 +24,7 @@
 	{#if label}
 		<label for={nameInput} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}
-	<InputRange
+	<SmallRange
 		{toolTip}
 		name={nameRange}
 		min={minRange}

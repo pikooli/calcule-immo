@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n';
-	import { InputNumberWithRange } from '$components/inputs';
+	import { InputNumberWithSmallRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS, EUROS } from '$lib/constants';
 	import { AgencyBlock } from '$components/forms/immo/agency';
@@ -9,7 +9,7 @@
 </script>
 
 <div class="grid grid-cols-3">
-	<InputNumberWithRange
+	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.depositAmount')}
 		nameInput={IMMO_FIELDS.DEPOSITE_AMOUNT}
 		minInput={0}

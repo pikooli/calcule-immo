@@ -71,3 +71,5 @@ export const computeMortgageTotalCost = (values: ImmoStore) => {
 		values.mortgageAmount + values.mortgageTotalRateAmount + values.mortgageInsuranceFeesTotal;
 	return values;
 };
+export const computeMortgageMontlyRateWithInsurance = (values: ImmoStore) =>
+	values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;

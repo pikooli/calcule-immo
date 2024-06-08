@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n';
-	import { InputNumberWithRange } from '$components/inputs';
+	import { InputNumberWithSmallRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { IMMO_FIELDS, EUROS } from '$lib/constants';
 	import './agency.scss';
 </script>
 
-<InputNumberWithRange
+<InputNumberWithSmallRange
 	label={$t('pages.immo.report.agencyFees')}
 	nameInput={IMMO_FIELDS.AGENCY_FEES}
 	minInput={0}
