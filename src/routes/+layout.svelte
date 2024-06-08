@@ -2,7 +2,8 @@
 	import '../app.css';
 	import { NavBar } from '$components/navBar';
 	import { modalStore } from '$lib/stores/modals';
-	import { Modal } from '$components/modals';
+	import { alertStore } from '$lib/stores/alerts';
+	import { Modal, Alert } from '$components/modals';
 	import { Footer } from '$components/footer';
 </script>
 
@@ -10,6 +11,6 @@
 	<NavBar />
 	<slot />
 	<Modal open={$modalStore.isOpen} haveCloseBtn />
-
+	<Alert open={$alertStore.isOpen} haveCloseBtn />
 	<Footer />
 </div>

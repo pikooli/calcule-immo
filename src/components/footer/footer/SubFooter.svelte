@@ -2,8 +2,8 @@
 	import { t } from 'svelte-i18n';
 </script>
 
-<span class="text-graytext text-sm sm:text-center"
-	>© 2023 <a href="/">{$t('website')}</a>. All Rights Reserved.
+<span class="text-sm text-graytext sm:text-center"
+	>© 2024 <a href="/">{$t('website')}</a>. All Rights Reserved.
 </span>
 <!-- <div class="mt-4 flex space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
 	<a href="#" class="text-graytext hover:text-gray-900">

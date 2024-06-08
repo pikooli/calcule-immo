@@ -48,6 +48,7 @@ function createModalStore() {
 		amortizationScheduleStore.init(immoStoreValue);
 		openModal(e, { component: AmortizationSchedule });
 	};
+
 	const openEmailModal = (e: MouseEvent) => {
 		amortizationScheduleStore.init(immoStoreValue);
 		openModal(e, { component: Email });

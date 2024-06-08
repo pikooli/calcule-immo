@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { modalStore } from '$lib/stores/modals';
+	import { alertStore } from '$lib/stores/alerts';
 	import { IconBtn } from '$components/buttons';
 	import { crossIcon } from '$lib/assets/icons';
 	export let open: boolean = false;
@@ -8,7 +8,7 @@
 
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
-			modalStore.closeModal();
+			alertStore.closeAlert();
 		}
 	}
 
@@ -29,15 +29,15 @@
 				src={crossIcon}
 				className="absolute right-0 z-20 mr-6"
 				iconClass="h-[25px]"
-				handleClick={modalStore.triggerModal}
+				handleClick={alertStore.triggerAlert}
 			/>
 		{/if}
-		{#if $modalStore.component}
-			<svelte:component this={$modalStore.component} />
+		{#if $alertStore.component}
+			<svelte:component this={$alertStore.component} message={$alertStore.options?.message} />
 		{/if}
 	</div>
 	<button
 		class="absolute left-0 right-0 top-0 z-0 h-full w-full cursor-default bg-slate-900 opacity-15"
-		on:click={modalStore.triggerModal}
+		on:click={alertStore.triggerAlert}
 	/>
 </dialog>

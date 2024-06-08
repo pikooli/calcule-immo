@@ -34,8 +34,8 @@ export const defaultImmoStore: ImmoStore = {
 function createImmoStore() {
 	const { subscribe, set, update } = writable(defaultImmoStore);
 
-	const init = () => {
-		update(initValues);
+	const init = (immoValues?: ImmoStore) => {
+		update(immoValues ? () => initValues(immoValues) : initValues);
 	};
 
 	const updateValue = (field: string = '') => {

@@ -10,11 +10,7 @@
 	let email = '';
 </script>
 
-<form
-	action="?/emailAmortizationSchedule"
-	method="post"
-	class="grap-4 grid grid-cols-1 bg-primary p-8"
->
+<form action="?/emailAmortizationSchedule" method="post" class="grap-4 grid grid-cols-1 p-8">
 	<DisplayH1 text={$t('pages.immo.email.title')} />
 	<DisplayText text={$t('pages.immo.email.description')} />
 	<InputEmail label={$t('email')} name="email" value={email} required />

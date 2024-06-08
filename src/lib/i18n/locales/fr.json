@@ -88,5 +88,11 @@
 			"text": "Bonjour, \n\nCi-joint le tableau d'amortissement de votre prêt immobilier. \n\nCordialement",
 			"html": "<p>Bonjour,</p><p>Ci-joint le tableau d'amortissement de votre prêt immobilier.</p><p>Cordialement</p>"
 		}
+	},
+	"errors": {
+		"emailAmortizationSchedule": "Erreur lors de l'envoi du tableau d'amortissement par email"
+	},
+	"success": {
+		"emailAmortizationSchedule": "Le tableau d'amortissement a été envoyé par email"
 	}
 }

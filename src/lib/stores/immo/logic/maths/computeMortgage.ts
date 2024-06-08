@@ -49,8 +49,7 @@ interface ComputeMortgageMontlyRateAmountArgs {
 export const computeMortgageMontlyRateAmount = ({
 	mortgageAmount,
 	mortgageRatePercent,
-	mortgageDurationYears,
-	mortgageInsuranceFees = 0
+	mortgageDurationYears
 }: ComputeMortgageMontlyRateAmountArgs) => {
 	if (mortgageRatePercent === 0 || mortgageAmount === 0 || mortgageDurationYears === 0) {
 		return 0;
@@ -63,7 +62,7 @@ export const computeMortgageMontlyRateAmount = ({
 				Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments))) /
 		(Math.pow(1 + mortgageMonthlyRatePercent, totalPaymentInstallments) - 1);
 
-	return parseFloat((montlyAmount + mortgageInsuranceFees).toFixed(2));
+	return parseFloat(montlyAmount.toFixed(2));
 };
 
 export const computeMortgageTotalCost = (values: ImmoStore) => {

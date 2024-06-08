@@ -44,6 +44,8 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.notaryFees = computeNotaryFeeAmount(values);
 			values.agencyFees = computeAgencyAmount(values);
 			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
+			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageMonthlyRateAmountWithInsurance =
 				computeMortgageMontlyRateWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);

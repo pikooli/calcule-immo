@@ -5,7 +5,7 @@
 	import { formatCurrency } from '$lib/utils/display';
 </script>
 
-<div class="grap-4 grid grid-cols-4 px-8 pt-2">
+<div class="grap-4 grid grid-cols-4 px-8 pb-6 pt-2">
 	<DisplayAmount
 		classLabel="text-center"
 		label={$t('pages.immo.amortizationSchedule.total.mortgageInstalment')}

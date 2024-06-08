@@ -40,6 +40,15 @@ export default {
 				whiteText: {
 					DEFAULT: '#F9FAFB'
 				},
+				grayColor: {
+					DEFAULT: '#fafaf9'
+				},
+				alert: {
+					DEFAULT: '#F87171'
+				},
+				success: {
+					DEFAULT: '#34D399'
+				},
 				graytext: {
 					DEFAULT: '#6B7280'
 				}
