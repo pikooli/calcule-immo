@@ -33,6 +33,7 @@
 		bind:value={valueRange}
 		onInput={onInputRange}
 		inputClass={inputRangeClass}
+		containerClass="mb-1"
 	/>
 	<InputNumber
 		name={nameInput}

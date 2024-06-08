@@ -9,9 +9,10 @@
 	export let onInput: any = null;
 	export let toolTip: string = '';
 	export let inputClass: string = '';
+	export let containerClass: string = '';
 </script>
 
-<div class="px-1">
+<div class={`flex px-1 ${containerClass}`}>
 	{#if label}
 		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}
