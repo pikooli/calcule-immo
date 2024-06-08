@@ -1,4 +1,4 @@
-import type { ImmoStore } from './immo';
+import type { ImmoStore } from '$lib/stores/immo';
 import { IMMO_FIELDS } from '$lib/constants';
 
 import {
@@ -17,7 +17,11 @@ import {
 	computeMortgageMontlyRateAmount,
 	computeTotal,
 	computeTotalMortgageCost
-} from './utils';
+} from '$lib/stores/immo/logic/utils';
+import {
+	computeMonthyInsuranceFeeByPercent,
+	computeInsuranceFeePercentByAmount
+} from '$lib/stores/immo/logic/maths';
 
 export const initValues = (values: ImmoStore) => {
 	values.depositeAmount = computedepositeAmountOndepositePercent(values);
@@ -28,8 +32,10 @@ export const initValues = (values: ImmoStore) => {
 	values.mortgageMonthlyRateAmountWithInsurance =
 		values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
 	values.notaryFees = computeNotaryFees(values);
+	values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 	values.mortgageInsuranceFeesTotal =
 		values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
+
 	return computeTotal(values);
 };
 
@@ -127,6 +133,15 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_INSURANCE_FEES: {
+			values.mortgageInsurancePercent = computeInsuranceFeePercentByAmount(values);
+			values.mortgageInsuranceFeesTotal =
+				values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
+			values.mortgageMonthlyRateAmountWithInsurance =
+				values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+			break;
+		}
+		case IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT: {
+			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal =
 				values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
 			values.mortgageMonthlyRateAmountWithInsurance =

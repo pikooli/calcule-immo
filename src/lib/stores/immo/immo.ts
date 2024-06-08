@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { updateValues, initValues } from './logic';
+import { updateValues, initValues } from '$lib/stores/immo/logic';
 import { z } from 'zod';
 import { immoValidator } from '$lib/validator';
 
@@ -11,7 +11,7 @@ export const defaultImmoStore: ImmoStore = {
 	amount: 200000,
 	depositePercent: 0,
 	depositeAmount: 0,
-	mortgageAmount: 0,
+	mortgageAmount: 200000,
 	mortgageAmountPercent: 100,
 	mortgageDurationYears: 20,
 	mortgageRatePercent: 1.2,
@@ -19,7 +19,8 @@ export const defaultImmoStore: ImmoStore = {
 	mortgageMonthlyRateAmount: 0,
 	mortgageMonthlyRateAmountWithInsurance: 0,
 	mortgageTotalRateAmount: 0,
-	mortgageInsuranceFees: 30,
+	mortgageInsuranceFees: 0,
+	mortgageInsurancePercent: 0.2,
 	mortgageInsuranceFeesTotal: 0,
 	agencyFees: 0,
 	agencyFeesPercent: 0,

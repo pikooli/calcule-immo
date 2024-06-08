@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n';
-	import { InputNumberWithRange, InputNumber } from '$components/inputs';
+	import { InputNumberWithRange } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
 	import { IMMO_FIELDS, SIGN } from '$lib/constants';
@@ -52,12 +52,19 @@
 		toolTip={`${$immoStore.mortgageDurationYears}`}
 		sign={SIGN}
 	/>
-	<InputNumber
+	<InputNumberWithRange
 		label={$t('pages.immo.report.mortgageInsuranceFees')}
-		name={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
-		min={0}
-		onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_FEES)}
-		sign={SIGN}
-		bind:value={$immoStore.mortgageInsuranceFees}
+		nameInput={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
+		minInput={0}
+		maxInput={$immoStore.mortgageAmount}
+		bind:valueInput={$immoStore.mortgageInsuranceFees}
+		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_FEES)}
+		nameRange={IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT}
+		minRange={0}
+		maxRange={100}
+		stepRange={0.01}
+		bind:valueRange={$immoStore.mortgageInsurancePercent}
+		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT)}
+		toolTip={`${$immoStore.mortgageInsurancePercent} %`}
 	/>
 </div>

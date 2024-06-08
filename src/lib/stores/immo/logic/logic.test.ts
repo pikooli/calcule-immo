@@ -1,4 +1,4 @@
-import { initValues } from './logic';
+import { initValues } from '$lib/stores/immo/logic';
 import {
 	computatemortgageTotalRateAmount,
 	computedepositeAmountOndepositePercent,
@@ -7,7 +7,7 @@ import {
 	computeNotaryFees,
 	computeTotal
 } from './utils';
-import { defaultImmoStore } from './immo';
+import { defaultImmoStore } from '$lib/stores/immo/immo';
 import { describe, it, expect } from 'vitest';
 
 describe('logic test', () => {
