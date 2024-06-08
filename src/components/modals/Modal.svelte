@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { modalStore } from '$lib/stores/modals';
 	import { IconBtn } from '$components/buttons';
-	import crossIcon from '$lib/assets/icons/cross.png';
+	import { crossIcon } from '$lib/assets/icons';
 	export let open: boolean = false;
 	export let haveCloseBtn: boolean = false;
 

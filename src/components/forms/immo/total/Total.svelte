@@ -3,7 +3,6 @@
 	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
 	import { formatCurrency } from '$lib/utils/display';
-	import questMarkIcon from '$lib/assets/icons/questionMark.png';
 </script>
 
 <div class="grid grid-cols-3">
@@ -23,9 +22,6 @@
 </div>
 <div class="grid grid-cols-2">
 	<DisplayAmount
-		toolTip="test"
-		iconId="test"
-		iconSrc={questMarkIcon}
 		label={$t('pages.immo.report.mortgageTotalRateAmount')}
 		value={formatCurrency($immoStore.mortgageTotalRateAmount)}
 	/>

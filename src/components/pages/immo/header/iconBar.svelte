@@ -4,9 +4,7 @@
 	import { amortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 	import { immoStore } from '$lib/stores/immo';
 	import { IconBtn } from '$components/buttons';
-	import amortizationScheduleIcon from '$lib/assets/icons/amortizationScheduleIcon.png';
-	import downloadIcon from '$lib/assets/icons/download.png';
-	import emailIcon from '$lib/assets/icons/email.png';
+	import { amortizationScheduleIcon, downloadIcon, emailIcon } from '$lib/assets/icons';
 	import { generateAmortizationScheduleUrl } from '$lib/pdf';
 
 	const handleDownload = (e: MouseEvent) => {

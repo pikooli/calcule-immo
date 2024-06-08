@@ -1,4 +1,7 @@
 <script lang="ts">
+	import type { Placement } from '@floating-ui/dom';
+	import { Icon } from '$components/icons';
+
 	export let label: string = '';
 	export let name: string;
 	export let value: any;
@@ -9,12 +12,33 @@
 	export let sign: string = '';
 	export let placeholder: string = 'test';
 	export let inputClass: string = '';
+
+	export let iconSrc: string = '';
+	export let iconAlt: string = '';
+	export let iconClass: string = '';
+	export let toolTip: string = '';
+	export let toolTipPlacement: Placement = 'top';
+	export let iconId: string = '';
 </script>
 
 <div class="flex flex-col px-1">
-	{#if label}
-		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
-	{/if}
+	<div class="flex items-center">
+		{#if label}
+			<label for={name} class="mr-2 block text-sm font-medium leading-6 text-gray-900"
+				>{label}</label
+			>
+		{/if}
+		{#if iconSrc}
+			<Icon
+				src={iconSrc}
+				alt={iconAlt}
+				className={`h-[1rem] border-2 rounded-full ${iconClass}`}
+				id={iconId}
+				{toolTip}
+				{toolTipPlacement}
+			/>
+		{/if}
+	</div>
 	<div class="relative rounded-md shadow-sm">
 		<input
 			class={`block w-full rounded-md border-0 py-1.5 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300

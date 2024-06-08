@@ -3,6 +3,7 @@
 	import { immoStore } from '$lib/stores/immo';
 	import InputNumber from '$components/inputs/InputNumber.svelte';
 	import { IMMO_FIELDS, EUROS } from '$lib/constants';
+	import { questMarkIcon } from '$lib/assets/icons';
 </script>
 
 <InputNumber
@@ -12,4 +13,7 @@
 	sign={EUROS}
 	bind:value={$immoStore.amount}
 	onInput={() => immoStore.updateValue(IMMO_FIELDS.AMOUNT)}
+	toolTip="test"
+	iconId="test"
+	iconSrc={questMarkIcon}
 />
