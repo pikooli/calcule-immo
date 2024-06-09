@@ -1,6 +1,8 @@
 export {
 	computeMonthyInsuranceFeeByPercent,
-	computeInsuranceFeePercentByAmount
+	computeInsuranceFeePercentByAmount,
+	computeInsuranceAnnuallyFees,
+	computeInsuranceMonthyFeesByAnnually
 } from './computeInsurance';
 export { computeNotaryFeeAmount, computenotaryFeePercent } from './computeNotary';
 export {

@@ -20,6 +20,7 @@ export const defaultImmoStore: ImmoStore = {
 	mortgageMonthlyRateAmountWithInsurance: 0,
 	mortgageTotalRateAmount: 0,
 	mortgageInsuranceFees: 0,
+	mortgageInsuranceAnnuallyFees: 0,
 	mortgageInsurancePercent: 0.2,
 	mortgageInsuranceFeesTotal: 0,
 	agencyFees: 0,

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from 'svelte-i18n';
-	import { InputNumberWithSmallRange } from '$components/inputs';
+	import { InputNumberWithSmallRange, InputNumber } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
 	import { IMMO_FIELDS, EUROS } from '$lib/constants';
@@ -60,23 +60,37 @@
 		iconAlt={$t('pages.immo.descriptions.mortgageDurationYears')}
 		iconId="mortgageDurationYearsId"
 	/>
-	<InputNumberWithSmallRange
-		label={$t('pages.immo.report.mortgageInsuranceFees')}
-		nameInput={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
-		minInput={0}
-		maxInput={$immoStore.mortgageAmount}
-		bind:valueInput={$immoStore.mortgageInsuranceFees}
-		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_FEES)}
-		nameRange={IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT}
-		minRange={0}
-		maxRange={100}
-		stepRange={0.01}
-		sign={EUROS}
-		bind:valueRange={$immoStore.mortgageInsurancePercent}
-		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT)}
-		toolTipRange={`${$immoStore.mortgageInsurancePercent} %`}
-		toolTip={$t('pages.immo.descriptions.mortgageInsuranceFees')}
-		iconAlt={$t('pages.immo.descriptions.mortgageInsuranceFees')}
-		iconId="mortgageInsuranceFeesId"
-	/>
+	<div>
+		<InputNumberWithSmallRange
+			label={$t('pages.immo.report.mortgageInsuranceAnnuallyFees')}
+			nameInput={IMMO_FIELDS.MORTGAGE_INSURANCE_ANNUALLY_FEES}
+			minInput={0}
+			maxInput={$immoStore.mortgageAmount}
+			bind:valueInput={$immoStore.mortgageInsuranceAnnuallyFees}
+			onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_ANNUALLY_FEES)}
+			nameRange={IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT}
+			minRange={0}
+			maxRange={100}
+			stepRange={0.01}
+			sign={EUROS}
+			bind:valueRange={$immoStore.mortgageInsurancePercent}
+			onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT)}
+			toolTipRange={`${$immoStore.mortgageInsurancePercent} %`}
+			toolTip={$t('pages.immo.descriptions.mortgageInsuranceAnnuallyFees')}
+			iconAlt={$t('pages.immo.descriptions.mortgageInsuranceAnnuallyFees')}
+			iconId="mortgageInsuranceAnnuallyFeesId"
+		/>
+		<InputNumber
+			label={$t('pages.immo.report.mortgageInsuranceFees')}
+			name={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
+			min={0}
+			max={$immoStore.mortgageAmount}
+			bind:value={$immoStore.mortgageInsuranceFees}
+			sign={EUROS}
+			onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_INSURANCE_FEES)}
+			toolTip={$t('pages.immo.descriptions.mortgageInsuranceFees')}
+			iconAlt={$t('pages.immo.descriptions.mortgageInsuranceFees')}
+			iconId="mortgageInsuranceFeesId"
+		/>
+	</div>
 </div>
