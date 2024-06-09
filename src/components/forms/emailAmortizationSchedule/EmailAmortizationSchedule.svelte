@@ -28,5 +28,5 @@
 	/>
 	<InputText inputClass="hidden" name="locale" value={$locale} />
 
-	<SubmitBtn txt="send" className="w-fit mt-4 " />
+	<SubmitBtn txt="send" id="btn-emailAmortizationSchedule" className="w-fit mt-4 " />
 </form>

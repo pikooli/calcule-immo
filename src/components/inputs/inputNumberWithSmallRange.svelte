@@ -43,7 +43,7 @@
 				src={iconSrc || questMarkIcon}
 				alt={iconAlt}
 				className={`h-[1rem] border-2 rounded-full ${iconClass}`}
-				id={iconId}
+				id={iconId || 'question-mark'}
 				{toolTip}
 				{toolTipPlacement}
 			/>
