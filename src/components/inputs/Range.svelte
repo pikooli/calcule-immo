@@ -10,6 +10,15 @@
 	export let toolTip: string = '';
 	export let inputClass: string = '';
 	export let containerClass: string = '';
+	let tooltipVisible = false;
+
+	function showTooltip() {
+		tooltipVisible = true;
+	}
+
+	function hideTooltip() {
+		tooltipVisible = false;
+	}
 </script>
 
 <div class={`flex px-1 ${containerClass}`}>
@@ -17,7 +26,7 @@
 		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
 	{/if}
 	{#if toolTip}
-		<Tooltip triggeredBy={`#${name}`}>{toolTip}</Tooltip>
+		<Tooltip triggeredBy={`#${name}`} open={tooltipVisible}>{toolTip}</Tooltip>
 	{/if}
 
 	<input
@@ -31,6 +40,8 @@
 		{step}
 		bind:value
 		on:input={onInput}
+		on:touchstart={showTooltip}
+		on:touchend={hideTooltip}
 	/>
 </div>
 
