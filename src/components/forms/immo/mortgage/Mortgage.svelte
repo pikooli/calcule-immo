@@ -9,7 +9,7 @@
 <div class="grid grid-cols-2 gap-2">
 	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageAmount')}
-		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT}
+		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT}
 		minInput={0}
 		maxInput={$immoStore.amount}
 		bind:valueInput={$immoStore.mortgageAmount}

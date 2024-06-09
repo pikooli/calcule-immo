@@ -18,6 +18,7 @@
 		placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${inputClass}`}
 			{placeholder}
 			{name}
+			id={name}
 			type="email"
 			bind:value
 			on:input={onInput}

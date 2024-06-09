@@ -14,6 +14,7 @@
 	<input
 		class={`ml-4 block rounded-md text-gray-900 shadow-sm sm:text-sm sm:leading-6 ${inputClass}`}
 		{name}
+		id={name}
 		type="checkbox"
 		bind:checked={value}
 		{value}
