@@ -19,7 +19,7 @@
 	};
 </script>
 
-<div class="absolute right-4 top-4 flex content-center justify-end">
+<div class="flex content-center justify-end">
 	<IconBtn
 		toolTip={$t('pages.immo.toolTip.amortizationSchedule')}
 		iconId="amortizationScheduleIcon"
