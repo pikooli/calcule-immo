@@ -26,6 +26,7 @@
 		handleClick={modalStore.openAmortizationScheduleModal}
 		src={amortizationScheduleIcon}
 		className="h-[2rem] rounded-md mx-1"
+		alt="amortizationScheduleIcon"
 	/>
 	<IconBtn
 		toolTip={$t('pages.immo.toolTip.email')}
@@ -33,6 +34,7 @@
 		handleClick={modalStore.openEmailModal}
 		src={emailIcon}
 		className="h-[2rem] rounded-md mx-1"
+		alt="emailIcon"
 	/>
 	<IconBtn
 		toolTip={$t('pages.immo.toolTip.download')}
@@ -40,5 +42,6 @@
 		handleClick={handleDownload}
 		src={downloadIcon}
 		className="h-[2rem] rounded-md mx-1"
+		alt="downloadIcon"
 	/>
 </div>

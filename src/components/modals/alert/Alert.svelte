@@ -22,7 +22,7 @@
 
 <dialog {open} class="absolute top-0 h-full w-full bg-transparent">
 	<div
-		class="bg-grayColor absolute z-10 mx-[2.5vw] my-[2.5vh] max-h-[95vh] w-[95vw] overflow-scroll rounded-md border border-black shadow-md"
+		class="absolute z-10 mx-[2.5vw] my-[2.5vh] max-h-[95vh] w-[95vw] overflow-scroll rounded-md border border-black bg-grayColor shadow-md"
 	>
 		{#if haveCloseBtn}
 			<IconBtn
@@ -30,6 +30,8 @@
 				className="absolute right-0 z-20 mr-6"
 				iconClass="h-[25px]"
 				handleClick={alertStore.triggerAlert}
+				iconId="close-alert"
+				alt="close-alert"
 			/>
 		{/if}
 		{#if $alertStore.component}

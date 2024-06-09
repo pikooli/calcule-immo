@@ -11,6 +11,6 @@
 	export let iconId: string = '';
 </script>
 
-<button on:click={handleClick} class={className}>
+<button on:click={handleClick} class={className} id={`btn-${iconId}`} name={`btn-${iconId}`}>
 	<Icon {src} {alt} className={iconClass} id={iconId} {toolTip} {toolTipPlacement} />
 </button>
