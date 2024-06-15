@@ -8,6 +8,8 @@
 	export let toolTip: string = '';
 	export let toolTipPlacement: Placement = 'top';
 	export let id: string = '';
+	export let width: number = 24;
+	export let height: number = 24;
 </script>
 
 {#if toolTip}
@@ -26,4 +28,6 @@
 	{alt}
 	{id}
 	class={`h-6 w-auto transform transition-transform duration-200 ease-in-out hover:scale-[1.2] ${className}`}
+	{width}
+	{height}
 />

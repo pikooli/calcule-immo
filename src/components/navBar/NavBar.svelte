@@ -15,7 +15,13 @@
 			<div class="flex flex-1 items-center justify-center sm:items-stretch md:justify-start">
 				<div class="flex flex-shrink-0 items-center">
 					<a href="/" class="flex items-center">
-						<img class="scale-200 h-8 w-auto" src={logoIconAvif} alt="Your Company" />
+						<img
+							class="scale-200 h-8 w-auto"
+							src={logoIconAvif}
+							alt="Your Company"
+							width={32}
+							height={32}
+						/>
 						<DisplayStrong text={$t('website.title')} className="text-white pl-2" />
 					</a>
 				</div>
