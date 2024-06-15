@@ -3,7 +3,7 @@
 	import { Icon } from '$components/icons';
 	import InputNumber from './InputNumber.svelte';
 	import SmallRange from './SmallRange.svelte';
-	import { questMarkIcon } from '$lib/assets/icons';
+	import { questMarkIconAvif } from '$lib/assets/icons';
 
 	export let label: string = '';
 	export let nameRange: string = '';
@@ -40,7 +40,7 @@
 		{/if}
 		{#if iconSrc || toolTip}
 			<Icon
-				src={iconSrc || questMarkIcon}
+				src={iconSrc || questMarkIconAvif}
 				alt={iconAlt}
 				className={`h-[1rem] border-2 rounded-full ${iconClass}`}
 				id={iconId || 'question-mark'}

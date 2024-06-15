@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { alertStore } from '$lib/stores/alerts';
 	import { IconBtn } from '$components/buttons';
-	import { crossIcon } from '$lib/assets/icons';
+	import { crossIconAvif } from '$lib/assets/icons';
 	export let open: boolean = false;
 	export let haveCloseBtn: boolean = false;
 
@@ -26,7 +26,7 @@
 	>
 		{#if haveCloseBtn}
 			<IconBtn
-				src={crossIcon}
+				src={crossIconAvif}
 				className="absolute right-0 z-20 mr-6"
 				iconClass="h-[25px]"
 				handleClick={alertStore.triggerAlert}

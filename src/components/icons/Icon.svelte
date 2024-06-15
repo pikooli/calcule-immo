@@ -25,5 +25,5 @@
 	{src}
 	{alt}
 	{id}
-	class={`h-5 w-auto transform transition-transform duration-200 ease-in-out hover:scale-[1.2] ${className}`}
+	class={`h-6 w-auto transform transition-transform duration-200 ease-in-out hover:scale-[1.2] ${className}`}
 />

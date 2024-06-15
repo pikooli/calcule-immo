@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Placement } from '@floating-ui/dom';
 	import { Icon } from '$components/icons';
-	import { questMarkIcon } from '$lib/assets/icons';
+	import { questMarkIconAvif } from '$lib/assets/icons';
 
 	export let label: string = '';
 	export let value: string = '';
@@ -26,7 +26,7 @@
 		{/if}
 		{#if iconSrc || toolTip}
 			<Icon
-				src={iconSrc || questMarkIcon}
+				src={iconSrc || questMarkIconAvif}
 				alt={iconAlt}
 				className={`h-[1rem] border-2 rounded-full ${iconClass}`}
 				id={iconId}
