@@ -1,8 +1,11 @@
 {
-	"website": "Calcule-immo",
+	"website": {
+		"title": "Calcule-immo"
+	},
 	"pages": {
 		"immo": {
 			"title": "Simulateur de prêt immobilier",
+			"description": "Calculez votre prêt immobilier facilement avec notre simulateur complet. Comprend des taux d'assurance fixes, des calendriers de prêt détaillés et des options pour envoyer les résultats par email ou télécharger au format PDF. Simplifiez la planification de votre achat immobilier dès aujourd'hui !",
 			"amortizationSchedule": {
 				"title": "Tableau d'amortissement",
 				"yearSchedule": {

@@ -16,7 +16,7 @@
 				<div class="flex flex-shrink-0 items-center">
 					<a href="/" class="flex items-center">
 						<img class="scale-200 h-8 w-auto" src={logoIcon} alt="Your Company" />
-						<DisplayStrong text={$t('website')} className="text-white pl-2" />
+						<DisplayStrong text={$t('website.title')} className="text-white pl-2" />
 					</a>
 				</div>
 				<!-- <DesktopMenu /> -->

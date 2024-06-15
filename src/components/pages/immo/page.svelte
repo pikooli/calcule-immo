@@ -10,6 +10,7 @@
 	});
 </script>
 
-<title>{`${$t('website')} - ${$t('pages.immo.title')}`}</title>
+<title>{`${$t('website.title')} - ${$t('pages.immo.title')}`}</title>
+<meta name="description" content={$t('pages.immo.description')} />
 
 <Compute />
