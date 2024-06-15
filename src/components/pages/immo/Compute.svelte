@@ -3,8 +3,8 @@
 	import { Header } from './header/';
 </script>
 
-<div class="m-3 flex justify-center md:my-auto">
-	<div class="relative rounded-md bg-primary p-4">
+<div class="bg-primary md:flex md:justify-center">
+	<div class="relative p-4 md:rounded-b-md">
 		<Header />
 		<ImmoForm />
 	</div>

@@ -6,7 +6,7 @@
 	import { IMMO_FIELDS, EUROS, PERCENT } from '$lib/constants';
 </script>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="grid gap-2 md:grid-cols-2">
 	<InputNumberWithSmallRange
 		label={$t('pages.immo.report.mortgageAmount')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT}

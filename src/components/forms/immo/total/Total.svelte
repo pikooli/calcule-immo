@@ -6,7 +6,7 @@
 	import { PERCENT } from '$lib/constants';
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-3">
+<div class="grid md:grid-cols-3">
 	<DisplayAmount
 		label={$t('pages.immo.report.mortgageMonthlyRateAmount')}
 		value={formatCurrency($immoStore.mortgageMonthlyRateAmount)}
