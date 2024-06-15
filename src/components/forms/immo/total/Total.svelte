@@ -3,6 +3,7 @@
 	import { DisplayAmount } from '$components/displays';
 	import { immoStore } from '$lib/stores/immo';
 	import { formatCurrency } from '$lib/utils/display';
+	import { PERCENT } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2 md:grid-cols-3">
@@ -22,7 +23,7 @@
 	/>
 	<DisplayAmount
 		label={$t('pages.immo.report.mortgageMonthlyRatePercent')}
-		sign="%"
+		sign={PERCENT}
 		value={`${$immoStore.mortgageMonthlyRatePercent}`}
 		toolTip={$t('pages.immo.descriptions.mortgageMonthlyRatePercent')}
 		iconAlt={$t('pages.immo.descriptions.mortgageMonthlyRatePercent')}

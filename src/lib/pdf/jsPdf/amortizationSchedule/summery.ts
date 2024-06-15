@@ -4,6 +4,7 @@ import { get } from 'svelte/store';
 import type { ImmoStore } from '$lib/stores/immo';
 import { gridTextCenter, gridText } from '$lib/pdf/jsPdf/utils';
 import { formatCurrency } from '$lib/utils/display';
+import { PERCENT } from '$lib/constants';
 
 interface GenerateSummaryArgs {
 	doc: jsPDF;
@@ -29,7 +30,7 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 		doc,
 		texts: [
 			formatCurrency(immoStore.mortgageAmount),
-			`${immoStore.mortgageRatePercent} %`,
+			`${immoStore.mortgageRatePercent} ${PERCENT}`,
 			`${immoStore.mortgageDurationYears * 12}`,
 			formatCurrency(immoStore.mortgageInsuranceFees)
 		],

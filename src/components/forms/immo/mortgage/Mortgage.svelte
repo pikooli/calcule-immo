@@ -3,7 +3,7 @@
 	import { InputNumberWithSmallRange, InputNumber } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
 	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
-	import { IMMO_FIELDS, EUROS } from '$lib/constants';
+	import { IMMO_FIELDS, EUROS, PERCENT } from '$lib/constants';
 </script>
 
 <div class="grid grid-cols-2 gap-2">
@@ -37,8 +37,8 @@
 		maxRange={100}
 		bind:valueRange={$immoStore.mortgageRatePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_RATE_PERCENT)}
-		toolTipRange={`${$immoStore.mortgageRatePercent} %`}
-		sign={EUROS}
+		toolTipRange={`${$immoStore.mortgageRatePercent} ${PERCENT}`}
+		sign={PERCENT}
 		toolTip={$t('pages.immo.descriptions.mortgageRatePercent')}
 		iconAlt={$t('pages.immo.descriptions.mortgageRatePercent')}
 		iconId="mortgageRatePercentId"
