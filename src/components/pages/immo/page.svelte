@@ -10,7 +10,9 @@
 	});
 </script>
 
-<title>{`${$t('website.title')} - ${$t('pages.immo.title')}`}</title>
-<meta name="description" content={$t('pages.immo.description')} />
+<svelte:head>
+	<title>{`${$t('website.title')} - ${$t('pages.immo.title')}`}</title>
+	<meta name="description" content={$t('pages.immo.description')} />
+</svelte:head>
 
 <Compute />
