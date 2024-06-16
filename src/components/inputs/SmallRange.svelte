@@ -10,6 +10,8 @@
 	export let toolTip: string = '';
 	export let inputClass: string = '';
 	export let containerClass: string = '';
+	export let classLabel: string = '';
+	export let whiteLabel: boolean = false;
 
 	let tooltipVisible = false;
 
@@ -24,7 +26,11 @@
 
 <div class={`flex p-1 ${containerClass}`}>
 	{#if label}
-		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+		<label
+			for={name}
+			class={`block text-sm font-medium leading-6 text-gray-900 ${whiteLabel ? 'text-whiteText' : ''} ${classLabel}`}
+			>{label}</label
+		>
 	{/if}
 	{#if toolTip}
 		<Tooltip triggeredBy={`#${name}`} open={tooltipVisible}>{toolTip}</Tooltip>

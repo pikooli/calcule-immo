@@ -7,6 +7,7 @@
 </script>
 
 <InputNumberWithSmallRange
+	whiteLabel
 	label={$t('pages.immo.report.agencyFees')}
 	nameInput={IMMO_FIELDS.AGENCY_FEES}
 	minInput={0}

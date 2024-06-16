@@ -17,12 +17,19 @@
 	export let toolTip: string = '';
 	export let toolTipPlacement: Placement = 'top';
 	export let iconId: string = '';
+	export let whiteLabel: boolean = false;
 </script>
 
-<div class={`relative px-1 text-gray-900 shadow-sm sm:text-sm sm:leading-6 ${className}`}>
+<div class={`relative  text-gray-900 shadow-sm sm:text-sm sm:leading-6 ${className}`}>
 	<div class="flex items-center">
 		{#if label}
-			<div class={`mr-2 text-sm font-medium leading-6 text-gray-900 ${classLabel}`}>{label}</div>
+			<div
+				class={`mr-2 text-sm font-medium leading-6 text-gray-900 
+			${whiteLabel ? 'text-whiteText' : ''}
+			${classLabel}`}
+			>
+				{label}
+			</div>
 		{/if}
 		{#if iconSrc || toolTip}
 			<Icon

@@ -8,16 +8,10 @@
 </script>
 
 <form method="POST">
-	<Card>
-		<AmountBlock />
-	</Card>
+	<AmountBlock />
 
-	<Card className="mt-4 border-t-2 pt-4">
-		<DepositBlock />
-	</Card>
-	<Card className="mt-4 border-t-2 pt-4">
-		<MortgageBlock />
-	</Card>
+	<DepositBlock />
+	<MortgageBlock />
 	<Card className="mt-4 border-t-2 pt-4">
 		<TotalBlock />
 	</Card>

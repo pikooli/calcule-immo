@@ -20,12 +20,16 @@
 	export let toolTip: string = '';
 	export let toolTipPlacement: Placement = 'top';
 	export let iconId: string = '';
+	export let classLabel: string = '';
+	export let whiteLabel: boolean = false;
 </script>
 
 <div class="flex flex-col px-1">
 	<div class="flex items-center">
 		{#if label}
-			<label for={name} class="mr-2 block text-sm font-medium leading-6 text-gray-900"
+			<label
+				for={name}
+				class={`mr-2 block text-sm font-medium leading-6 text-gray-900 ${whiteLabel ? 'text-whiteText' : ''} ${classLabel}`}
 				>{label}</label
 			>
 		{/if}

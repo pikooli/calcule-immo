@@ -8,6 +8,7 @@
 
 <div class="grid gap-2 md:grid-cols-2">
 	<InputNumberWithSmallRange
+		whiteLabel
 		label={$t('pages.immo.report.mortgageAmount')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT_PERCENT}
 		minInput={0}
@@ -26,6 +27,7 @@
 		iconId="mortgageAmountId"
 	/>
 	<InputNumberWithSmallRange
+		whiteLabel
 		label={$t('pages.immo.report.mortgageRatePercent')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT}
 		minInput={0}
@@ -44,6 +46,7 @@
 		iconId="mortgageRatePercentId"
 	/>
 	<InputNumberWithSmallRange
+		whiteLabel
 		label={$t('pages.immo.report.mortgageDurationYears')}
 		nameInput={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
 		minInput={MORTGAGE_DURATION_MIN_YEARS}
@@ -62,6 +65,7 @@
 	/>
 	<div>
 		<InputNumberWithSmallRange
+			whiteLabel
 			label={$t('pages.immo.report.mortgageInsuranceAnnuallyFees')}
 			nameInput={IMMO_FIELDS.MORTGAGE_INSURANCE_ANNUALLY_FEES}
 			minInput={0}
@@ -81,6 +85,7 @@
 			iconId="mortgageInsuranceAnnuallyFeesId"
 		/>
 		<InputNumber
+			whiteLabel
 			label={$t('pages.immo.report.mortgageInsuranceFees')}
 			name={IMMO_FIELDS.MORTGAGE_INSURANCE_FEES}
 			min={0}

@@ -10,6 +10,7 @@
 
 <div class="grid md:grid-cols-3">
 	<InputNumberWithSmallRange
+		whiteLabel
 		label={$t('pages.immo.report.depositAmount')}
 		nameInput={IMMO_FIELDS.DEPOSITE_AMOUNT}
 		minInput={0}

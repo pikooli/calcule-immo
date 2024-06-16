@@ -6,6 +6,7 @@
 </script>
 
 <InputNumber
+	whiteLabel
 	label={$t('pages.immo.report.amount')}
 	name={IMMO_FIELDS.AMOUNT}
 	min={0}

@@ -5,11 +5,17 @@
 	export let onInput: any = null;
 	export let placeholder: string = 'test';
 	export let inputClass: string = '';
+	export let classLabel: string = '';
+	export let whiteLabel: boolean = false;
 </script>
 
 <div class="flex flex-col px-1">
 	{#if label}
-		<label for={name} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+		<label
+			for={name}
+			class={`block text-sm font-medium leading-6 text-gray-900 ${whiteLabel ? 'text-whiteText' : ''} ${classLabel}`}
+			>{label}</label
+		>
 	{/if}
 	<div class="relative mt-2 rounded-md shadow-sm">
 		<input

@@ -2,7 +2,7 @@
 	import { logoIconAvif } from '$lib/assets/icons';
 </script>
 
-<div class="absolute top-4 hidden md:block">
+<div class="absolute top-4 z-40 hidden md:block">
 	<div class="flex flex-shrink-0 items-center">
 		<a href="/" class="flex items-center">
 			<img

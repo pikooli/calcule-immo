@@ -7,6 +7,6 @@
 
 <Card className="bg-none grid text-center md:grid-cols-3">
 	<div />
-	<DisplayH1 text={$t('pages.immo.title')} />
+	<DisplayH1 className="text-whiteText" text={$t('pages.immo.title')} />
 	<IconBar />
 </Card>

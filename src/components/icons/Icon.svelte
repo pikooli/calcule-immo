@@ -17,7 +17,7 @@
 		triggeredBy={`#${id}`}
 		placement={toolTipPlacement}
 		type="custom"
-		class="z-50	w-52 text-wrap bg-black p-2 text-sm font-medium text-gray-100"
+		class="z-40	w-52 text-wrap bg-black p-2 text-sm font-medium text-gray-100"
 	>
 		{toolTip}</Tooltip
 	>
