@@ -21,19 +21,19 @@
 </script>
 
 <dialog {open} class="absolute top-0 z-40 h-full w-full bg-transparent">
+	{#if haveCloseBtn}
+		<IconBtn
+			src={crossIconAvif}
+			className="absolute top-[6vh] right-[6vw] z-40 "
+			iconClass="h-[25px]"
+			handleClick={modalStore.triggerModal}
+			iconId="close-modal"
+			alt="close-modal"
+		/>
+	{/if}
 	<div
 		class="absolute z-10 mx-[2.5vw] my-[2.5vh] max-h-[95vh] w-[95vw] overflow-scroll rounded-md border border-black bg-grayColor shadow-md"
 	>
-		{#if haveCloseBtn}
-			<IconBtn
-				src={crossIconAvif}
-				className="absolute right-0 z-20 mr-6"
-				iconClass="h-[25px]"
-				handleClick={modalStore.triggerModal}
-				iconId="close-modal"
-				alt="close-modal"
-			/>
-		{/if}
 		{#if $modalStore.component}
 			<svelte:component this={$modalStore.component} />
 		{/if}

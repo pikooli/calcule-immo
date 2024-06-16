@@ -27,7 +27,7 @@
 		{#if haveCloseBtn}
 			<IconBtn
 				src={crossIconAvif}
-				className="absolute right-0 z-20 mr-6"
+				className="absolute right-1 top-1 z-40"
 				iconClass="h-[25px]"
 				handleClick={alertStore.triggerAlert}
 				iconId="close-alert"
