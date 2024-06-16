@@ -2,7 +2,7 @@ import jsPDF from 'jspdf';
 import { get } from 'svelte/store';
 import { t } from 'svelte-i18n';
 import type { YearSchedule } from '$lib/stores/amortizationSchedule';
-import { gridText, drawLine, gridTextCenter } from '$lib/pdf/jsPdf/utils';
+import { gridText, drawLine, gridTextCenter } from '$lib/services/pdf/jsPdf/utils';
 import { formatCurrency } from '$lib/utils/display';
 
 interface GenerateYearScheduleArgs {

@@ -5,8 +5,8 @@ import {
 	USABLE_WIDTH,
 	DEFAULT_MARGIN_LEFT_TEXT,
 	CASE_COLOR
-} from '$lib/pdf/jsPdf/constants';
-import { incrementLine } from '$lib/pdf/jsPdf/utils';
+} from '$lib/services/pdf/jsPdf/constants';
+import { incrementLine } from '$lib/services/pdf/jsPdf/utils';
 interface CenterTextArg {
 	doc: jsPDF;
 	text: string;

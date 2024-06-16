@@ -3,10 +3,10 @@ import { get } from 'svelte/store';
 import { t } from 'svelte-i18n';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import type { ImmoStore } from '$lib/stores/immo';
-import { FONT_SIZE, LINE_HEIGHT, PAGE_HEIGHT, PAGE_WIDTH } from '$lib/pdf/jsPdf/constants';
-import { centerText, generatePdfUrl } from '$lib/pdf/jsPdf/utils';
-import { generateYearSchedule } from '$lib/pdf/jsPdf/amortizationSchedule/yearSchedule';
-import { generateSummary } from '$lib/pdf/jsPdf/amortizationSchedule/summery';
+import { FONT_SIZE, LINE_HEIGHT, PAGE_HEIGHT, PAGE_WIDTH } from '$lib/services/pdf/jsPdf/constants';
+import { centerText, generatePdfUrl } from '$lib/services/pdf/jsPdf/utils';
+import { generateYearSchedule } from '$lib/services/pdf/jsPdf/amortizationSchedule/yearSchedule';
+import { generateSummary } from '$lib/services/pdf/jsPdf/amortizationSchedule/summery';
 
 interface GeneratePdf {
 	immoStore: ImmoStore;

@@ -5,7 +5,7 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { IconBtn } from '$components/buttons';
 	import { amortizationScheduleIconAvif, downloadIconAvif, emailIconAvif } from '$lib/assets/icons';
-	import { generateAmortizationScheduleUrl } from '$lib/pdf';
+	import { generateAmortizationScheduleUrl } from '$lib/services/pdf';
 
 	const handleDownload = (e: MouseEvent) => {
 		e.preventDefault();

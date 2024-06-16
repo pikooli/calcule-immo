@@ -4,7 +4,7 @@ import { setLocale } from '$lib/i18n';
 import { sendMail } from '$lib/services/mails';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import type { ImmoStore } from '$lib/stores/immo';
-import { generateAmortizationScheduleBuffer } from '$lib/pdf/jsPdf/amortizationSchedule';
+import { generateAmortizationScheduleBuffer } from '$lib/services/pdf/jsPdf/amortizationSchedule';
 
 interface SendEmailOfAmortizationScheduleArgs {
 	to: string;

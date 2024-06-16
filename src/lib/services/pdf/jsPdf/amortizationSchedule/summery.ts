@@ -2,7 +2,7 @@ import jsPDF from 'jspdf';
 import { t } from 'svelte-i18n';
 import { get } from 'svelte/store';
 import type { ImmoStore } from '$lib/stores/immo';
-import { gridTextCenter, gridText } from '$lib/pdf/jsPdf/utils';
+import { gridTextCenter, gridText } from '$lib/services/pdf/jsPdf/utils';
 import { formatCurrency } from '$lib/utils/display';
 import { PERCENT } from '$lib/constants';
 

@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import { LINE_HEIGHT, MARGIN, PAGE_HEIGHT, USABLE_WIDTH } from '$lib/pdf/jsPdf/constants';
+import { LINE_HEIGHT, MARGIN, PAGE_HEIGHT, USABLE_WIDTH } from '$lib/services/pdf/jsPdf/constants';
 
 interface IncrementLineArgs {
 	doc: jsPDF;

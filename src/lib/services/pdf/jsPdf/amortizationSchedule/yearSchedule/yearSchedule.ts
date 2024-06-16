@@ -2,9 +2,9 @@ import jsPDF from 'jspdf';
 import { get } from 'svelte/store';
 import { t } from 'svelte-i18n';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
-import { centerText } from '$lib/pdf/jsPdf/utils';
-import { generateYearTotal } from '$lib/pdf/jsPdf/amortizationSchedule/yearSchedule/yearTotal';
-import { generateMonthSchedule } from '$lib/pdf/jsPdf/amortizationSchedule/yearSchedule/montSchedule';
+import { centerText } from '$lib/services/pdf/jsPdf/utils';
+import { generateYearTotal } from '$lib/services/pdf/jsPdf/amortizationSchedule/yearSchedule/yearTotal';
+import { generateMonthSchedule } from '$lib/services/pdf/jsPdf/amortizationSchedule/yearSchedule/montSchedule';
 
 interface GenerateYearScheduleArgs {
 	doc: jsPDF;
