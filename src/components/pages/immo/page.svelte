@@ -3,6 +3,7 @@
 	import { t } from 'svelte-i18n';
 	import { immoStore } from '$lib/stores/immo';
 	import { default as Compute } from '$components/pages/immo/Compute.svelte';
+	import { default as Article } from '$components/pages/immo/Articles.svelte';
 	export let form;
 
 	onMount(() => {
@@ -16,3 +17,4 @@
 </svelte:head>
 
 <Compute />
+<Article />

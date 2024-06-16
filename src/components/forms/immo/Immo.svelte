@@ -7,12 +7,10 @@
 	import './immo.scss';
 </script>
 
-<form>
-	<AmountBlock />
+<AmountBlock />
 
-	<DepositBlock />
-	<MortgageBlock />
-	<Card className="mt-4 border-t-2 pt-4">
-		<TotalBlock />
-	</Card>
-</form>
+<DepositBlock />
+<MortgageBlock />
+<Card className="mt-4 border-t-2 pt-4">
+	<TotalBlock />
+</Card>
