@@ -28,5 +28,9 @@
 	/>
 	<InputText inputClass="hidden" name="locale" value={$locale} />
 
-	<SubmitBtn txt="send" id="btn-emailAmortizationSchedule" className="w-fit mt-4 " />
+	<SubmitBtn
+		txt={$t('form.submit')}
+		id="btn-emailAmortizationSchedule"
+		className="w-fit mt-4 ml-auto"
+	/>
 </form>

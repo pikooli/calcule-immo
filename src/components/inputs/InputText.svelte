@@ -3,7 +3,7 @@
 	export let name: string;
 	export let value: any;
 	export let onInput: any = null;
-	export let placeholder: string = 'test';
+	export let placeholder: string = '';
 	export let inputClass: string = '';
 	export let classLabel: string = '';
 	export let whiteLabel: boolean = false;
