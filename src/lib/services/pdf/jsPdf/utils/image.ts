@@ -20,7 +20,6 @@ interface AddLogoArg extends DefaultPdfType {
 export const addLogo = async ({ doc, src, yPosition = LINE_HEIGHT }: AddLogoArg) => {
 	const i18n = get(t);
 	const website = i18n('website.title');
-	console.log('src', src);
 
 	const base64Image = await getBase64Image(src);
 	doc.addImage(
@@ -35,7 +34,8 @@ export const addLogo = async ({ doc, src, yPosition = LINE_HEIGHT }: AddLogoArg)
 	yPosition = incrementLine({ doc, yPosition });
 	return incrementLine({ doc, yPosition });
 };
-function getBase64Image(filePath) {
+
+function getBase64Image(filePath: string) {
 	const bitmap = fs.readFileSync(filePath);
 	return Buffer.from(bitmap).toString('base64');
 }

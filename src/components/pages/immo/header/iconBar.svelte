@@ -5,16 +5,28 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { IconBtn } from '$components/buttons';
 	import { amortizationScheduleIconAvif, downloadIconAvif, emailIconAvif } from '$lib/assets/icons';
-	import { generateAmortizationScheduleUrl } from '$lib/services/pdf';
+	import { fetchApi } from '$lib/services/fetch';
 
 	const handleDownload = (e: MouseEvent) => {
 		e.preventDefault();
 		amortizationScheduleStore.init($immoStore);
 
-		generateAmortizationScheduleUrl({
-			immoStore: $immoStore,
-			amortizationScheduleStore: $amortizationScheduleStore
-		}).then((url) => window.open(url));
+		fetchApi('/amortizationSchedulePdf', {
+			method: 'POST',
+			body: JSON.stringify({
+				immoStore: $immoStore,
+				amortizationScheduleStore: $amortizationScheduleStore
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then((response) => response.blob())
+			.then((blob) => {
+				if (blob.size === 0) return;
+				const url = window.URL.createObjectURL(blob);
+				window.open(url);
+			});
 	};
 </script>
 

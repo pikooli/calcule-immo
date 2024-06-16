@@ -7,7 +7,7 @@
 	import './immo.scss';
 </script>
 
-<form method="POST">
+<form>
 	<AmountBlock />
 
 	<DepositBlock />
