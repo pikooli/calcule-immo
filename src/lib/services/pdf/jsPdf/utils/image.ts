@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import fs from 'fs';
+// import fs from 'fs';
 import {
 	LINE_HEIGHT,
 	LOGO_HEIGHT,
@@ -21,7 +21,7 @@ export const addLogo = async ({ doc, src, yPosition = LINE_HEIGHT }: AddLogoArg)
 	const i18n = get(t);
 	const website = i18n('website.title');
 
-	const base64Image = await getBase64Image(src);
+	const base64Image = await fetchBase64Image(src);
 	doc.addImage(
 		`data:image/png;base64,${base64Image}`,
 		'PNG',
@@ -35,7 +35,13 @@ export const addLogo = async ({ doc, src, yPosition = LINE_HEIGHT }: AddLogoArg)
 	return incrementLine({ doc, yPosition });
 };
 
-function getBase64Image(filePath: string) {
-	const bitmap = fs.readFileSync(filePath);
-	return Buffer.from(bitmap).toString('base64');
-}
+// function getBase64Image(filePath: string) {
+// 	const bitmap = fs.readFileSync(filePath);
+// 	return Buffer.from(bitmap).toString('base64');
+// }
+
+const fetchBase64Image = async (url: string) => {
+	const response = await fetch(url);
+	const buffer = await response.arrayBuffer();
+	return Buffer.from(buffer).toString('base64');
+};

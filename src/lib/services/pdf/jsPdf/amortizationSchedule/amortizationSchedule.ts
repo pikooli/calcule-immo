@@ -7,7 +7,8 @@ import { FONT_SIZE, LINE_HEIGHT, PAGE_HEIGHT, PAGE_WIDTH } from '$lib/services/p
 import { centerText, generatePdfUrl, addLogo } from '$lib/services/pdf/jsPdf/utils';
 import { generateYearSchedule } from '$lib/services/pdf/jsPdf/amortizationSchedule/yearSchedule';
 import { generateSummary } from '$lib/services/pdf/jsPdf/amortizationSchedule/summery';
-import { logoIconPng } from '$lib/assets/icons';
+import { PUBLIC_LOCAL, PUBLIC_DEV_URL, PUBLIC_PROD_URL } from '$env/static/public';
+const LOGO = '/assets/icons/logo.png';
 
 interface GeneratePdf {
 	immoStore: ImmoStore;
@@ -29,8 +30,8 @@ export const generateAmortizationSchedule = async ({
 
 	doc.setFont('helvetica', 'normal'); // Default font
 	doc.setFontSize(FONT_SIZE);
-
-	yPosition = await addLogo({ doc, src: process.cwd() + logoIconPng, yPosition });
+	const logoUrl = PUBLIC_LOCAL === 'dev' ? PUBLIC_DEV_URL + LOGO : PUBLIC_PROD_URL + LOGO;
+	yPosition = await addLogo({ doc, src: logoUrl, yPosition });
 	const text = i18n('pages.immo.amortizationSchedule.title');
 	yPosition = centerText({ doc, text, yPosition });
 	yPosition = generateSummary({ doc, immoStore, yPosition });
