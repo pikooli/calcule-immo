@@ -20,26 +20,29 @@
 	});
 </script>
 
-<dialog {open} class="absolute top-0 z-40 h-full w-full bg-transparent">
-	{#if haveCloseBtn}
-		<IconBtn
-			src={crossIconAvif}
-			className="absolute top-[6vh] right-[6vw] z-40 "
-			iconClass="h-[25px]"
-			handleClick={modalStore.triggerModal}
-			iconId="close-modal"
-			alt="close-modal"
-		/>
-	{/if}
-	<div
-		class="absolute z-10 mx-[2.5vw] my-[2.5vh] max-h-[95vh] w-[95vw] overflow-scroll rounded-md border border-black bg-grayColor shadow-md"
-	>
-		{#if $modalStore.component}
-			<svelte:component this={$modalStore.component} />
+{#if open}
+	<dialog class="fixed inset-0 z-40 flex h-dvh w-dvw bg-transparent">
+		{#if haveCloseBtn}
+			<IconBtn
+				src={crossIconAvif}
+				className="absolute top-[6vh] right-[6vw] z-50"
+				iconClass="h-[25px]"
+				handleClick={modalStore.triggerModal}
+				iconId="close-modal"
+				alt="close-modal"
+			/>
 		{/if}
-	</div>
-	<button
-		class="absolute left-0 right-0 top-0 z-0 h-full w-full cursor-default bg-slate-900 opacity-15"
-		on:click={modalStore.triggerModal}
-	/>
-</dialog>
+		<div
+			class="relative z-40 mx-[2.5vw] my-[2.5vh] w-[95vw] overflow-scroll rounded-md border border-black bg-grayColor shadow-md"
+		>
+			{#if $modalStore.component}
+				<svelte:component this={$modalStore.component} />
+			{/if}
+		</div>
+
+		<button
+			class="absolute inset-0 h-dvh w-dvw cursor-default bg-slate-900 opacity-15"
+			on:click={modalStore.triggerModal}
+		/>
+	</dialog>
+{/if}

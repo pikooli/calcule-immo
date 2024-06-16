@@ -3,7 +3,8 @@
 	import { NavBar } from '$components/navBar';
 	import { modalStore } from '$lib/stores/modals';
 	import { alertStore } from '$lib/stores/alerts';
-	import { Modal, Alert } from '$components/modals';
+	import { loaderGlobalStore } from '$lib/stores/loaderGlobal';
+	import { Modal, Alert, LoadingGlobal } from '$components/modals';
 	import { Footer } from '$components/footer';
 </script>
 
@@ -12,5 +13,6 @@
 	<slot />
 	<Modal open={$modalStore.isOpen} haveCloseBtn />
 	<Alert open={$alertStore.isOpen} haveCloseBtn />
+	<LoadingGlobal open={$loaderGlobalStore} />
 	<Footer />
 </div>
