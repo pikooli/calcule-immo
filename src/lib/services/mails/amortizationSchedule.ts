@@ -23,7 +23,7 @@ export const sendEmailOfAmortizationSchedule = async ({
 	const i18n = get(t);
 
 	try {
-		const pdfBuffer = generateAmortizationScheduleBuffer({
+		const pdfBuffer = await generateAmortizationScheduleBuffer({
 			immoStore,
 			amortizationScheduleStore
 		});
@@ -36,15 +36,14 @@ export const sendEmailOfAmortizationSchedule = async ({
 			attachments: [
 				{
 					filename: 'amortizationSchedule.pdf',
-					content: pdfBuffer,
-					contentType: 'application/pdf'
+					content: pdfBuffer.toString('base64'),
+					contentType: 'application/pdf',
+					disposition: 'attachment'
 				}
 			]
 		};
 
-		const info = await sendMail(mailOptions);
-
-		console.log('Message sent: %s', info?.messageId);
+		await sendMail(mailOptions);
 	} catch (e) {
 		console.log(e);
 		throw e;

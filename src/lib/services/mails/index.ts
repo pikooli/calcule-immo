@@ -1,2 +1,2 @@
-export { sendMail } from './nodemailer/';
+export { sendMail } from './mailersend';
 export { sendEmailOfAmortizationSchedule } from './amortizationSchedule';

@@ -7,10 +7,10 @@ import {
 	CASE_COLOR
 } from '$lib/services/pdf/jsPdf/constants';
 import { incrementLine } from '$lib/services/pdf/jsPdf/utils';
-interface CenterTextArg {
+import type { DefaultPdfType } from '$lib/services/pdf/jsPdf/utils/types';
+interface CenterTextArg extends DefaultPdfType {
 	doc: jsPDF;
 	text: string;
-	yPosition: number;
 }
 
 export const centerText = ({ doc, text, yPosition = LINE_HEIGHT }: CenterTextArg) => {
@@ -21,10 +21,9 @@ export const centerText = ({ doc, text, yPosition = LINE_HEIGHT }: CenterTextArg
 	return incrementLine({ doc, yPosition });
 };
 
-interface GridTextArg {
+interface GridTextArg extends DefaultPdfType {
 	doc: jsPDF;
 	texts: string[];
-	yPosition: number;
 	drawBorders?: boolean;
 	gap?: number;
 }

@@ -6,3 +6,6 @@ export const MARGIN = LINE_HEIGHT;
 export const USABLE_WIDTH = PAGE_WIDTH - MARGIN * 2;
 export const DEFAULT_MARGIN_LEFT_TEXT = 2;
 export const CASE_COLOR = '#d1d5db';
+export const LOGO_WIDTH = LINE_HEIGHT;
+export const LOGO_HEIGHT = LINE_HEIGHT;
+export const LOGO_MARGIN = LINE_HEIGHT;

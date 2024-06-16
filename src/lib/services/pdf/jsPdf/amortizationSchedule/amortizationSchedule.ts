@@ -4,16 +4,17 @@ import { t } from 'svelte-i18n';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import type { ImmoStore } from '$lib/stores/immo';
 import { FONT_SIZE, LINE_HEIGHT, PAGE_HEIGHT, PAGE_WIDTH } from '$lib/services/pdf/jsPdf/constants';
-import { centerText, generatePdfUrl } from '$lib/services/pdf/jsPdf/utils';
+import { centerText, generatePdfUrl, addLogo } from '$lib/services/pdf/jsPdf/utils';
 import { generateYearSchedule } from '$lib/services/pdf/jsPdf/amortizationSchedule/yearSchedule';
 import { generateSummary } from '$lib/services/pdf/jsPdf/amortizationSchedule/summery';
+import { logoIconPng } from '$lib/assets/icons';
 
 interface GeneratePdf {
 	immoStore: ImmoStore;
 	amortizationScheduleStore: AmortizationScheduleStore;
 }
 
-export const generateAmortizationSchedule = ({
+export const generateAmortizationSchedule = async ({
 	immoStore,
 	amortizationScheduleStore
 }: GeneratePdf) => {
@@ -29,6 +30,7 @@ export const generateAmortizationSchedule = ({
 	doc.setFont('helvetica', 'normal'); // Default font
 	doc.setFontSize(FONT_SIZE);
 
+	yPosition = await addLogo({ doc, src: process.cwd() + logoIconPng, yPosition });
 	const text = i18n('pages.immo.amortizationSchedule.title');
 	yPosition = centerText({ doc, text, yPosition });
 	yPosition = generateSummary({ doc, immoStore, yPosition });
@@ -41,12 +43,12 @@ export const generateAmortizationSchedule = ({
 	return doc;
 };
 
-export const generateAmortizationScheduleUrl = ({
+export const generateAmortizationScheduleUrl = async ({
 	immoStore,
 	amortizationScheduleStore
 }: GeneratePdf) => {
 	try {
-		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		const doc = await generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
 		return generatePdfUrl(doc);
 	} catch (e) {
 		console.log(e);
@@ -54,12 +56,12 @@ export const generateAmortizationScheduleUrl = ({
 	}
 };
 
-export const generateAmortizationScheduleSave = ({
+export const generateAmortizationScheduleSave = async ({
 	immoStore,
 	amortizationScheduleStore
 }: GeneratePdf) => {
 	try {
-		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		const doc = await generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
 		doc.save('amortizationSchedule.pdf');
 	} catch (e) {
 		console.log(e);
@@ -67,12 +69,12 @@ export const generateAmortizationScheduleSave = ({
 	}
 };
 
-export const generateAmortizationScheduleBuffer = ({
+export const generateAmortizationScheduleBuffer = async ({
 	immoStore,
 	amortizationScheduleStore
 }: GeneratePdf) => {
 	try {
-		const doc = generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
+		const doc = await generateAmortizationSchedule({ immoStore, amortizationScheduleStore });
 		return Buffer.from(doc.output('arraybuffer'));
 	} catch (e) {
 		console.log(e);

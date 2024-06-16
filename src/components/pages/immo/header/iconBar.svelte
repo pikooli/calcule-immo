@@ -10,12 +10,11 @@
 	const handleDownload = (e: MouseEvent) => {
 		e.preventDefault();
 		amortizationScheduleStore.init($immoStore);
-		window.open(
-			generateAmortizationScheduleUrl({
-				immoStore: $immoStore,
-				amortizationScheduleStore: $amortizationScheduleStore
-			})
-		);
+
+		generateAmortizationScheduleUrl({
+			immoStore: $immoStore,
+			amortizationScheduleStore: $amortizationScheduleStore
+		}).then((url) => window.open(url));
 	};
 </script>
 
