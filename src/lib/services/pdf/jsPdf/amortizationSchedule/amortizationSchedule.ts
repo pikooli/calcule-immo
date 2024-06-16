@@ -32,7 +32,7 @@ export const generateAmortizationSchedule = async ({
 	doc.setFontSize(FONT_SIZE);
 	const logoUrl = PUBLIC_LOCAL === 'dev' ? PUBLIC_DEV_URL + LOGO : PUBLIC_PROD_URL + LOGO;
 	yPosition = await addLogo({ doc, src: logoUrl, yPosition });
-	const text = i18n('pages.immo.amortizationSchedule.title');
+	const text = i18n('pdf.amortizationSchedule.title');
 	yPosition = centerText({ doc, text, yPosition });
 	yPosition = generateSummary({ doc, immoStore, yPosition });
 	generateYearSchedule({

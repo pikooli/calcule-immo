@@ -23,7 +23,7 @@ export const generateYearSchedule = ({
 	amortizationScheduleStore.forEach((yearSchedule, idx) => {
 		const shouldrawLine = amortizationScheduleStore.length - 1 !== idx;
 		const { year } = yearSchedule;
-		const text = `${i18n('pages.immo.amortizationSchedule.yearSchedule.year')} ${year + 1}`;
+		const text = `${i18n('pdf.amortizationSchedule.yearSchedule.year')} ${year + 1}`;
 		currentYPosition = centerText({ doc, text, yPosition: currentYPosition });
 		currentYPosition = generateMonthSchedule({ doc, yearSchedule, yPosition: currentYPosition });
 		currentYPosition = generateYearTotal({

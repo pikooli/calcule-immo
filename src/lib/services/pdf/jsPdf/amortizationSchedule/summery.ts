@@ -18,10 +18,10 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.amortizationSchedule.total.mortgageAmount'),
-			i18n('pages.immo.report.mortgageRatePercent'),
-			i18n('pages.immo.amortizationSchedule.total.mortgageInstalment'),
-			i18n('pages.immo.report.mortgageInsuranceFees')
+			i18n('pdf.amortizationSchedule.amount'),
+			i18n('pdf.amortizationSchedule.mortgageRatePercent'),
+			i18n('pdf.amortizationSchedule.mortgageInstalment'),
+			i18n('pdf.amortizationSchedule.mortgageInsuranceFees')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
@@ -40,8 +40,8 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.report.mortgageMonthlyRateAmount'),
-			i18n('pages.immo.report.mortgageMonthlyRateAmountWithInsurance')
+			i18n('pdf.amortizationSchedule.mortgageMonthlyRateAmount'),
+			i18n('pdf.amortizationSchedule.mortgageMonthlyRateAmountWithInsurance')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
@@ -58,9 +58,9 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.report.mortgageInsuranceFeesTotal'),
-			i18n('pages.immo.report.mortgageTotalRateAmount'),
-			i18n('pages.immo.report.mortgageTotalCost')
+			i18n('pdf.amortizationSchedule.mortgageInsuranceFeesTotal'),
+			i18n('pdf.amortizationSchedule.mortgageTotalRateAmount'),
+			i18n('pdf.amortizationSchedule.mortgageTotalCost')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true

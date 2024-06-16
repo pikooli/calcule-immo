@@ -24,12 +24,12 @@ export const generateYearTotal = ({
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.amortizationSchedule.yearSchedule.total'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.yearPayment'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.yearMortgagePayment'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.yearInterest'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.mortgageInsuranceFees'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.remainingCapital')
+			i18n('pdf.amortizationSchedule.yearSchedule.total'),
+			i18n('pdf.amortizationSchedule.yearSchedule.yearPayment'),
+			i18n('pdf.amortizationSchedule.yearSchedule.yearMortgagePayment'),
+			i18n('pdf.amortizationSchedule.yearSchedule.yearInterest'),
+			i18n('pdf.amortizationSchedule.yearSchedule.mortgageInsuranceFees'),
+			i18n('pdf.amortizationSchedule.yearSchedule.remainingCapital')
 		],
 		yPosition: currentYPosition
 	});

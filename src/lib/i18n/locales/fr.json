@@ -52,11 +52,11 @@
 				"agencyFeesPercent": "Frais d'agence immobilière %",
 				"notaryFees": "Frais de notaire",
 				"notaryFeesPercent": "Frais de notaire %",
-				"total": "Coût total de l'achat"
+				"total": "Coût total de l'achat immobilier"
 			},
 			"email": {
 				"title": "Tableau d'amortissement",
-				"description": "Recever le tableau d'amortissement de votre prêt immobilier par email"
+				"description": "Recevez le tableau d'amortissement de votre prêt immobilier par email"
 			},
 			"toolTip": {
 				"amortizationSchedule": "Tableau d'amortissement",
@@ -92,6 +92,49 @@
 			"subject": "Tableau d'amortissement de votre prêt immobilier",
 			"text": "Bonjour, \n\nCi-joint le tableau d'amortissement de votre prêt immobilier. \n\nCordialement",
 			"html": "<p>Bonjour,</p><p>Ci-joint le tableau d'amortissement de votre prêt immobilier.</p><p>Cordialement</p>"
+		}
+	},
+	"pdf": {
+		"amortizationSchedule": {
+			"title": "Tableau d'amortissement",
+			"yearSchedule": {
+				"monthSchedule": {
+					"month": "Mois",
+					"monthlyPayment": "Mensualité",
+					"monthMortgagePayment": "Capital",
+					"monthlyInterest": "Intérêt",
+					"mortgageInsuranceFees": "Assurance",
+					"remainingCapital": "Capital restant"
+				},
+				"year": "Année",
+				"yearPayment": "Mensualité",
+				"yearInterest": "Intérêt",
+				"yearMortgagePayment": "Capital",
+				"mortgageInsuranceFees": "Assurance",
+				"remainingCapital": "Capital restant",
+				"total": "Total"
+			},
+
+			"mortgageMonthlyRateAmount": "Paiement mensuel",
+			"mortgageMonthlyRateAmountWithInsurance": "Paiement mensuel avec assurance",
+			"amount": "Montant du prêt",
+			"depositPercent": "Apport personnel %",
+			"depositAmount": "Apport personnel",
+			"mortgageAmount": "Emprunt",
+			"mortgageAmountPercent": "Emprunt %",
+			"mortgageDurationYears": "Durée du prêt",
+			"mortgageRatePercent": "Taux d'intérêt",
+			"mortgageMonthlyRatePercent": "Taux d'intérêt mensuel effectif",
+			"mortgageTotalRateAmount": "Intérêts totaux",
+			"mortgageTotalCost": "Coût total du crédit",
+			"mortgageInsuranceFees": "Mensualité de l'assurance",
+			"mortgageInsuranceAnnuallyFees": "Assurance annuelle du prêt",
+			"mortgageInsuranceFeesTotal": "Coût total de l'assurance",
+			"agencyFees": "Frais d'agence immobilière",
+			"mortgageInstalment": "Nombre de mensualités",
+			"agencyFeesPercent": "Frais d'agence immobilière %",
+			"notaryFees": "Frais de notaire",
+			"notaryFeesPercent": "Frais de notaire %"
 		}
 	},
 	"errors": {

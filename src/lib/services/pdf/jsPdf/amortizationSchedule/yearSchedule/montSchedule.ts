@@ -23,12 +23,12 @@ export const generateMonthSchedule = ({
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.month'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.monthlyPayment'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.monthMortgagePayment'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.monthlyInterest'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.mortgageInsuranceFees'),
-			i18n('pages.immo.amortizationSchedule.yearSchedule.monthSchedule.remainingCapital')
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.month'),
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.monthlyPayment'),
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.monthMortgagePayment'),
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.monthlyInterest'),
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.mortgageInsuranceFees'),
+			i18n('pdf.amortizationSchedule.yearSchedule.monthSchedule.remainingCapital')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
