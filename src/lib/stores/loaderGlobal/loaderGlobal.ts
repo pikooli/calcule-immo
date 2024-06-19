@@ -3,14 +3,14 @@ import { writable } from 'svelte/store';
 function createLoaderGlobalStore() {
 	const { subscribe, set, update } = writable(false);
 
-	const closeAlert = () => {
+	const closeLoading = () => {
 		update(() => {
 			return false;
 		});
 	};
 
-	const triggerAlert = (e: MouseEvent) => {
-		e.preventDefault();
+	const triggerLoading = (e?: MouseEvent) => {
+		e?.preventDefault();
 		update((value) => {
 			return !value;
 		});
@@ -20,8 +20,8 @@ function createLoaderGlobalStore() {
 		subscribe,
 		set,
 		update,
-		triggerAlert,
-		closeAlert
+		triggerLoading,
+		closeLoading
 	};
 }
 

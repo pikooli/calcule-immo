@@ -1,11 +1,11 @@
 import { get } from 'svelte/store';
-import { t } from 'svelte-i18n';
+import { t, waitLocale } from 'svelte-i18n';
 import { setLocale } from '$lib/i18n';
 import { sendMail } from '$lib/services/mails';
 import type { AmortizationScheduleStore } from '$lib/stores/amortizationSchedule';
 import type { ImmoStore } from '$lib/stores/immo';
 import { generateAmortizationScheduleBuffer } from '$lib/services/pdf/jsPdf/amortizationSchedule';
-
+import { PUBLIC_PROD_URL } from '$env/static/public';
 interface SendEmailOfAmortizationScheduleArgs {
 	to: string;
 	locale: string;
@@ -20,6 +20,8 @@ export const sendEmailOfAmortizationSchedule = async ({
 	amortizationScheduleStore
 }: SendEmailOfAmortizationScheduleArgs) => {
 	await setLocale(locale);
+	await waitLocale();
+
 	const i18n = get(t);
 
 	try {
@@ -27,12 +29,19 @@ export const sendEmailOfAmortizationSchedule = async ({
 			immoStore,
 			amortizationScheduleStore
 		});
-
 		const mailOptions = {
 			to,
 			subject: i18n('emails.amortizationSchedule.subject'),
-			text: i18n('emails.amortizationSchedule.text'),
-			html: i18n('emails.amortizationSchedule.html'),
+			text: i18n('emails.amortizationSchedule.text', {
+				values: {
+					url: PUBLIC_PROD_URL
+				}
+			}),
+			html: i18n('emails.amortizationSchedule.html', {
+				values: {
+					url: PUBLIC_PROD_URL
+				}
+			}),
 			attachments: [
 				{
 					filename: 'amortizationSchedule.pdf',
@@ -42,7 +51,6 @@ export const sendEmailOfAmortizationSchedule = async ({
 				}
 			]
 		};
-
 		await sendMail(mailOptions);
 	} catch (e) {
 		console.log(e);

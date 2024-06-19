@@ -90,8 +90,8 @@
 	"emails": {
 		"amortizationSchedule": {
 			"subject": "Tableau d'amortissement de votre prêt immobilier",
-			"text": "Bonjour, \n\nCi-joint le tableau d'amortissement de votre prêt immobilier. \n\nCordialement",
-			"html": "<p>Bonjour,</p><p>Ci-joint le tableau d'amortissement de votre prêt immobilier.</p><p>Cordialement</p>"
+			"text": "Bonjour, \n\nCi-joint le tableau d'amortissement de votre prêt immobilier. \n\nCordialement\n\n{url}",
+			"html": "<p>Bonjour,</p><p>Ci-joint le tableau d'amortissement de votre prêt immobilier.</p><p>Cordialement</p><p><a href=\"{url}\">calcule-immo</a></p>"
 		}
 	},
 	"pdf": {

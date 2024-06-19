@@ -9,7 +9,7 @@
 	import { fetchApi } from '$lib/services/fetch';
 
 	const handleDownload = (e: MouseEvent) => {
-		loaderGlobalStore.triggerAlert(e);
+		loaderGlobalStore.triggerLoading(e);
 		amortizationScheduleStore.init($immoStore);
 		fetchApi('/amortizationSchedulePdf', {
 			method: 'POST',
@@ -23,7 +23,7 @@
 		})
 			.then((response) => response.blob())
 			.then((blob) => {
-				loaderGlobalStore.closeAlert();
+				loaderGlobalStore.closeLoading();
 				if (blob.size === 0) return;
 				const url = window.URL.createObjectURL(blob);
 				window.open(url);

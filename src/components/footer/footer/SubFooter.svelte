@@ -5,7 +5,12 @@
 
 <span class="text-sm text-graytext sm:text-center"
 	>© {date.getFullYear()} <a href="/">{$t('website.title')}</a>. All Rights Reserved.
+	<span class="ml-4"
+		>Make with ♥️ by
+		<a href="https://zhang-pascal.com/"> pikooli</a></span
+	>
 </span>
+
 <!-- <div class="mt-4 flex space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
 	<a href="#" class="text-graytext hover:text-gray-900">
 		<svg
