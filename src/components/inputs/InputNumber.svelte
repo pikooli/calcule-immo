@@ -24,7 +24,7 @@
 	export let whiteLabel: boolean = false;
 </script>
 
-<div class="flex flex-col px-1">
+<div class="flex flex-col">
 	<div class="flex items-center">
 		{#if label}
 			<label

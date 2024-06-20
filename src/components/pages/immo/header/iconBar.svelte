@@ -6,28 +6,41 @@
 	import { immoStore } from '$lib/stores/immo';
 	import { IconBtn } from '$components/buttons';
 	import { amortizationScheduleIconAvif, downloadIconAvif, emailIconAvif } from '$lib/assets/icons';
-	import { fetchApi } from '$lib/services/fetch';
+	// import { fetchApi } from '$lib/services/fetch';
+	import { generateAmortizationScheduleSave } from '$lib/services/pdf';
 
 	const handleDownload = (e: MouseEvent) => {
 		loaderGlobalStore.triggerLoading(e);
 		amortizationScheduleStore.init($immoStore);
-		fetchApi('/amortizationSchedulePdf', {
-			method: 'POST',
-			body: JSON.stringify({
-				immoStore: $immoStore,
-				amortizationScheduleStore: $amortizationScheduleStore
-			}),
-			headers: {
-				'Content-Type': 'application/json'
-			}
+		generateAmortizationScheduleSave({
+			immoStore: $immoStore,
+			amortizationScheduleStore: $amortizationScheduleStore
 		})
-			.then((response) => response.blob())
-			.then((blob) => {
+			.catch((error) => {
+				console.error(error);
+			})
+			.finally(() => {
 				loaderGlobalStore.closeLoading();
-				if (blob.size === 0) return;
-				const url = window.URL.createObjectURL(blob);
-				window.open(url);
 			});
+
+		// amortizationScheduleStore.init($immoStore);
+		// fetchApi('/amortizationSchedulePdf', {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({
+		// 		immoStore: $immoStore,
+		// 		amortizationScheduleStore: $amortizationScheduleStore
+		// 	}),
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	}
+		// })
+		// 	.then((response) => response.blob())
+		// 	.then((blob) => {
+		// 		loaderGlobalStore.closeLoading();
+		// 		if (blob.size === 0) return;
+		// 		const url = window.URL.createObjectURL(blob);
+		// 		window.open(url);
+		// 	});
 	};
 </script>
 

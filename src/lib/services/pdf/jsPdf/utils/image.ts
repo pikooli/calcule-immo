@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-// import fs from 'fs';
+import { Buffer } from 'buffer';
 import {
 	LINE_HEIGHT,
 	LOGO_HEIGHT,

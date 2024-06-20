@@ -1,2 +1,4 @@
 export const MORTGAGE_DURATION_MIN_YEARS = 1;
 export const MORTGAGE_DURATION_MAX_YEARS = 30;
+export const MAX_MORTGAGE_INTERET = 30;
+export const MORTGAGE_INTERET_STEP = 0.01;

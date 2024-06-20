@@ -2,7 +2,12 @@
 	import { t } from 'svelte-i18n';
 	import { InputNumberWithSmallRange, InputNumber } from '$components/inputs';
 	import { immoStore } from '$lib/stores/immo';
-	import { MORTGAGE_DURATION_MAX_YEARS, MORTGAGE_DURATION_MIN_YEARS } from '$lib/constants';
+	import {
+		MORTGAGE_DURATION_MAX_YEARS,
+		MORTGAGE_DURATION_MIN_YEARS,
+		MAX_MORTGAGE_INTERET,
+		MORTGAGE_INTERET_STEP
+	} from '$lib/constants';
 	import { IMMO_FIELDS, EUROS, PERCENT } from '$lib/constants';
 </script>
 
@@ -31,12 +36,14 @@
 		label={$t('pages.immo.report.mortgageRatePercent')}
 		nameInput={IMMO_FIELDS.MORTGAGE_AMOUNT}
 		minInput={0}
-		maxInput={100}
+		maxInput={MAX_MORTGAGE_INTERET}
+		stepRange={MORTGAGE_INTERET_STEP}
+		stepInput={MORTGAGE_INTERET_STEP}
 		bind:valueInput={$immoStore.mortgageRatePercent}
 		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_RATE_PERCENT)}
 		nameRange={IMMO_FIELDS.MORTGAGE_RATE_PERCENT}
 		minRange={0}
-		maxRange={100}
+		maxRange={MAX_MORTGAGE_INTERET}
 		bind:valueRange={$immoStore.mortgageRatePercent}
 		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_RATE_PERCENT)}
 		toolTipRange={`${$immoStore.mortgageRatePercent} ${PERCENT}`}

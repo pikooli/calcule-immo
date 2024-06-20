@@ -15,25 +15,25 @@
 						"monthMortgagePayment": "Capital",
 						"monthlyInterest": "Intérêt",
 						"mortgageInsuranceFees": "Assurance",
-						"remainingCapital": "Capital restant"
+						"remainingCapital": "Capital"
 					},
 					"year": "Année",
 					"yearPayment": "Mensualité",
 					"yearInterest": "Intérêt",
 					"yearMortgagePayment": "Capital",
 					"mortgageInsuranceFees": "Assurance",
-					"remainingCapital": "Capital restant",
+					"remainingCapital": "Capital",
 					"total": "Total"
 				},
 				"total": {
 					"mortgageAmount": "Capital remboursé",
 					"mortgageInsuranceFeesTotal": "Assurance payée",
 					"mortgageTotalRateAmount": "Intérêt payé",
-					"mortgageInstalment": "Nombre de mensualités"
+					"mortgageInstalment": "Total mensualités"
 				}
 			},
 			"report": {
-				"amount": "Montant du prêt",
+				"amount": "Montant du bien",
 				"depositPercent": "Apport personnel %",
 				"depositAmount": "Apport personnel",
 				"mortgageAmount": "Emprunt",
@@ -114,9 +114,9 @@
 				"remainingCapital": "Capital restant",
 				"total": "Total"
 			},
+			"mortgageAmount": "Emprunt",
 			"mortgageMonthlyRateAmount": "Paiement mensuel",
 			"mortgageMonthlyRateAmountWithInsurance": "Paiement mensuel avec assurance",
-			"amount": "Montant du prêt",
 			"mortgageDurationYears": "Durée du prêt",
 			"mortgageRatePercent": "Taux d'intérêt",
 			"mortgageTotalRateAmount": "Intérêts totaux",

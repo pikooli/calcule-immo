@@ -49,6 +49,7 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "^1.6.5",
+		"buffer": "^6.0.3",
 		"jspdf": "^2.5.1",
 		"mailersend": "^2.2.0",
 		"nodemailer": "^6.9.13",

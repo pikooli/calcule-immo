@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div class={`flex px-1 ${containerClass}`}>
+<div class={`flex ${containerClass}`}>
 	{#if label}
 		<label
 			for={name}

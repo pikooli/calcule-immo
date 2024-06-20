@@ -8,7 +8,7 @@
 	import './deposit.scss';
 </script>
 
-<div class="grid md:grid-cols-3">
+<div class="grid gap-2 md:grid-cols-3">
 	<InputNumberWithSmallRange
 		whiteLabel
 		label={$t('pages.immo.report.depositAmount')}
