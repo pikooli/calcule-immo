@@ -34,7 +34,7 @@
 </script>
 
 <div class="flex flex-col">
-	<div class="flex items-center">
+	<div class="mb-1 flex items-center">
 		{#if label}
 			<label
 				for={nameInput}
@@ -62,7 +62,7 @@
 		bind:value={valueRange}
 		onInput={onInputRange}
 		inputClass={inputRangeClass}
-		containerClass="mb-1"
+		containerClass="mb-2"
 	/>
 	<InputNumber
 		name={nameInput}

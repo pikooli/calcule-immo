@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Tooltip } from 'flowbite-svelte';
+	import { colors } from '$colors';
+
 	export let label: string = '';
 	export let name: string = '';
 	export let value: any;
@@ -49,6 +51,9 @@
 		on:input={onInput}
 		on:touchstart={showTooltip}
 		on:touchend={hideTooltip}
+		on:mouseenter={showTooltip}
+		on:mouseleave={hideTooltip}
+		style={`--thumb-color: ${colors.darkBlue[700]}; --thumb-border: ${colors.darkBlue[300]};`}
 	/>
 </div>
 
@@ -66,8 +71,11 @@
 	} */
 	input[type='range']::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		height: 0.7rem;
-		width: 0.7rem;
+		height: 1.2rem;
+		width: 1.2rem;
+		border-radius: 4px;
+		background-color: var(--thumb-color);
+		border: 0.1px solid var(--thumb-border);
 	}
 
 	/* input[type='range']:hover::-webkit-slider-thumb {
