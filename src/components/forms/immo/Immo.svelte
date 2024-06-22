@@ -7,9 +7,13 @@
 	import './immo.scss';
 </script>
 
-<AmountBlock />
+<div class="mb-1">
+	<AmountBlock />
+</div>
 
-<DepositBlock />
+<div class="mb-1">
+	<DepositBlock />
+</div>
 <MortgageBlock />
 <Card className="mt-4 border-t-2 pt-4">
 	<TotalBlock />

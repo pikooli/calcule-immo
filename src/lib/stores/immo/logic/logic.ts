@@ -10,31 +10,32 @@ import {
 	computedepositePercentOndepositeAmount,
 	computeMortgageTotalRateAmount,
 	computeMortgageMontlyRatePercentFixed,
-	computeMortgageMontlyRateAmount,
+	computeMortgageMontlyAmount,
 	computeMortgageAmountOnmortgagePercent,
-	computeMortgageAmountOnmortgageAmount,
+	computeMortgagePercentOnmortgageAmount,
 	computeAgencyAmount,
 	computeAgencyPercent,
 	computedepositeAmountOnmortgageAmount,
 	computeMortgageAmount,
 	computeTotal,
 	computeMortgageInsuranceFeesTotal,
-	computeMortgageMontlyRateWithInsurance,
+	computeMortgageMontlyAmountWithInsurance,
 	computeInsuranceAnnuallyFees,
-	computeInsuranceMonthyFeesByAnnually
+	computeInsuranceMonthyFeesByAnnually,
+	computeMortgageAmountFromMonthlyAmount
 } from '$lib/stores/immo/logic/maths';
 
 export const initValues = (values: ImmoStore) => {
 	values.depositeAmount = computedepositeAmountOndepositePercent(values);
 	values.mortgageAmount = computeMortgageAmount(values);
 	values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-	values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+	values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 	values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 	values.notaryFees = computeNotaryFeeAmount(values);
 	values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 	values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 	values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
-	values.mortgageMonthlyRateAmountWithInsurance = computeMortgageMontlyRateWithInsurance(values);
+	values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 
 	return computeTotal(values);
 };
@@ -46,39 +47,36 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageAmount = computeMortgageAmount(values);
 			values.notaryFees = computeNotaryFeeAmount(values);
 			values.agencyFees = computeAgencyAmount(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.DEPOSITE_PERCENT: {
 			values.depositeAmount = computedepositeAmountOndepositePercent(values);
 			values.mortgageAmount = computeMortgageAmount(values);
-			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.mortgageAmountPercent = computeMortgagePercentOnmortgageAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.DEPOSITE_AMOUNT: {
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageAmount = computeMortgageAmount(values);
-			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.mortgageAmountPercent = computeMortgagePercentOnmortgageAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
@@ -87,42 +85,51 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_AMOUNT: {
-			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.mortgageAmountPercent = computeMortgagePercentOnmortgageAmount(values);
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
+			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
+			break;
+		}
+		case IMMO_FIELDS.MORTGAGE_MONTHLY_AMOUNT: {
+			values.mortgageAmount = computeMortgageAmountFromMonthlyAmount(values);
+			values.mortgageAmountPercent = computeMortgagePercentOnmortgageAmount(values);
+			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
+			values.depositePercent = computedepositePercentOndepositeAmount(values);
+			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
+			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
+			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
+			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_RATE_PERCENT: {
-			values.mortgageAmountPercent = computeMortgageAmountOnmortgageAmount(values);
+			values.mortgageAmountPercent = computeMortgagePercentOnmortgageAmount(values);
 			values.depositeAmount = computedepositeAmountOnmortgageAmount(values);
 			values.depositePercent = computedepositePercentOndepositeAmount(values);
 			values.mortgageMonthlyRatePercent = computeMortgageMontlyRatePercentFixed(values);
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
-
 			break;
 		}
 		case IMMO_FIELDS.AGENCY_FEES_PERCENT: {
@@ -142,9 +149,8 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_DURATION_YEARS: {
-			values.mortgageMonthlyRateAmount = computeMortgageMontlyRateAmount(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmount = computeMortgageMontlyAmount(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
 			values.mortgageTotalRateAmount = computeMortgageTotalRateAmount(values);
 			values = computeMortgageTotalCost(values);
@@ -154,24 +160,21 @@ export const updateValues = (field: string, values: ImmoStore) => {
 			values.mortgageInsurancePercent = computeInsuranceFeePercentByAmount(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_INSURANCE_PERCENT: {
 			values.mortgageInsuranceFees = computeMonthyInsuranceFeeByPercent(values);
 			values.mortgageInsuranceAnnuallyFees = computeInsuranceAnnuallyFees(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			break;
 		}
 		case IMMO_FIELDS.MORTGAGE_INSURANCE_ANNUALLY_FEES: {
 			values.mortgageInsuranceFees = computeInsuranceMonthyFeesByAnnually(values);
 			values.mortgageInsurancePercent = computeInsuranceFeePercentByAmount(values);
 			values.mortgageInsuranceFeesTotal = computeMortgageInsuranceFeesTotal(values);
-			values.mortgageMonthlyRateAmountWithInsurance =
-				computeMortgageMontlyRateWithInsurance(values);
+			values.mortgageMonthlyAmountWithInsurance = computeMortgageMontlyAmountWithInsurance(values);
 			break;
 		}
 	}

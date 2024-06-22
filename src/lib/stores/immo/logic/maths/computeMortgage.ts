@@ -3,17 +3,18 @@ import { computeAmount, computePercent } from '$lib/utils/math';
 
 export const computeMortgageAmountOnmortgagePercent = (values: ImmoStore) =>
 	computeAmount(values.amount, values.mortgageAmountPercent);
-export const computeMortgageAmountOnmortgageAmount = (values: ImmoStore) =>
+export const computeMortgagePercentOnmortgageAmount = (values: ImmoStore) =>
 	computePercent(values.mortgageAmount, values.amount);
 export const computeMortgageInsuranceFeesTotal = (values: ImmoStore) =>
 	values.mortgageInsuranceFees * 12 * values.mortgageDurationYears;
 export const computeMortgageAmount = (values: ImmoStore) => values.amount - values.depositeAmount;
 export const computeMortgageTotalRateAmount = (values: ImmoStore) => {
-	if (values.mortgageMonthlyRateAmount === 0) {
+	if (values.mortgageMonthlyAmount === 0) {
 		return 0;
 	}
+
 	return (
-		Math.round(values.mortgageMonthlyRateAmount * 12 * values.mortgageDurationYears) -
+		Math.round(values.mortgageMonthlyAmount * 12 * values.mortgageDurationYears) -
 		values.mortgageAmount
 	);
 };
@@ -39,18 +40,18 @@ export const computeMortgageMontlyRatePercentFixed = ({
 	return parseFloat(montlyRate.toFixed(6));
 };
 
-interface ComputeMortgageMontlyRateAmountArgs {
+interface computeMortgageMontlyAmountArgs {
 	mortgageAmount: number;
 	mortgageRatePercent: number;
 	mortgageDurationYears: number;
 	mortgageInsuranceFees?: number;
 }
 
-export const computeMortgageMontlyRateAmount = ({
+export const computeMortgageMontlyAmount = ({
 	mortgageAmount,
 	mortgageRatePercent,
 	mortgageDurationYears
-}: ComputeMortgageMontlyRateAmountArgs) => {
+}: computeMortgageMontlyAmountArgs) => {
 	if (mortgageRatePercent === 0 || mortgageAmount === 0 || mortgageDurationYears === 0) {
 		return 0;
 	}
@@ -65,10 +66,31 @@ export const computeMortgageMontlyRateAmount = ({
 	return parseFloat(montlyAmount.toFixed(2));
 };
 
+interface computeMortageAmountFromMontlyAmountArgs {
+	mortgageMonthlyAmount: number;
+	mortgageDurationYears: number;
+	mortgageMonthlyRatePercent: number;
+}
+
+export const computeMortgageAmountFromMonthlyAmount = ({
+	mortgageDurationYears,
+	mortgageMonthlyAmount,
+	mortgageMonthlyRatePercent
+}: computeMortageAmountFromMontlyAmountArgs) => {
+	const numberOfPayments = mortgageDurationYears * 12;
+
+	const mortgageAmount =
+		(mortgageMonthlyAmount * (1 - Math.pow(1 + mortgageMonthlyRatePercent, -numberOfPayments))) /
+		mortgageMonthlyRatePercent;
+
+	return parseFloat(mortgageAmount.toFixed(2));
+};
+
 export const computeMortgageTotalCost = (values: ImmoStore) => {
 	values.totalMortgageCost =
 		values.mortgageAmount + values.mortgageTotalRateAmount + values.mortgageInsuranceFeesTotal;
 	return values;
 };
-export const computeMortgageMontlyRateWithInsurance = (values: ImmoStore) =>
-	values.mortgageMonthlyRateAmount + values.mortgageInsuranceFees;
+
+export const computeMortgageMontlyAmountWithInsurance = (values: ImmoStore) =>
+	values.mortgageMonthlyAmount + values.mortgageInsuranceFees;

@@ -52,25 +52,40 @@
 		iconAlt={$t('pages.immo.descriptions.mortgageRatePercent')}
 		iconId="mortgageRatePercentId"
 	/>
-	<InputNumberWithSmallRange
-		whiteLabel
-		label={$t('pages.immo.report.mortgageDurationYears')}
-		nameInput={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
-		minInput={MORTGAGE_DURATION_MIN_YEARS}
-		maxInput={MORTGAGE_DURATION_MAX_YEARS}
-		bind:valueInput={$immoStore.mortgageDurationYears}
-		onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
-		nameRange={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
-		minRange={MORTGAGE_DURATION_MIN_YEARS}
-		maxRange={MORTGAGE_DURATION_MAX_YEARS}
-		bind:valueRange={$immoStore.mortgageDurationYears}
-		onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
-		toolTipRange={`${$immoStore.mortgageDurationYears}`}
-		toolTip={$t('pages.immo.descriptions.mortgageDurationYears')}
-		iconAlt={$t('pages.immo.descriptions.mortgageDurationYears')}
-		iconId="mortgageDurationYearsId"
-	/>
-	<div>
+	<div class="grid gap-2">
+		<InputNumberWithSmallRange
+			whiteLabel
+			label={$t('pages.immo.report.mortgageDurationYears')}
+			nameInput={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
+			minInput={MORTGAGE_DURATION_MIN_YEARS}
+			maxInput={MORTGAGE_DURATION_MAX_YEARS}
+			bind:valueInput={$immoStore.mortgageDurationYears}
+			onInputNumber={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
+			nameRange={IMMO_FIELDS.MORTGAGE_DURATION_YEARS}
+			minRange={MORTGAGE_DURATION_MIN_YEARS}
+			maxRange={MORTGAGE_DURATION_MAX_YEARS}
+			bind:valueRange={$immoStore.mortgageDurationYears}
+			onInputRange={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_DURATION_YEARS)}
+			toolTipRange={`${$immoStore.mortgageDurationYears}`}
+			toolTip={$t('pages.immo.descriptions.mortgageDurationYears')}
+			iconAlt={$t('pages.immo.descriptions.mortgageDurationYears')}
+			iconId="mortgageDurationYearsId"
+		/>
+		<InputNumber
+			whiteLabel
+			label={$t('pages.immo.report.mortgageMonthlyAmount')}
+			name={IMMO_FIELDS.MORTGAGE_MONTHLY_AMOUNT}
+			min={0}
+			max={$immoStore.mortgageAmount}
+			bind:value={$immoStore.mortgageMonthlyAmount}
+			sign={EUROS}
+			onInput={() => immoStore.updateValue(IMMO_FIELDS.MORTGAGE_MONTHLY_AMOUNT)}
+			toolTip={$t('pages.immo.descriptions.mortgageMonthlyAmount')}
+			iconAlt={$t('pages.immo.descriptions.mortgageMonthlyAmount')}
+			iconId="mortgageMonthlyAmountId"
+		/>
+	</div>
+	<div class="grid gap-2">
 		<InputNumberWithSmallRange
 			whiteLabel
 			label={$t('pages.immo.report.mortgageInsuranceAnnuallyFees')}

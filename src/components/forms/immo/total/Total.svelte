@@ -6,22 +6,14 @@
 	import { PERCENT } from '$lib/constants';
 </script>
 
-<div class="grid gap-2 md:grid-cols-3">
+<div class="grid grid-cols-2 gap-2">
 	<DisplayAmount
 		whiteLabel
-		label={$t('pages.immo.report.mortgageMonthlyRateAmount')}
-		value={formatCurrency($immoStore.mortgageMonthlyRateAmount)}
-		toolTip={$t('pages.immo.descriptions.mortgageMonthlyRateAmount')}
-		iconAlt={$t('pages.immo.descriptions.mortgageMonthlyRateAmount')}
-		iconId="mortgageMonthlyRateAmountId"
-	/>
-	<DisplayAmount
-		whiteLabel
-		label={$t('pages.immo.report.mortgageMonthlyRateAmountWithInsurance')}
-		value={formatCurrency($immoStore.mortgageMonthlyRateAmountWithInsurance)}
-		toolTip={$t('pages.immo.descriptions.mortgageMonthlyRateAmountWithInsurance')}
-		iconAlt={$t('pages.immo.descriptions.mortgageMonthlyRateAmountWithInsurance')}
-		iconId="mortgageMonthlyRateAmountWithInsuranceId"
+		label={$t('pages.immo.report.mortgageMonthlyAmountWithInsurance')}
+		value={formatCurrency($immoStore.mortgageMonthlyAmountWithInsurance)}
+		toolTip={$t('pages.immo.descriptions.mortgageMonthlyAmountWithInsurance')}
+		iconAlt={$t('pages.immo.descriptions.mortgageMonthlyAmountWithInsurance')}
+		iconId="mortgageMonthlyAmountWithInsuranceId"
 	/>
 	<DisplayAmount
 		whiteLabel

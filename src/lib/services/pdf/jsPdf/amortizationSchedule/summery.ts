@@ -40,8 +40,8 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridTextCenter({
 		doc,
 		texts: [
-			i18n('pdf.amortizationSchedule.mortgageMonthlyRateAmount'),
-			i18n('pdf.amortizationSchedule.mortgageMonthlyRateAmountWithInsurance')
+			i18n('pdf.amortizationSchedule.mortgageMonthlyAmount'),
+			i18n('pdf.amortizationSchedule.mortgageMonthlyAmountWithInsurance')
 		],
 		yPosition: currentYPosition,
 		drawBorders: true
@@ -49,8 +49,8 @@ export const generateSummary = ({ doc, immoStore, yPosition }: GenerateSummaryAr
 	currentYPosition = gridText({
 		doc,
 		texts: [
-			formatCurrency(immoStore.mortgageMonthlyRateAmount),
-			formatCurrency(immoStore.mortgageMonthlyRateAmountWithInsurance)
+			formatCurrency(immoStore.mortgageMonthlyAmount),
+			formatCurrency(immoStore.mortgageMonthlyAmountWithInsurance)
 		],
 		yPosition: currentYPosition,
 		drawBorders: true

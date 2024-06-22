@@ -13,14 +13,15 @@ export {
 export {
 	computeMortgageTotalRateAmount,
 	computeMortgageAmount,
-	computeMortgageAmountOnmortgageAmount,
+	computeMortgagePercentOnmortgageAmount,
 	computeMortgageInsuranceFeesTotal,
 	computeMortgageMontlyRatePercent,
 	computeMortgageMontlyRatePercentFixed,
-	computeMortgageMontlyRateAmount,
+	computeMortgageMontlyAmount,
 	computeMortgageAmountOnmortgagePercent,
 	computeMortgageTotalCost,
-	computeMortgageMontlyRateWithInsurance
+	computeMortgageMontlyAmountWithInsurance,
+	computeMortgageAmountFromMonthlyAmount
 } from './computeMortgage';
 export { computeAgencyAmount, computeAgencyPercent } from './computeAgency';
 export { computeTotal } from './computeTotal';

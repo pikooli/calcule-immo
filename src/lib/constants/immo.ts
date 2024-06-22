@@ -7,7 +7,7 @@ export const IMMO_FIELDS = {
 	MORTGAGE_DURATION_YEARS: 'mortgageDurationYears',
 	MORTGAGE_RATE_PERCENT: 'mortgageRatePercent',
 	MORTGAGE_MONTHLY_RATE_PERCENT: 'mortgageMonthlyRatePercent',
-	MORTGAGE_MONTHLY_RATE_AMOUNT: 'mortgageMonthlyRateAmount',
+	MORTGAGE_MONTHLY_AMOUNT: 'mortgageMonthlyAmount',
 	MORTGAGE_INSURANCE_FEES: 'mortgageInsuranceFees',
 	MORTGAGE_INSURANCE_ANNUALLY_FEES: 'mortgageInsuranceAnnuallyFees',
 	MORTGAGE_INSURANCE_PERCENT: 'mortgageInsurancePercent',
