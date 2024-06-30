@@ -49,7 +49,7 @@
 		{step}
 		bind:value
 		on:input={onInput}
-		on:touchstart={showTooltip}
+		on:input={showTooltip}
 		on:touchend={hideTooltip}
 		on:mouseenter={showTooltip}
 		on:mouseleave={hideTooltip}
