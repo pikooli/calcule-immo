@@ -53,14 +53,14 @@
 		className="h-[2rem] rounded-md mx-1"
 		alt="amortizationScheduleIcon"
 	/>
-	<IconBtn
+	<!-- <IconBtn
 		toolTip={$t('pages.immo.toolTip.email')}
 		iconId="emailIcon"
 		handleClick={modalStore.openEmailModal}
 		src={emailIconAvif}
 		className="h-[2rem] rounded-md mx-1"
 		alt="emailIcon"
-	/>
+	/> -->
 	<IconBtn
 		toolTip={$t('pages.immo.toolTip.download')}
 		iconId="downloadIcon"
